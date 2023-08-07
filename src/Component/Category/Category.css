@@ -1,0 +1,43 @@
+
+
+body{margin:0 auto;}
+
+
+@media (max-width: 575.98px) { 
+    
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .categorylist{z-index: 0;padding: 0px  !important;background: #fff;margin: 0px 0 10px 0px;border: 1px solid #ccc;}
+    .categorylist ul{border-radius: none !important;background: #fff;padding: 0px 0px  !important ;}
+    .categorylist ul li{background: #fff;padding: 3px 5px;border: none;color: #222;line-height: 1.2;}
+    .categorylist ul li:hover{background: #D8DADF;padding: 3px 5px;border: none;color: #222;line-height: 1.2;color: #3a4080;}
+    .categorylist ul li a{color: #222222;font-size: 11px;text-decoration: none;}
+    .categorylist ul li a:hover{color: #3a4080;font-size: 11px;text-decoration: none;}
+    .stickysidebar{z-index: 1;transform: translateZ(0px);top:45px;position: fixed;margin: 45px 0 0 0;}
+    .stickymenu{z-index: 1 ;}
+    
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+    .categorylist{z-index: 0; padding: 0px !important;background: #E4E6E8;margin: 0px 0 10px 0px;padding: 5px 0px ;border: 1px solid #ccc;}
+    .categorylist ul{border-radius: none !important;background: #fff;padding: 0px 0px  !important ;}
+    .categorylist ul li{background: #fff;padding: 0 10px 4px 10px;border: none;color: #222;line-height: 1.2;}
+    .categorylist ul li:hover{background: #D8DADF;padding: 0 10px 4px 10px;border: none;color: #222;line-height: 1.2;color: #3a4080;}
+    .categorylist ul li a{color: #222222;font-size: 12px;text-decoration: none;}
+    .categorylist ul li a:hover{color: #3a4080;font-size: 12px;text-decoration: none;}
+    .stickysidebar{z-index: 1;transform: translateZ(0px);top:45px;position: fixed;margin: 45px 0 0 0;}
+    .stickymenu{z-index: 1;}
+}

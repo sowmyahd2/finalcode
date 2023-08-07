@@ -1,0 +1,144 @@
+p{font-size: 14px;}
+.productpagelayout{background: #fff;} 
+.productpageimage{background: #E4E5EB;height: auto;flex-direction: column;justify-content: center;padding: 20px 0px;}
+.productpagedetails{padding:0 10px;}
+.productpagesocial{background: #fff; padding: 10px;}
+.imagecaurosel {width:auto !important;mix-blend-mode: multiply !important;height: auto;justify-content: center;flex-direction: column;max-width: fit-content;max-height: 400px;}
+.cauroselimage{background: #E4E5EB;padding: 20px;}
+ul.thumbs.animated {display: none;}
+.carousel.carousel-slider .control-arrow{top: 50% !important;color: #222;font-size: 20px !important;bottom: 0;margin-top: 0;padding: 0px !important;width: 40px;height: 40px;}
+.carousel .control-arrow {outline: 0;border: 0;background: #999 !important;top: 50%;margin:0px;font-size: 18px;}
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {transition: all .25s ease-in;opacity: 1 !important;filter: alpha(opacity=40);position: absolute;z-index: 2;top: 20px;background: none;border: 0;font-size: 20px;cursor: pointer;}
+.carousel .thumbs-wrapper {display: none;}
+.buttonproduct {display: flex;justify-content: center;}
+.addtocart{background: #ffee1f;text-align: center;margin: 10px;padding: 10px;font-weight: 600;}
+.buynow{color:#fff;background:  #fb641b;text-align: center;margin: 10px;padding: 10px;font-weight: 600;}
+.stickyproduct{top: 20px !important;}
+.detailsproduct {padding: 0px;}
+.detailsproduct h6{margin: 0px;padding: 10px 10px 5px 5px;}
+.producthorizontal {margin: 10px 0;padding: 0px;background: #ccc;}
+.concode{margin: 5px 0;background: #fff;padding: 5px;}
+.productcode{margin: 5px 0;background: #fff;padding: 5px;}
+.ratings{padding: 0px;display: flex;}
+.ratings h6{font-size:13px; background: #388e3c;width: fit-content;color: #fff;padding: 5px 5px;margin: 0px;}
+.ratings i{padding: 0px;font-size: 13px;}
+.ratings span{padding: 0px 10px;}
+.productpricepin{padding: 0px;margin: 10px 0;}
+.productrupee{padding: 0px;margin: 10px 0;display: flex;}
+.itemprice{font-size: 25px;font-weight: 500;}
+.discountprice{font-size: 14px;font-weight: 500;text-decoration: line-through;margin: 10px;padding: 0 5px;}
+.productrupee span{color: #388e3c;padding: 10px 0;font-size: 14px;}
+.wishcomemail{padding: 0px;display: flex;}
+.wishcomemail h6{font-size: 13px;margin:10px 0px;padding: 0px;}
+.wishcomemail p{padding: 8px 10px;margin: 0px;}
+.wishcomemail i{font-size: 15px;padding: 0 5px;cursor: pointer;}
+.socialproduct {display: flex;padding: 0px;margin: 10px 0;}
+.shareproduct {display: flex;margin: 0px;}
+.shareproduct h6{font-size: 13px;margin:10px 0px;padding: 0px;}
+.shareproduct p{padding: 8px 10px;margin: 0px;}
+.shareproduct i{font-size: 25px;padding: 0px;cursor: pointer;}
+.productresource{display: flex;padding: 0px;}
+.delivery{padding: 0px;}
+.delivery h6{padding: 0px;font-size: 14px;}
+.pincode{padding: 0px;}
+.pincode h6{font-size: 14px;}
+.pincode p{margin: 0px;display: flex;}
+.productdhighlight{display: flex;padding: 0px;}
+.highlight{padding: 0px;font-size: 14px;}
+.highlight h6{padding: 0px;font-size: 14px;}
+.highlightdetails{padding: 0px;}
+.highlightdetails p{margin: 0px;}
+.productdservice{display: flex;padding: 0px;}
+.service{padding: 0px;font-size: 14px;}
+.service h6{padding: 0px;font-size: 14px;}
+.servicedetails {padding: 0px;}
+.productdseller{display: flex;padding: 0px;}
+.seller{padding: 0px;font-size: 14px;}
+.seller h6{padding: 0px;font-size: 14px;margin: 0px;}
+.sellerdetails{padding: 0;}
+.sellerdetails p {margin: 0px;padding: 0;}
+.facilityproduct{padding: 0px;}
+.facilityproduct ul{list-style-type: none;}
+.facilityproduct ul li{font-size: 12px;} 
+.facilityproduct{display: flex;}
+.serviceprod{display: flex;padding: 0px;}
+.productspedesc{padding: 0px;}
+.pivoted{padding:10px !important;}
+.pspecefication{padding: 0px;}
+.pspecefication ul{list-style-type: none;font-size: 13px;margin: 5px 0px;}
+.pspecefication ul li {padding: 0px;display: inline-flex;}
+.accordion__panel{padding: 10px !important;font-size: 14px;border: 1px solid #ccc;}
+.accordion__button{padding: 10px !important;font-size: 15px;background: #E4E5EB !important;}
+.pickshop{margin: 0 0px;font-size: 13px;cursor: pointer;background: #ffe11b;text-align: center;padding: 10px 0 !important;justify-content: center;font-weight: 600;color: #000 !important;height: 40px;}
+.homedelivery{margin: 0 5px;font-size: 13px;cursor: pointer;background: #ffe11b;text-align: center;padding: 10px 0 !important;justify-content: center;font-weight: 600;color: #000 !important;height: 40px;}
+.orderonline{margin: 5px 0px;font-size: 13px;cursor: pointer;background: #ffe11b;text-align: center;padding: 10px !important;justify-content: center;font-weight: 600;color: #000 !important;}
+.dealname{margin:5px 0px;text-decoration: underline;}
+.dealloc{cursor: pointer;margin: 5px 0;}
+.dealview{color: #000;padding:5px 0px;display: inline;}
+.dealerslist {display: flex;padding: 0px;background:hsl(7, 89%, 64%);margin: 0;color: #fff;}
+.selectdel{padding:5px;}
+.selectdel h5{font-size: 14px;padding: 5px;margin: 0px;padding: 10px 0;}
+.selectopt{padding:5px 10px;}
+.locationdel{border: 1px solid #ccc;height: 35px;padding: 5px;width: 100%;font-size: 13px;}
+.dealertable{padding: 0px 5px;overflow-y: scroll;height:auto;max-height: 400px; border: 1px solid #ccc;}
+.headertable{padding: 10px;}
+.headertable tr{margin: 5px 0px;border: 1px solid #ccc !important;}
+.headertable th{background: #E4E5EB;color:#000;padding: 5px 10px;border: 1px solid #ccc;font-size: 14px;font-weight: 600;}
+.headertable td{background: #fff;color:#000;padding: 0px;border: 1px solid #ccc;font-size: 13px;font-weight: 400;}
+.tdBefore{background:#e5e5e5;padding:0px;}
+.productsticky {background: #E4E5EB;padding: 0px}
+.producttable{padding: 0px;margin: 10px 0;background: #fff;}
+.picuwarniwats{display: flex;}
+.whatsappexcla{display: flex;padding: 0px !important;}
+.wapp{color:green;font-size: 30px;padding:5px 2px;}
+.excl{color: #aaa;font-size: 15px;padding: 15px 0;}
+.pvir{padding: 0px;}
+.productoption{font-size: 14px;}
+.priceprod{margin: 0px;}
+.storepriceprod{margin: 0px;}
+.shippingprod{margin: 0px;}
+.shopdealername{width: 30%;}
+.shopdealerprice{width: 10%;}
+.shopdealerquantity{width: 10%;}
+.shopdealerstock{width: 10%;}
+.shopdealerbuying{width: 20%;}
+.mostviewed{background: #fff;padding: 20px 0;}
+.producttable {margin: 0px;}
+.producttabb{margin: 0px;}
+
+
+@media (max-width: 575.98px) { 
+    .buttonproduct {display: block;justify-content: center;padding: 0px;}
+    .stickyproduct {position: relative !important;top: 0px !important;}
+    .dealerslist {display: block;padding: 0px;background: #3a4080;margin: 0;color: #fff;}
+    .socialproduct {display:block;}
+    .pivoted{margin: 10px 0;background: #E4E5EB !important;}
+    .shareproduct{padding: 0px;}
+    .addtocart{background: #ffee1f;text-align: center;margin: 10px 0;padding: 10px;font-weight: 600;}
+    .buynow{color:#fff;background:  #fb641b;text-align: center;margin: 10px 0;padding: 10px;font-weight: 600;}
+    .pincode{padding:0 10px;}
+    .servicedetails {padding: 0px 10px;}
+    .productdseller{display: flex;padding:0 10px;}
+    .selectdel h5{font-size: 14px;padding: 5px;margin: 0px;}
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .stickyproduct {position: relative !important;top: 0px !important;}
+    .dealerslist {display: block;padding: 0px;background: #3a4080;margin: 0;color: #fff;}
+    .socialproduct {display:block;}
+    .pivoted{margin: 10px 0;}    
+    .shareproduct{padding: 0px;}
+    .whatsappexcla{display: block;}
+    .wapp {color: green;font-size: 25px;padding: 0 5px;}
+    .excl {color: #aaa;font-size: 15px;padding: 0px 8px;}
+    .addtocart{background: #ffee1f;text-align: center;margin: 10px 0;padding: 10px;font-weight: 600;}
+    .buynow{color:#fff;background:  #fb641b;text-align: center;margin: 10px 0;padding: 10px;font-weight: 600;}
+
+
+}
+
+
+
+
+

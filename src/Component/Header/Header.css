@@ -1,0 +1,221 @@
+body{margin:0 auto;}
+.searchinputlist a{color: #000;font-size: 13px;}
+.searchinputlist h6{border-bottom:1px solid #ccc;margin:0px 0 10px 0; padding: 10px 0;font-size: 14px;}
+
+@media (max-width: 575.98px) { 
+.cityonnet_Header_xs{background:hwb(18 9% 4%);padding: 0px 5px;}
+.header{color: #fff;}
+.navlist li a {padding: 4px 8px;color: #fff;list-style-type: none;font-size: 18px;}
+.headerleft{padding:5px 0px !important;display: flex;}
+.headerright{padding:5px 0px !important;}
+.headerleft i {position: relative;top:9px;padding: 0px 5px;color: #fff;font-size: 24px;color:#ffee1f;}
+.headersearch{padding: 0px !important;display: flex;margin: 5px auto;}
+.inputsearch{width: 100%;font-size: 14px;padding: 5px;background: #fff;border: 1px solid #fff;height: 35px;}
+.gobutton {height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #3a4080;    position: absolute;
+    right: 0px;}
+.gobutton i{padding: 0px 10px;}
+.navlist{margin: 5px 0 0 0;}
+.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+.citylist{background: #E4E6E8;}
+.citylist h6{background: #E4E6E8;padding: 10px;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.listli{padding: 5px 10px !important;}
+.listli a{color: #3a4080 !important;}
+.inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
+.searchinput{padding: 0 10px;}
+.headerright ul li span{text-transform: capitalize;}
+.searchinputlist{    border: 1px solid #ccc;
+    height: 300px;
+    position: absolute;
+    z-index: 1;
+    top: 34px;
+    width: 100%;
+    padding: 5px;
+    background: #E4E5EB;
+    color: #000;overflow-y: scroll;
+}
+.suggestedlist{list-style-type: none;}
+.logcolor{color: #ffee1f;}
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) { 
+.cityonnet_Header_xs{background:hsl(0, 93%, 62%);padding: 0px 5px;}
+.header{color: #fff}
+.logo{width: 100px;height: auto;padding: 0px !important /*mix-blend-mode: multiply;background:#fff;padding: 0px 5px;*/}
+.navlist li a {padding:5px 10px;color: #fff;list-style-type: none;font-size: 18px;}
+.headerleft{padding:5px 0px !important;display: flex;}
+.headerright{padding:5px 0px !important;}
+.headerleft i {position: relative;top:9px;padding: 0px 5px;color: #ffee1f;font-size: 24px;}
+.headersearch{padding: 0px !important;display: flex;margin: 5px auto;}
+.inputsearch{width: 100%;font-size: 14px;padding: 5px;background: #fff;border: 1px solid #fff;height: 35px;}
+.gobutton {height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #3a4080;    position: absolute;
+    right: 0px;}
+.gobutton i{padding: 0px 10px;}
+.navlist{margin: 5px 0 0 0;}
+.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+.citylist{background: #E4E6E8;}
+.citylist h6{background: #E4E6E8;padding: 10px;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.listli{padding: 5px 10px !important;}
+.listli a{color: #3a4080 !important;}
+.inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
+.searchinput{padding: 0 10px;}
+.headerright ul li span{text-transform: capitalize;}
+.searchinputlist{    border: 1px solid #ccc;
+    height: 300px;
+    position: absolute;
+    z-index: 1;
+    top: 34px;
+    width: 100%;
+    padding: 5px;
+    background: #E4E5EB;
+    color: #000;overflow-y: scroll;
+}
+.suggestedlist{list-style-type: none;}
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) { 
+.cityonnet_Header{background:#fff;padding: 0px 5px;}
+.cityonnet_Header_menu{background: #fd5806;}
+.header{color: #fff;}
+.logo{width: 150px;height: auto;padding: 0px !important/*mix-blend-mode: multiply;background:#fff;padding: 0px 5px;*/}
+.navlist li a {padding: 5px 10px;color: #3a4080;list-style-type: none;font-size: 14px;}
+.navlist li i{border:1px solid #3a4080;color: #3a4080;padding: 5px;}
+.headerleft{padding: 0px !important;}
+.headerright{padding: 0px !important;}
+.headerleft i {position: relative;top: 5px;padding: 0px 5px;color: #fff;font-size: 20px;}
+.headersearch{padding: 0px !important;display: flex;margin: 3px auto;}
+.inputsearch{width: 100%;font-size: 14px;padding: 5px;background: #fff;border: 1px solid #fff;height: 35px;}
+.gobutton {height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #3a4080;    position: absolute;
+    right: 10px;}
+.gobutton i{padding: 0px 10px;}
+.navlist{margin: 8px 0 0 0;padding: 0px;}
+.categories {color:  #ffee1f !important;padding: 0px;padding: 7px 0;font-size: 13px;font-weight: 500;height: 35px;}
+.categories i{padding: 5px;}
+.navlist_menu li a{color: #fff;padding:5px 3px ;font-size: 12px;}
+.navlist_menu li i{background: #fff;color: #f55302;padding: 5px;border-radius:5px 5px 5px 15px;}
+.navlist_menu span{padding: 0 5px;}
+.stickymenu{z-index: 1;} 
+.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+.citylist{background: #E4E6E8;}
+.citylist h6{background: #E4E6E8;padding: 10px;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.listli{padding: 5px 10px !important;}
+.listli a{color: #3a4080 !important;}
+.inputbar{height: 35px;width: 100%;font-size: 13px;padding: 5px;}
+.searchinput{padding: 0 10px  !important;}
+.headerright ul li span{text-transform: capitalize;}
+.inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
+.searchinput{padding: 0 15px;}
+.headerright ul li span{text-transform: capitalize;}
+.searchinputlist{    border: 1px solid #ccc;
+    height: 300px;
+    position: absolute;
+    z-index: 1;
+    top: 34px;
+    width: 90%;
+    padding: 5px;
+    background: #E4E5EB;
+    color: #000;overflow-y: scroll;
+}
+.suggestedlist{list-style-type: none;}
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+.cityonnet_Header{background:#fff;padding: 0px 5px;}
+.cityonnet_Header_menu{background: #3a4080;}
+.header{color: #fff;padding: 0px;}
+.logo{width: 150px;height: auto;padding: 0px !important;/*mix-blend-mode: multiply;background:#fff;padding: 0px 5px;*/}
+.navlist li a {padding: 5px 30px;color: #3a4080;list-style-type: none;font-size: 14px;}
+.navlist li i{border:1px solid #3a4080;color: #3a4080;padding: 5px;}
+.headerleft{padding: 0px !important;}
+.headerright{padding: 0px !important;}
+.headerleft i {position: relative;top: 5px;padding: 0px 5px;color: #fff;font-size: 20px;}
+.headersearch{padding: 0px  !important;display: flex;margin: 3px auto;}
+.inputsearch{width: 100%;font-size: 14px;padding: 5px;background: #fff;border: 1px solid #fff;height: 35px;margin: 0px 0 0 10px;}
+.gobutton {height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #3a4080;    position: absolute;
+    right: 10px;}
+.gobutton i{padding: 0px 10px;}
+.navlist{margin: 10px 0 0 0;padding: 0px;}
+.categories {color: #ffee1f !important;padding: 0px;padding: 5px;font-size: 14px;font-weight: 500;height: 35px;}
+.categories i{padding: 5px;}
+.navlist_menu li a{color: #fff;padding: 5px 10px;font-size: 14px;}
+.navlist_menu li i{background: #fff;color: #3a4080;padding: 5px;border-radius:5px 5px 5px 15px;}
+.navlist_menu span{padding: 0 5px;}
+.stickymenu{z-index: 1;position:relative;}
+.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+.citylist{background: #E4E6E8;}
+.citylist h6{background: #E4E6E8;padding: 10px;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.listli{padding: 5px 10px !important;}
+.listli a{color: #3a4080 !important;}
+.inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
+.searchinput{padding: 0 10px;}
+.headerright ul li span{text-transform: capitalize;}
+.inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
+.searchinput{padding: 0 15px !important;}
+.headerright ul li span{text-transform: capitalize;}
+.searchinputlist{    border: 1px solid #ccc;
+    height: 300px;
+    position: absolute;
+    z-index: 1;
+    top: 34px;
+    width: 90%;
+    padding: 5px;
+    background: #E4E5EB;
+    color: #000;overflow-y: scroll;
+}
+.suggestedlist{list-style-type: none;}
+
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+ @media (min-width:1200px)  { 
+.cityonnet_Header{background:#fff;padding: 0px 10px;}
+.cityonnet_Header_menu{background: hsl(7, 89%, 64%);}
+.header{color: #fff;padding: 0px;}
+.logo{width: 150px;height: auto;padding: 0px  !important; /*mix-blend-mode: multiply;background:#fff;padding: 0px 5px;*/}
+.navlist li a {padding: 5px 30px;color: #3a4080;list-style-type: none;font-size: 14px;}
+.navlist li i{border:1px solid #3a4080;color: #3a4080;padding: 5px;}
+.headerleft{padding: 0px !important;}
+.headerright{padding: 0px !important;}
+.headerleft i {position: relative;top: 5px;padding: 0px 5px;color: #fff;font-size: 20px;}
+.headersearch{padding: 0px !important;display: flex;margin: 3px auto;}
+.inputsearch{width: 100%;font-size: 14px;padding: 5px;background: #fff;border: 1px solid #fff;height: 35px;margin: 0px 0 0 10px;}
+.gobutton {height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #3a4080;    position: absolute;
+    right: 10px;}
+.gobutton i{padding: 0px 10px;}
+.navlist{margin: 10px 0 0 0;padding: 0px;}
+.categories {color: #ffee1f !important;padding: 0px;padding: 5px;font-size: 15px;font-weight: 500;height: 35px;}
+.categories i{padding: 5px;}
+.navlist_menu li a{color: #fff;padding: 5px 20px;font-size: 14px;}
+.navlist_menu li i{background: #fff;color: #3a4080;padding: 4px;border-radius:5px 5px 5px 15px;}
+.navlist_menu span{padding: 0 5px;}
+.stickymenu{z-index: 1;transform: none !important;position: relative;}
+.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+.citylist{background: #E4E6E8;}
+.citylist h6{background: #E4E6E8;padding: 10px;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.listli{padding: 5px 10px !important;}
+.listli a{color: #3a4080 !important;}
+.inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
+.searchinput{padding: 0 10px;}
+.headerright ul li span{text-transform: capitalize;}
+.searchinputlist{    border: 1px solid #ccc;
+    height: 300px;
+    position: absolute;
+    z-index: 1;
+    top: 34px;
+    width: 87%;
+    padding: 5px;
+    background: #E4E5EB;
+    color: #000;overflow-y: scroll;
+}
+.suggestedlist{list-style-type: none;}
+
+}

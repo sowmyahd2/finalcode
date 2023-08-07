@@ -1,0 +1,11 @@
+ 
+  .dealslayout {
+    display: flex;
+    flex-direction: column;
+    width: px;
+    margin: 0;
+    padding: 0;
+    color: black;
+    border: 1px solid sandybrown;
+   
+  }

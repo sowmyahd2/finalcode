@@ -1,0 +1,139 @@
+body{margin:0 auto;}
+.footer{padding:0px;background: #e5e5e5;z-index: 9;}
+.footer_layout{padding: 5px 10px !important; display: flex;background: #fff;}
+.footercityonnet{padding:5px 5px 5px 0px !important; border-right:1px solid #ccc;}
+.footercityonnet p{text-align: justify;font-size: 12px;margin: 0px;}
+.footersocialmedia{text-align: center;padding: 5px 0 0 0;}
+.footersocialmedia p{margin:0px;font-size: 12px;}
+.footersocialmedia span{margin:10px 0px;font-size: 14px;}
+.vfb{background:#3b5998;color:white}
+.vtb{background:#55acee;color:white}
+.vgb{background:#dd4b39;color:white}
+.vlb{background:#007bb5;color:white}
+.vyb{background:#b00;color:white}
+.vib{background:#125688;color:white}
+.virtuallmallfoot{padding: 0px;margin: 0 auto;}
+.footer_vmworks{padding:0px 5px !important;border-top:1px solid #ccc;}
+.footer_cdworks{padding:0px 5px !important;border-top:1px solid #ccc;}
+.footer_allworks{padding: 5px 0px !important;border-top:1px solid #ccc;}
+.footer_pmworks{padding: 0px !important;}
+.listfooter{padding: 0px !important;margin:5px 0;}
+.listfooter li {display: inline-flex;}
+.listfooter li a{color: #333; padding: 0px 5px ;font-size: 12px;}
+.listfooter li b{color: #333; padding: 0px ;font-size: 12px;}
+.cityfoot{padding: 0px 5px !important;font-size: 12px;text-align: justify;}
+.cityfoot span{padding: 0px !important;font-size: 12px !important;}
+.footer_bottom{padding:5px 0 0 0px !important;font-size: 12px;margin: 0px;display: flex;}
+.footer_terms{padding: 0px !important;}
+.footer_rights{padding: 0px !important;}
+.list_footer{margin:0 0 0px 0;padding: 0px 5px !important;}
+.list_footer li {display: inline-flex;}
+.list_footer li a{color: #333; padding: 0px 0px !important;}
+.list_footer li span{color: #333; padding: 0px 10px !important;}
+.list_footer a{color: #333; padding: 0px 10px 0 0 !important;}
+.footer_pmworks p{padding: 0px !important;margin: 0px;font-size: 14px;}
+.footer_pmworks img{margin: 0 auto;width: auto;}
+.footerleft{padding: 0px !important;}
+.allfooter{padding: 10px !important;text-align: justify;background: #fff;}
+.allfooter > p{margin: 0px;font-size: 11px;border-bottom: 1px solid #ccc;padding:0px 5px 5px 5px;}
+.footer_rights {padding: 0px !important;}
+.footerhr{width: 100%;background: #e5e5e5;margin: 0px 0;position: relative;padding: 0px 0;border-bottom:10px solid #f56551;}
+
+
+ /*..............................Visible-extraXS...........................*/
+ @media(min-width:200px) and (max-width:500px){
+    .footer{padding:5px;background: #e5e5e5;z-index: 9;}
+ .listfooter{padding: 0px;margin:5px 0;}
+.listfooter li {display:inline-flex;font-size: 9px;}
+.listfooter li a{color: #333; padding: 0px 0px ;font-size: 11px;}
+.list_footer li span{color: #333; padding: 0px 0px ;font-size: 11px !important;}
+.allfooter{text-align: justify;font-size: 12px;}
+.footer_pmworks {border-top: 1px solid #ccc;margin: 10px auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;}
+.footer_pmworks p{padding: 0px;margin: 0px;text-align: center;}
+.footer_pmworks img{margin: 0 auto;width: auto;height: auto;}
+.footer_layout{display: block;background: #fff;}
+.footer_terms {margin: 10px 0px;text-align: center;}
+.footer_terms ul li a {padding: 0px;}
+.footer_terms ul li span {padding:0px 20px;}
+.footer_rights {padding: 0px; font-size: 12px;text-align: center;}
+.footersocialmedia a{padding:5px 15px;font-size:14px;text-align:center;text-decoration:none;margin:2px 0 0 0px;}
+.footersocialmedia a:hover{opacity:1;color:#fff}
+.footer_bottom{padding:5px 0 0 0px;font-size: 12px;margin: 0px;display: block;}
+.footercityonnet{padding:5px 0px; border-right:none;}
+}
+
+ /*..............................Visible-XS...........................*/
+ @media(min-width:501px) and (max-width: 767px){
+    .footer{padding:5px;background: #e5e5e5;z-index: 9;}
+    .listfooter{padding: 0px;margin:5px 0;}
+    .listfooter li {display:inline-flex;font-size: 9px;}
+    .listfooter li a{color: #333; padding: 0px 0px ;font-size: 11px;}
+    .list_footer li span{color: #333; padding: 0px 0px ;font-size: 11px !important;}
+    .allfooter{text-align: justify;font-size: 12px;}
+    .footer_pmworks {border-top: 1px solid #ccc;margin: 10px auto;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;}
+    .footer_pmworks p{padding: 0px;margin: 0px;text-align: center;}
+    .footer_pmworks img{margin: 0 auto;width: auto;height: auto;}
+    .footer_layout{display: block;background: #fff;}
+    .footer_terms {margin: 10px auto;text-align: center;}
+    .footer_terms ul li a {padding: 0px;}
+    .footer_terms ul li span {padding:0px 20px;}
+    .footer_rights {padding: 0px; font-size: 12px;text-align: center;margin: 0 auto;}
+    .footersocialmedia a{padding: 5px 15px;
+        font-size: 25px;
+        text-align: center;
+        text-decoration: none;
+        margin: 2px 2px;}
+    .footersocialmedia a:hover{opacity:1;color:#fff}
+    .footer_bottom{padding:5px 0 0 0px;font-size: 12px;margin: 0px;display: block;}
+}
+
+/*..............................Visible-SM...........................*/
+@media(min-width: 768px) and (max-width: 991px){
+    .footer{padding:5px;background: #e5e5e5;z-index: 9;}
+	.footer_pmworks{padding: 0px 0 10px 0;text-align: center;position: absolute;right: 0;bottom: 0;margin: 0 auto;}
+    .footersocialmedia a{padding: 5px 15px;
+        font-size: 25px;
+        text-align: center;
+        text-decoration: none;
+        margin: 2px 2px;}.footersocialmedia a:hover{opacity:1;color:#fff}
+.listfooter li span{color: #333; padding: 0px 5px ;font-size: 12px;}
+.footer_layout{padding: 0px; display: flex;background: #fff;}
+}
+/*..............................Visible-MD...........................*/
+@media(min-width: 992px) and (max-width: 1199px){
+    .footer_pmworks{padding: 0px 0 10px 0;text-align: center;position: absolute;right: 0;bottom: 0;margin: 0 auto;}
+	
+.footersocialmedia a{padding: 5px 15px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;}.footersocialmedia a:hover{opacity:1;color:#fff}
+.listfooter li span{color: #333; padding: 0px 5px ;font-size: 12px;}
+.footer_layout{padding: 0px; display: flex;background: #fff;}
+
+}
+/*..............................Visible-LG...........................*/
+@media(min-width: 1200px) and (max-width: 1900px){
+	.footer_pmworks{padding: 5px 15px;
+        font-size: 25px;
+        text-align: center;
+        text-decoration: none;
+        margin: 2px 2px;}
+	
+.footersocialmedia a{padding: 5px 15px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;}
+.footersocialmedia a:hover{opacity:1;color:#fff}
+.listfooter li span{color: #333; padding: 0px 5px ;font-size: 12px;}
+.footer_layout{padding: 0px; display: flex;background: #fff;}
+
+}
+

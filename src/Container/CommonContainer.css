@@ -1,0 +1,233 @@
+/* ..............HOME.JS CSS STARTS HERE............... */
+
+.productitemm {padding: 0 15px;}
+.infinite-scroll-component__outerdiv {
+    width: -webkit-fill-available;
+}
+
+@media (max-width: 767.98px) { 
+    
+}
+
+/* ..............HOME.JS CSS ENDS HERE............... */
+
+/* ..............DEPARTMENT.JS CSS STARTS HERE............... */
+
+.departmentlayout {padding: 0px !important      ;}
+.departmentbanner{padding: 0 10px ;}
+.depimage{border: 1px solid #ccc;  width:100%}
+@media (max-width: 767.98px) { 
+    .departmentbanner{padding: 0 5px !important;}
+}
+/* ..............DEPARTMENT.JS CSS ENDS FROM HERE............... */
+
+/* ..............MAINCATEGORY.JS  CSS STARTS HERE............... */
+.subcategoryfilter {padding:0 0 0 10px !important;}
+.maincateproducts {background: #E4E5EB;}
+.subfilter {height: auto;max-height: 250px;overflow-y: scroll;border: 1px solid #ccc;}
+.subcategorybanner{padding: 0 10px ;}
+.subcategoryimage{border: 1px solid #ccc;}
+@media (max-width: 767.98px) { 
+    .subcategorybanner{padding: 0 5px !important;}
+}
+/* ..............MAINCATEGORY.JS  CSS ENDS HERE............... */
+
+/* ..............SUBCATEGORY.JS CSS STARTS HERE............... */
+.subcategoryproducts{padding: 0 10px;}
+.subcateproducts{background: #E4E5EB;}
+
+@media (max-width: 767.98px) { 
+    .subcategoryproducts{padding: 0 5px !important;}
+}
+
+/* ..............SUBCATEGORY.JS CSS ENDS HERE............... */
+
+/* ..............NEWARRIVALS.JS CSS STARTS FROM HERE............... */
+.arrivalsfilter {padding: 0px !important;background: #E4E5EB;}
+.arrivalsbrand{padding: 0px 10px;}
+.arrivalsfilter ul li{background: #E4E5EB;}
+.formarrival select{padding: 0 10px;margin: 0px;font-size: 12px;height: 35px;}
+.formarrival {padding: 10px;margin: 0px;}
+
+
+
+/* ..............NEWARRIVALS.JS CSS ENDS HERE............... */
+/* ..............NEWARRIVALS/PRODUCTS.JS CSS STARTS FROM HERE............... */
+
+.newarrivalsproduct{background: #E4E5EB;}
+
+
+/* ..............NEWARRIVALS/PRODUCTS.JS CSS ENDS HERE............... */
+
+
+/* ..............BRANDOFFERDETAILS.JS CSS STARTS FROM HERE............... */
+
+.offerdetailsbanner{padding: 10px;margin: 0px 0px;background-color: #E4E5EB;}
+.odbimage{border: 1px solid #ccc;}
+.offerdetailproducts{background: #E4E5EB;padding: 0px 0px;}
+
+/* ..............BRANDOFFERDETAILS.JS CSS ENDS HERE............... */
+
+
+
+/* ..............BRANDCATEGORY.JS CSS STARTS FROM HERE............... */
+/* .brandcategory{background: #E4E5EB;} */
+.brandmaincategory{padding:0 10px;} 
+.brandmaincategorylayout{padding: 0 10px;}
+.brandcategorybanner {padding: 0 10px;}
+
+
+/* ..............BRANDCATEGORY.JS CSS ENDS HERE............... */
+
+
+/* ..............BRANDMAINCATEGORY.JS CSS STARTS FROM HERE............... */
+ 
+    
+ body {
+   margin: 20px auto;
+   width: 60%;
+ }
+ 
+ header h2 {
+   text-align: center;
+   margin: 30px auto;
+ }
+ 
+ pre {
+   background: #f7f7f7;
+   padding: 10px 20px;
+   border-radius: 2px;
+   border: 1px solid #ccc;
+ }
+ 
+ pre code {
+   line-height: 20px;
+ }
+ 
+ .result {
+   padding: 8px 0;
+ }
+ 
+ .arrow-closed, .arrow-open {
+   border: solid #999;
+   border-width: 0 2px 2px 0;
+   display: inline-block;
+   padding: 4px;
+   position: absolute;
+   right: 10px;
+ }
+ 
+ .arrow-closed {
+   top: 10px;
+   transform: rotate(45deg);
+   -webkit-transform: rotate(45deg);
+ }
+ 
+ .arrow-open {
+   top: 14px;
+   transform: rotate(-135deg);
+   -webkit-transform: rotate(-135deg);
+ }
+ 
+ .Dropdown-root {
+   position: relative;
+ }
+ 
+ .Dropdown-control {
+   position: relative;
+   overflow: hidden;
+   background-color: white;
+   border: 1px solid #ccc;
+   border-radius: 2px;
+   box-sizing: border-box;
+   color: #333;
+   cursor: default;
+   outline: none;
+   padding: 8px 52px 8px 10px;
+   transition: all 200ms ease;
+ }
+ 
+ .Dropdown-control:hover {
+   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+ }
+ 
+ .Dropdown-arrow {
+   border-color: #999 transparent transparent;
+   border-style: solid;
+   border-width: 5px 5px 0;
+   content: ' ';
+   display: block;
+   height: 0;
+   margin-top: -ceil(2.5);
+   position: absolute;
+   right: 10px;
+   top: 14px;
+   width: 0
+ }
+ 
+ .is-open .Dropdown-arrow {
+   border-color: transparent transparent #999;
+   border-width: 0 5px 5px;
+ }
+ 
+ .Dropdown-menu {
+   background-color: white;
+   border: 1px solid #ccc;
+   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+   box-sizing: border-box;
+   margin-top: -1px;
+   max-height: 200px;
+   overflow-y: auto;
+   position: absolute;
+   top: 100%;
+   width: 100%;
+   z-index: 1000;
+   -webkit-overflow-scrolling: touch;
+ }
+ 
+ .Dropdown-menu .Dropdown-group > .Dropdown-title {
+   padding: 8px 10px;
+   color: rgba(51, 51, 51, 1.2);
+   font-weight: bold;
+   text-transform: capitalize;
+ }
+ 
+ .Dropdown-option {
+   box-sizing: border-box;
+   color: rgba(51, 51, 51, 0.8);
+   cursor: pointer;
+   display: block;
+   padding: 8px 10px;
+ }
+ 
+ .Dropdown-option:last-child {
+   border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+ }
+ 
+ .Dropdown-option:hover {
+   background-color: #f2f9fc;
+   color: #333;
+ }
+ 
+ .Dropdown-option.is-selected {
+   background-color: #f2f9fc;
+   color: #333;
+ }
+ 
+ .Dropdown-noresults {
+   box-sizing: border-box;
+   color: #ccc;
+   cursor: default;
+   display: block;
+   padding: 8px 10px;
+ }
+ 
+ .my-custom-class {
+   border: 2px solid red;
+   font-weight: bold;
+   color: purple;
+ }
+
+/* ..............BRANDMAINCATEGORY.JS CSS ENDS HERE............... */
+

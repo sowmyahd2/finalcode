@@ -1,0 +1,18 @@
+
+.hmeban{width: 100%;border: 1px solid #ccc;}
+.homebannerimage{clear: both;margin: 15px 0 15px 0;background: #fff;}
+
+@media (max-width: 575.98px) { 
+    .bannerhome{padding: 0px 10px !important; background: #fff;}
+    .hmeban{width: 100%;border: 1px solid #ccc;}  
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .bannerhome{padding: 0px 10px !important;background: #fff; }
+    .hmeban{width: 100%;border: 1px solid #ccc;}
+}
+@media (min-width:768px) and (max-width: 990px) { 
+    .bannerhome{padding: 0px 10px !important;background: #fff; }
+    .hmeban{width: 100%;border: 1px solid #ccc;}
+}

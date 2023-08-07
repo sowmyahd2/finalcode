@@ -1,0 +1,5 @@
+.browselayout{background:#E4E5EB;display: flex;padding: 0px;}
+.browsebrand{padding: 10px;}
+.browseshop {padding: 10px;}
+.browsecategory{padding: 10px;}
+.browseshop select, .browsebrand select, .browsecategory select {width: 100%;height: 35px;border: 1px solid #ccc;font-size: 14px;}

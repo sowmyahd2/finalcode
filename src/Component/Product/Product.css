@@ -1,0 +1,24 @@
+.productslayout {text-align: center;justify-content: center;cursor: pointer;padding: 5px;background: #fff;border: 1px solid #ccc;    border-radius: 25px;}
+.productsimage {background:#fff;padding: 0px;height: 200px !important;flex-direction: column !important;display: flex !important;justify-content: center !important;}
+.imagesproduct {height: auto;max-height: 200px;max-width: 100%;margin: 0 auto;padding: 5px;}
+.productstext p{margin:0px;font-size: 13px;padding:0px 5px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.sellingprice {color:#3a4080; font-weight:600;margin:0px;font-size: 15px;padding:0px 5px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.storeprice{color:#FE5641; font-weight:700;margin:0px;font-size: 12px;padding:0px 5px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.ndealers{font-size: 13px;}
+.ndealers span{font-size: 14px;color: #3a4080;font-weight: 700;}
+.categorytittle{background: #E4E6EB;padding: 10px;}
+.categorytittle h6{margin: 0px;}
+.viewall{background: #E4E6EB;padding: 5px !important;justify-content: right;display: grid;cursor: pointer;}
+.viewall h6 {font-size: 13px;background: #3a4080;padding:10px;margin: 0;color: #fff;}
+.producttittle {background: #E4E5EB;}
+
+
+.productslayout a{color: #000 !important;}
+.offerpercentage {background-color:#FE5641; font-size:12px;height:20px;
+    left:8px;padding:5px;text-align:center; margin-top:"5px";border-radius:0.25em; vertical-align:baseline;
+    position:absolute;line-height:1; color:white;padding:5px; white-space: nowrap;}
+
+
+
+
+/* #FC3729 */

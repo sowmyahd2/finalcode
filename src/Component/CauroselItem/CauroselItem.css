@@ -1,0 +1,23 @@
+.imageproduct {height: auto;max-height: 180px;max-width: 90%;width:auto;margin: 0 auto;padding:5px 15px;flex-direction: column !important;display: flex !important;justify-content: center !important;}
+
+.productlayout a{color: #000 !important;} 
+.productlayout {text-align: center;justify-content: center;cursor: pointer;}
+.productimage {background:#fff;padding: 0px;height: 210px !important;flex-direction: column !important;display: flex !important;justify-content: center !important;}
+.producttext{height: 35px;}
+.producttext p{margin:0px;font-size: 13px;padding:0px 5px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.producttext span{font-size: 13px;font-weight: 600;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+ 
+.brandlayout a{color: #000 !important;}  
+.brandlayout{text-align: center;justify-content: center;cursor: pointer;}
+.brandimage{background:#fff;padding: 0px;height: 180px !important;flex-direction: column !important;display: flex !important;justify-content: center !important;}
+.brandtext{height: 35px;}
+.brandtext p{margin:0px;font-size: 13px;padding:0px 5px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+.storelayout a{color: #000 !important;}
+.storelayout{text-align: center;justify-content: center;cursor: pointer;}
+.storeimage{background:#fff;padding: 0px;height: 150px !important;flex-direction: column !important;display: flex !important;justify-content: center !important;}
+.storetext{height: 25px;}
+.storetext p{margin:0px;font-size: 13px;padding:0px 5px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.storelocality{margin:0px;font-size: 13px;padding:0px 5px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.storelocality p{margin:0px 0 10px 0;font-size: 13px;padding:0px 5px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+

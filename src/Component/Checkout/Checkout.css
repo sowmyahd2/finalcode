@@ -1,0 +1,36 @@
+.checkoutlayout{margin: 10px;padding: 0px;}
+.recipient{padding: 20px !important;background: #e4e4e4;margin: 0 auto;}
+.recipient h5{padding: 0 !important;margin: 0 !important;}
+
+.reciientdetail{    padding: 20px;
+    box-shadow: 1px 1px 1px 1px #aaa;
+    background: #fff;
+    margin: 10px 0;
+    border: 1px solid #ccc;}
+.recipientbutton{background: #ffee1f;color: #000;border: 1px solid #ffee1f;padding: 10px 20px;}
+
+.selectdate{background: #e4e4e4;margin: 10px auto;padding: 20px;}
+.selectdate h5{padding: 0px 0 !important;margin: 0 !important;}
+.paymentoption { padding: 20px;
+    box-shadow: 1px 1px 1px 1px #aaa;
+    background: #fff;
+    margin: 10px 0;
+    border: 1px solid #ccc;}
+    .paymentoptionhome { padding: 10px;
+        box-shadow: 1px 1px 1px 1px #aaa;
+        background: #fff;
+        margin: 0px 0;
+        border: 1px solid #ccc;}
+    .paymentoption h6{}
+    .datepick{}
+    .agrrepayment{margin: 30px 0 0 0;}
+    .agrrepaymenthome{margin: 0px 0 0 0;}
+    .agrrepayment h6{text-decoration: underline;}
+    .placeordercheckout{background: #fb641b !important;border: 1px solid #fb641b !important;margin: 0 auto !important;}
+    .radiocheck div{margin: 10px 0;}
+    .seller {background: #e4e4e4;margin: 0px auto;padding: 20px;}
+    .selerdetails{    padding:0 20px;
+        box-shadow: 1px 1px 1px 1px #aaa;
+        background: #fff;
+        margin: 10px 0;
+        border: 1px solid #ccc;}

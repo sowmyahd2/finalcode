@@ -1,0 +1,19 @@
+.verticals{padding:0px !important;margin: 10px 0;background: #fff;}
+.verticals figcaption{color:#000;text-align: center;font-size: 14px;margin: 0px 0px;padding:10px 5px;}
+.verticals img{width: 100%;margin: 0px;}
+.verticals figure{    padding: 5px;
+    margin: 0px auto;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 0px; }
+.figtag{padding: 5px;}
+.verticals figure:hover {color: #000;}
+.verticals a {color: #000 !important;text-decoration: none !important;}
+.figure-img {
+    width: 100%;
+    height: auto;
+}
+.figlayout{padding: 0px;margin: 0px;}
+@media (max-width: 575.98px) { 
+    .verticals figcaption{color:#000;text-align: center;font-size: 12px;margin: 0px 0px;padding:10px 5px 0px;}
+}

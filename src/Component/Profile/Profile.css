@@ -1,0 +1,61 @@
+.profilelayout{padding: 0 10px;}
+.virtualorderlist{padding: 0px !important;border: 1px solid #ccc;}
+.virtualorderlist h6{background: #E4E5EB;padding: 10px;margin: 0px;}
+.virtualorderlist a {padding: 5px 10px;font-size: 13px; color: #000;}
+.virtualtablist{border: 1px solid #ccc;padding: 0 10px;}
+.ordertabbox{padding: 5px;}
+.profileorder {padding: 0 !important;display: inline-flex !important;}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{color: #fff !important;background: #3a4080  !important;}
+.react-tabs {
+    display: flex;
+    margin-left: 36px;
+    width: 1000px;
+    height: auto;
+
+  }
+  
+  .react-tabs__tab-list {
+    display: flex;
+    flex-direction: column;
+    width: px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: #FFFFFF;
+  }
+  
+  .react-tabs__tab {
+    height: 70px;
+    list-style: none;
+    padding: 12px 6px;
+    cursor: pointer;
+    color: #bbb;
+  }
+  
+  .react-tabs__tab--selected {
+    background: #1c1d1f;
+    border-color: #1c1d1f;
+    border-left: 4px solid #6eb800;
+    color: white;
+  }
+  
+  .react-tabs__tab-panel {
+    display: none;
+    width: 300px;
+  }
+  
+  .react-tabs__tab-panel--selected {
+    display: block;
+  }
+  
+  .react-tabs__tab {
+    padding-left: 24px;
+  }
+  
+  .react-tabs__tab--selected {
+    padding-left: 21px;
+  }
+  
+  .panel-content {
+    text-align: center;
+  }

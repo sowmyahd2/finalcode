@@ -1,0 +1,97 @@
+.shoptranparent {padding: 0px;}
+.shoplogoname {padding: 0px;display: flex;position: absolute  !important;z-index: 1;}
+.storefrontlogo {padding: 0px 10px;}
+.storebanner{width: 100%;}
+.storefrontbanner {padding: 0px 10px;margin: 60px 0 0 0;}
+.bannershoplogo {width: 180px;margin: 0 20px;border: 1px solid #fff;}
+.shopfrontname {padding: 0px;}
+.shopfrontname h6 {padding: 0px;margin: 20px 0 0 20px;font-size: 20px;}
+.storelogodetail {position: relative;top: 60px;padding: 0px;}
+.storeaddress{padding: 0px;position: relative;left: 55px;}
+.storeoverlaybanner {background: #000;opacity: 0.75;position: absolute !important;top: 60px;margin: 0 15px;}
+.shoprating {margin: 0px;color: #ffee1f;padding: 0px;}
+.shoprating i {padding: 5px 10px 0 0;margin: 0px 0;}
+.shoplocate{margin: 10px 0;color: #ffee1f;padding: 0px;}
+.shoplocate i {padding: 0px 5px 0 0;font-size: 20px;color: #fff;}
+.shoptime{margin: 0px;color: #ffee1f;padding: 0px;}
+.shoppickup{margin: 0px;} 
+.shopopenclose{padding:2px 10px; margin:5px 0px;background: #fff; width: fit-content;color: #000;font-size: 12px;font-weight: 600;}
+.storeaddress{margin: 0px;color: #ffee1f;padding: 0px;}
+.shopoonline{margin:5px 0px;padding: 5px 0;color: aqua;}
+.shoptimings{margin:5px 0px;padding: 5px 0;color: #fff;}
+.shoppayment{margin:5px 0px;padding: 5px 0;color: #fff;}
+.shopdelivery{margin:5px 0px;padding: 5px 0;color: #fff;}
+.shopaddress{margin:5px 0px;padding: 5px 0;color: #fff;}
+.shopviewno{margin:5px 0px;padding: 5px 0;color: #fff;}
+.shopoonline i{padding: 0px 10px 0 0;color: #fff; }
+.shoptimings i{padding: 0px 10px 0 0;color: #fff;}
+.shoppayment i{padding: 0px 10px 0 0;color: #fff;}
+.shopdelivery i{padding: 0px 10px 0 0;color: #fff;}
+.shopaddress i{padding: 0px 10px 0 0;color: #fff;}
+.shopviewno i{padding: 0px 10px 0 0;color: #fff;}
+.shopoonline span{padding: 0px 10px 0 0;color: ##fdb90b; }
+.shoptimings span{padding: 0px 10px 0 0;color: #ffee1f;}
+.shoppayment span{padding: 0px 10px 0 0;color: #ffee1f;}
+.shopdelivery span{padding: 0px 10px 0 0;color: #ffee1f;}
+.shopaddress span{padding: 0px 10px 0 0;color: #ffee1f;}
+.shopviewno span{padding: 0px 10px 0 0;color: #ffee1f;}
+.storemarquee{background-color: #000;border: 1px solid #ccc;opacity: 0.63;position: absolute;top: 60px;margin: 0 10px;}
+.storefrontfilter{padding: 0px;}
+.storefrontlayout{padding: 0 10px;}
+.storefrontbox{background: #E4E5EB;display: flex;padding: 0;}
+.storefrontmylisting{padding: 10px;}
+.storefrontsearch{display: flex;padding:10px 0px;}
+.storeinputsearch{width: 100%;font-size: 14px;padding: 5px;background: #fff;border: 1px solid #ccc;height: 35px;margin: 0px 0 0 10px;}
+.storegobutton {padding:0px 15px; height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #000;}
+.storemylisting {width:fit-content;padding:0px 15px; height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #000;font-weight: 500;}
+.storefiltersort{background: #E4E5EB;padding: 0px 0 45px 0;}
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+.storelogodetail {position: relative;top:60px;padding: 0px;}
+.shopoonline{margin:0px 0px;padding: 5px 0;color: aqua;}
+.shoptimings{margin:0px 0px;padding: 5px 0;color: #fff;}
+.shoppayment{margin:0px 0px;padding: 5px 0;color: #fff;}
+.shopdelivery{margin:0px 0px;padding: 5px 0;color: #fff;}
+.shopaddress{margin:0px 0px;padding: 5px 0;color: #fff;}
+.shopviewno{margin:0px 0px;padding: 5px 0;color: #fff;}
+.storeoverlaybanner {background: #000;opacity: 0.75;position: absolute;top: 60px;margin: 0 10px;}
+.shoprating i {padding: 5px 5px 0 0;margin: 0px 0;}
+.shopfrontname h6 {padding: 0px;margin: 25px 0 0 30px;font-size: 20px;}
+
+
+}
+
+@media (max-width: 767.98px) { 
+.shopfrontname h6 {padding: 0px;margin: 5px 0 0 20px;font-size: 16px;}
+.storefrontbanner {padding: 0px 10px;margin:30px 0 0 0;}
+.storeinfomobileview{padding: 0 5px;}
+.storefrontbanner{padding: 0 5px;}
+.storefrontlogo {padding: 0px 10px 0 0;}
+.shoprating i {padding: 0 5px 0 0;margin: 0px 0;}
+.shoprating{padding:0 10px;background: #fff;color: crimson; }
+.mobileratingstore{display: flex;padding: 10px 0 0px 0;}
+.tabsimage{width: 100% ;}
+.tabbackground {padding: 0px;border-bottom: 1px solid #ccc;margin: 0px 0px;}
+.tabbackground li{background:#fff;width: 20%;}
+.detailsinfostore {background: #E4E5EB;padding: 0px 10px;}
+.detailsinfostore p{background: #E4E5EB;padding:10px 0;margin: 0;}
+.pickxs{background: #E4E5EB !important;}
+.react-tabs__tab-panel--selected {display: block;background: #E4E5EB;padding: 10px;}
+.tabbackground li i {margin: 0 auto;text-align: center;justify-content: center;flex-direction: column;display: flex;margin: 5px 0;}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+.shopoonline{margin:0px 0px;padding: 2px 0;color: aqua;font-size: 13px;}
+.shoptimings{margin:0px 0px;padding: 2px 0;color: #fff;font-size: 13px;}
+.shoppayment{margin:0px 0px;padding: 2px 0;color: #fff;font-size: 13px;}
+.shopdelivery{margin:0px 0px;padding: 2px 0;color: #fff;font-size: 13px;}
+.shopaddress{margin:0px 0px;padding: 2px 0;color: #fff;font-size: 13px;}
+.shopviewno{margin:0px 0px;padding: 2px 0;color: #fff;font-size: 13px;}
+.storeoverlaybanner {background: #000;opacity: 0.75;position: absolute;top: 65px;margin: 0 10px;}
+.storeaddress {padding: 0px;position: relative;left: 20px;}
+.storelogodetail {position: relative;top: 25px;padding: 0px;}
+.shoprating i {padding: 5px 5px 0 0;margin: 0px 0;}
+.shoplocate {margin: 10px 0;color: #ffee1f;font-size: 13px;}
+
+}

@@ -1,0 +1,10 @@
+.filterlayout{padding: 0px;background: #E4E5E6;    border: 1px solid #ccc;}
+.filterhead{padding: 5px 10px;}
+.filterhead h6{font-size: 14px;margin: 0px;padding: 5px 0px;}
+.filterllist{padding: 0px;}
+.filterllist li{padding: 0px 10px;border: none;}
+.filterbody{max-height: 250px;background: #E4E5E6;overflow-y: scroll;}
+.filterinput{margin: 0px 5px 0 0;}
+.filterlabel{color:#000;font-size: 13px;text-decoration: none !important;}
+.filterlabel:hover{color:#3a4080;font-size: 13px;text-decoration: none !important;}
+.filterlabels {margin: 5px 0 0 0;cursor: pointer;font-size: 14px;} 

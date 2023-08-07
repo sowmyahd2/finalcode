@@ -1,0 +1,21 @@
+.welcome{background: #3a4080;padding: 9px;}
+.welcome h6{color: #fff;font-size: 16px;}
+.welcome p{color: #fff;font-size: 12px;}
+.sidebartabs{width: 320px !important;}
+.sidebartab h2{padding: 5px;}
+.rootsidebar{height: 100vh;position: relative;}
+.overlaysidebar{background-color:rgba(0, 0, 0, 0.7) !important;}
+.categorylist li, .brandlist li, .storelist li{padding: 5px 10px; font-size: 13px}
+.rootsidebar > div {position: fixed !important;}
+
+.categorylist a{color: #000;}
+.categorylist a:hover{color: #3a4080;text-decoration: none;}
+.formdrawer{background: #E4E5EB;padding: 1px 0;}
+.selectdrawer{margin:0px ;padding: 0px;}
+.selectdrawer select{font-size: 13px;}
+.searchdrawer{margin:5px 0px ;padding: 0px;}
+.searchdrawer input{margin: 0px ;padding:5px 15px;font-size: 13px;}
+.brandlist a{color: #222;text-decoration: none;}
+.brandlist a:hover{color: #3a4080;text-decoration: none;}
+.storelist a{color: #222;text-decoration: none;}
+.storelist a:hover{color: #3a4080;text-decoration: none;}

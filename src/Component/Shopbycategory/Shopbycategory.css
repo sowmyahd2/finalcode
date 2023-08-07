@@ -1,0 +1,16 @@
+.mostviewed{background: #E4E6E8;margin: 10px 0;padding: 0 0 5px 0;}
+.mostviewed h5{background: #E4E6EB;padding: 10px 0;font-size: 15px;margin:5px;}
+.slick-arrow{background: #E4E6EB !important;color: #fff;transition: none;border: 1px solid #ccc;}
+.slick-arrow:hover{background: #3a4080 !important;color: #fff;transition: none;color: #FFF;}
+.slick-prev{color:#fff;width: 25px !important;height: 25px !important;}
+.slick-next{color:#fff;width: 25px !important;height: 25px !important;} 
+.productimage {background:#fff;padding: 0px;height: 200px !important;flex-direction: column !important;display: flex !important;justify-content: center !important;}
+.imageproduct {height: auto;max-height: 180px;max-width: 80%;width:auto;margin: 0 auto;padding: 5px;}
+.productlayout {text-align: center;justify-content: center;cursor: pointer;}
+.productlayout:hover {text-align: center;justify-content: center;cursor: pointer;}
+.producttext p{margin:0px;font-size: 13px;padding:0px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.producttext span{font-size: 13px;font-weight: 600;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+/* .slick-slide{height: 230px !important;display: flex !important;flex-direction: column !important;justify-content: center !important;margin: 5px 0px !important;padding: 0 5px !important;} */
+.producttext {padding: 10px 0;}
+.slick-prev:before, .slick-next:before{color: #aaa !important;}
+.shopbybanner{background: #fff;}
