@@ -45,6 +45,7 @@ const Home = () => {
 
     const mostViewProduct = useSelector(state => state.Product.mostView);
     const mostViewStore = useSelector(state => state.Store.mostView);
+   console.log("dd");
     const offersBrand = useSelector(state => state.Department.department);
     return ( 
         <Suspense fallback={<Loader />} >

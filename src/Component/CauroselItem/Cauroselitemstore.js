@@ -12,7 +12,7 @@ const Cauroselitemstore = (props) => {
             <Link to={props.link}  style={{ textDecoration: 'none' }}> 
             <div className="productimage">
                 <LazyLoadImage width="auto" height="auto" effect='blur' className="imageproduct" onError={event => {
-          event.target.src = "https://www.cityonnet.com/images/preloader.gif"
+          event.target.src = "https://cityonnet-virtualmall.s3.ap-southeast-1.amazonaws.com/preloader.gif"
           event.onerror = null
         }} src={props.image} alt="images"/>
             </div>

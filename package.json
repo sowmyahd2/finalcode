@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -17,7 +18,7 @@
     "react-dom": "^18.2.0",
     "react-fullscreen-loading": "^0.0.4",
     "react-infinite-scroll-component": "^6.1.0",
-    "react-lazy-load-image-component": "^1.6.0",
+    "react-lazy-load-image-component": "^1.6.2",
     "react-redux": "^8.1.1",
     "react-responsive-carousel": "^3.2.23",
     "react-responsive-modal": "^6.4.2",

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import './CommonContainer.css';
+
 
 import {gethomedeliverysorders } from '../Redux/Action/UserprofileAction';
 import { userprofile } from '../Redux/Action/UserprofileAction';

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './CommonContainer.css';
+
 import Header from '../Component/Header/Header';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';

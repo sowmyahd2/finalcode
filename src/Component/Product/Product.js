@@ -1,14 +1,18 @@
 import React from 'react'
 import './Product.css';
 import { Link } from 'react-router-dom';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Product = (props) => {
     return(
         
         <div className="productslayout col-lg-3 col-md-3 col-sm-3 col-6">
         <Link to={`/productdetails/${props.product.ProductId}`}>
             <div className="productsimage">
-                <img className="imagesproduct" src={props.product.medium_image} alt="Product" />
+               
+                <LazyLoadImage width="auto" height="auto" effect='blur' className="imageproduct" onError={event => {
+          event.target.src = "https://www.cityonnet.com/images/preloader.gif"
+          event.onerror = null
+        }} src={props.product.medium_image} alt="product"/>
             </div>
             
             <div className="productstext ">

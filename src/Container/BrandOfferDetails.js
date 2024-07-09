@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import './CommonContainer.css'
+
 import { getBrandOfferDetail } from '../Redux/Action/BrandAction'
 import Header from '../Component/Header/Header'
 import { useDispatch, useSelector } from 'react-redux';

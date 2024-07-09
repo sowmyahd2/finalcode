@@ -1,5 +1,5 @@
 import React, {useEffect,useCallback} from 'react'
-import './CommonContainer.css';
+
 
 import { useDispatch, useSelector } from 'react-redux';
 

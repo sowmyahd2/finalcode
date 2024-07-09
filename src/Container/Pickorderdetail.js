@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import './CommonContainer.css';
+
 import Header from '../Component/Header/Header';
 import {getpickorderdetail,cancelproduct } from '../Redux/Action/UserprofileAction';
 import { useDispatch, useSelector } from 'react-redux';

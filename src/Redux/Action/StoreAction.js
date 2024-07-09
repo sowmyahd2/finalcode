@@ -34,7 +34,7 @@ export const getcatStore = () => async dispatch => {
 export const getMostViewStore = (city) => async dispatch => {
     try
     {
-        const response = await Api.get('stores/mostview/'+city)
+        const response = await Api.get('stores/mostview/'+city+'/0')
         if(response.message === "success"){
             dispatch({
                     type : Type.mostViewStoreSuccess,
