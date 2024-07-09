@@ -43,7 +43,7 @@ export default function App() {
         <Provider store={store}>
             <PersistGate loading={<Loader />} persistor={persistor} >
                 <Suspense fallback={<Loader />} >
-                    <Router basename='react' forceRefresh={true}>
+                    <Router basename='reacts' forceRefresh={true}>
                         <Switch>
                             <Route path="/" render={() => <Home />} exact />
                             <Route path="/department/category/:id" render={() => <Department />} exact />
