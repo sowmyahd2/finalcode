@@ -1,9 +1,9 @@
 import React,{useEffect} from 'react'
-import './CommonContainer.css';
+
 import Header from '../Component/Header/Header';
 
 import Footer from '../Component/Footer/Footer';
-import GoogleMapReact from 'google-map-react';
+
 
  
 const Contactus = () => {

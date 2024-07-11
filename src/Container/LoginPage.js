@@ -1,5 +1,5 @@
 import React from 'react'
-import './CommonContainer.css';
+
 import Header from '../Component/Header/Header';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';

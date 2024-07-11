@@ -1,5 +1,5 @@
 import React, { useEffect,useCallback, useMemo } from 'react'
-import './CommonContainer.css'
+
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Header from '../Component/Header/Header'
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,6 +1,7 @@
 import React from 'react';
 import './CauroselItem.css'
 import { Link } from 'react-router-dom';
+import { image } from '../../data/images';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
@@ -11,7 +12,7 @@ const Cauroselitemproduct = (props) => {
             <Link to={props.link}  style={{ textDecoration: 'none' }}> 
             <div className="productimage">
                 <LazyLoadImage effect='blur' className="imageproduct"  onError={event => {
-          event.target.src = "https://www.cityonnet.com/images/preloader.gif"
+          event.target.src = image[0].ImageId
           event.onerror = null
         }} src={props.image} alt="images"/>
             </div>
