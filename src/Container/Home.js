@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMostViewProduct } from '../Redux/Action/ProductAction';
 import { getMostViewStore } from '../Redux/Action/StoreAction';
 import './styles/Home.css'
-
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 const Loader = React.lazy(() => import('../Component/Loader'));
 const Header = lazy(() => import('../Component/Header/Header'));
 const Banner = lazy(() => import('../Component/Banner/Banner'));
