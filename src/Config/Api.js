@@ -20,7 +20,7 @@ class Api {
     }
     static xhr(route, params, verb) {
         
-       const host = "https://13.235.76.80/reactapi/public/v1/" 
+       const host = "http://13.235.76.80/reactapi/public/v1/" 
         const url = `${host}${route}`;
         const options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null);
         options.headers = Api.headers();
