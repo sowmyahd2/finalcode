@@ -41,7 +41,7 @@ const CheckoutHome= React.lazy(()=>import("../Container/Checkouthome"));
 export default function App() {
     return (
         <Provider store={store}>
-            <PersistGate loading={<Loader />} persistor={persistor} >
+            
                 <Suspense fallback={<Loader />} >
                     <Router basename='react' forceRefresh={true}>
                         <Switch>
@@ -64,7 +64,7 @@ export default function App() {
                         </Switch>
                     </Router>
                 </Suspense>
-            </PersistGate>
+           
         </Provider> 
     )
 }

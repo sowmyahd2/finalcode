@@ -3,7 +3,7 @@ import React,{useEffect} from 'react'
 import Header from '../Component/Header/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getBrandCategory } from '../Redux/Action/BrandAction';
+import { getBrandCategory } from '../Redux/Slice/BrandSlice';
 import ProductTittle from '../Component/Product/ProductTittle';
 import Product from '../Component/Product/Product';
 import { pathOr } from 'ramda';
@@ -13,16 +13,16 @@ import FilterBox from '../Component/FilterBox/FilterBox';
 const BrandCategory = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
+    const city = "mysore";
     useEffect(()=>{
-        dispatch(getBrandCategory(city,id))
+       
+        dispatch(getBrandCategory({"selectedcity":city,brandid:id}))
 
-    },[])
-    const brandCategoryProducts = useSelector(state => pathOr([],["products"],state.Brand.brandCategory));    
-    const brandCategoryFilter = useSelector(state => pathOr([],["filter"],state.Brand.brandCategory));    
+    },[city])
+    const {brandCategoryProducts,brandCategoryFilter} = useSelector(state => state.brand);    
     const brandCategoryFilterkeys = Object.keys(brandCategoryFilter);
     const brandCategoryProductskeys = Object.keys(brandCategoryProducts);
-    
+  
     const brandCategoryfilterHeading = () => { 
         let node = []
 
@@ -41,31 +41,30 @@ const BrandCategory = () => {
                 return (<FilterBox label={data.MainCategoryName} link={'/brands/subcategory/'+data.MainCategoryId+"/"+id} />)
             }
             )}
-     
-
-    const brandcategoryheading = () => {
-        let node = []
-        brandCategoryProductskeys.forEach((key) => {
-            const title = key.split("_");
-            if(brandcategorybody(brandCategoryProducts[key]).length !==0)
-            {
-                node.push(<ProductTittle title={title[0]} link={"/brands/maincategory/"+title[1]+"/"+id}> {brandcategorybody(brandCategoryProducts[key])}</ProductTittle>)
+            const brandcategoryheading = () => {
+                let node = []
+                brandCategoryProductskeys.forEach((key) => {
+                    const title = key.split("_");
+                    if(brandcategorybody(brandCategoryProducts[key]).length !==0)
+                    {
+                        node.push(<ProductTittle title={title[0]} link={"/brands/maincategory/"+title[1]+"/"+id}> {brandcategorybody(brandCategoryProducts[key])}</ProductTittle>)
+                    }
+                   
+                })
+                    return node;
+            };
+                const brandcategorybody = (item) => {
+                    return item.map((data,index)=>{
+                        return (<Product product={data}  />)
+                    }
+                    )}
+            const brandcategorybanner = () => {
+                return "https://s3-ap-southeast-1.amazonaws.com/cityonnet-virtualmall/brandbanners/"+id+".jpg"
             }
-           
-        })
-            return node;
-    };
-        const brandcategorybody = (item) => {
-            return item.map((data,index)=>{
-                return (<Product product={data}  />)
-            }
-            )}
-    const brandcategorybanner = () => {
-        return "https://s3-ap-southeast-1.amazonaws.com/cityonnet-virtualmall/brandbanners/"+id+".jpg"
-    }
     return(
         <>
         <Header />
+      
         <div className="container-fluid">
         <div className="row">
             <div className="brandcategorylayout col-lg-2 d-none d-lg-block">    

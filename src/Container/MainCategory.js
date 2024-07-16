@@ -4,8 +4,9 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Header from '../Component/Header/Header';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductByMaincategory } from '../Redux/Action/ProductAction';
-import { getCategory, getBrowseByMainCategory } from '../Redux/Action/CategoryAction';
+import { getProductByMaincategory } from '../Redux/Slice/ProductSlice';
+
+import { getCategory,getBrowseByMainCategory } from '../Redux/Slice/CategorySlice';
 import Product from '../Component/Product/Product';
 import SortbyFilter from '../Component/SortbyFilter/SortbyFilter';
 import FilterBox from '../Component/FilterBox/FilterBox';
@@ -24,7 +25,7 @@ let offset = 0
 const Maincategory = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
+    const city = "mysore";
     const [checkedValues, setCheckedValues] = React.useState([]);
     const [price, setPrice] = React.useState({min: 0, max:0})
     const [selectedPrice, setSelectedPrice] = React.useState({min: 0, max:0})
@@ -33,8 +34,8 @@ const Maincategory = () => {
     const [pricemax, setpricemax] = React.useState([]);
     let limit = 24
     useEffect(() => {
-        dispatch(getCategory(city, id))
-        dispatch(getBrowseByMainCategory(city, id))
+        dispatch(getCategory({"selectedcity":city, id:id}))
+        dispatch(getBrowseByMainCategory({"selectedcity":city,id:id}))
         getMinMaxPrice()
     }, [])
     useEffect(() => {
@@ -43,23 +44,24 @@ const Maincategory = () => {
             type: Type.resetProducts
         })
         const cost = selectedPrice.min + "," + selectedPrice.max
-        dispatch(getProductByMaincategory(city, id, limit, offset, checkedValues.toString(), cost))
+        dispatch(getProductByMaincategory({"selectedCity":city, id:id, limit:limit, offset:offset, brandIds:checkedValues.toString(), sort:cost}))
     }, [checkedValues, selectedPrice])
 
 
-    const MainCategoryProduct = useSelector(state => state.Product.productByMaincategory);
-    const MainCategory = useSelector(state => pathOr([], ["category", "category"], state.Category));
-    const brands = useSelector(state => pathOr([], ["category", "brands"], state.Category));
-    const storeBrands = useSelector(state => pathOr([], ["category", "localBrands"], state.Category));
-    const hasMore = useSelector(state => state.Product.productByMaincategoryHasMore)
-    const BrowseByMainCategoryStore = useSelector(state => pathOr([], ["store"], state.Category.browseByMainCategory));
-    const BrowseByMainCategorybrand = useSelector(state => pathOr([], ["brand"], state.Category.browseByMainCategory));
+    const {maincategoryproducts} = useSelector(state => state.product);
+    const {catsubcategory,catbrands,catstorebrands} =useSelector(state=>state.category);
+  
+
+    const hasMore = useSelector(state => state.product.productByMaincategoryHasMore)
+   ;
+    const {browsebycatstores,browsebycatbrands}=useSelector(state=>state.category);
+    
     const [prices, setprices] = React.useState([])
     const getMinMaxPrice = () => {
         let max = 0;
         let min =0;
-        if(MainCategoryProduct.length > 0) { 
-            MainCategoryProduct.forEach((data) => {
+        if(maincategoryproducts.length > 0) { 
+            maincategoryproducts.forEach((data) => {
             if(parseInt(data.SellingPrice) > parseInt(max))
             {
                 max = data.SellingPrice;
@@ -135,7 +137,8 @@ const Maincategory = () => {
     const fetchData = () => {
         offset = limit + offset;
         const cost = selectedPrice.min + "," + selectedPrice.max
-        dispatch(getProductByMaincategory(city, id, limit, offset, checkedValues.toString(), cost,sort))
+
+        dispatch(getProductByMaincategory({"selectedCity":city, id:id, limit:limit, offset:offset, brandIds:checkedValues.toString(), price:cost,sort:sort}))
     }
 
     const handleBrandsFilter = (target) => {
@@ -161,18 +164,18 @@ const Maincategory = () => {
         })
        
       
-        dispatch(getProductByMaincategory(city, id, limit, offset, checkedValues.toString(), cost,type))
+        dispatch(getProductByMaincategory({"selectedCity":city, id:id, limit:limit, offest:offset, brandIds:checkedValues.toString(), price:cost,sort:type}))
     }
 
     return (
         <>
-            <Header />
+          <Header />
             <div className="container-fluid">
                 <div className="row">
                     <div className="subcategoryfilter col-2  d-none d-lg-block ">
                         <div className="subfilter  my-2">
 
-                            {MainCategory.map((data, index) => {
+                            {catsubcategory.map((data, index) => {
                                 return (
                                     <FilterBox label={data.SubCategoryName} link={'/subcategory/' + data.SubCategoryId} id={data.SubCategoryId} key={index} />
                                 )
@@ -181,32 +184,22 @@ const Maincategory = () => {
 
                         <div className="">
                             <BoxFilter title="Brands">
-                                {brands.map((brand, index) => {
+                                {catbrands.map((brand, index) => {
                                     return (<FilterBox name="brandIds" onChange={(target) => { handleBrandsFilter(target) }} label={brand.BrandName} id={brand.BrandId} key={index} checkbox />)
                                 })}
                             </BoxFilter>
                         </div>
                         <div className="">
                             <BoxFilter title="Store Brands">
-                                {storeBrands.map((brand, index) => {
+                                {catstorebrands.map((brand, index) => {
                                     return (<FilterBox name="brandIds" onChange={(target) => { handleBrandsFilter(target) }} label={brand.BrandName} id={brand.BrandId} key={index} checkbox />)
                                 })}
                             </BoxFilter>
                         </div>
                         <div className="">
-                        <BoxFilter title="Price">
-                            {prices.map((brand,index)=>{
-                                return (<FilterBox onChange={(target) => { handlepriceFilter(target) }} id={brand}    label={brand} key={index} checkbox  />)
-                            })}
-                        </BoxFilter>
+                      
                     </div>  
-                        <div className="">
-                            <BoxFilter title="Price">
-                                <div class="mx-4 p-4 filterbox">
-                                
-                                </div>
-                            </BoxFilter>
-                        </div>
+                       
                     </div>
                     <div className="subcategorybanner col-lg-10 col-md-12 col-sm-12 col-12 my-2">
                         <img className="subcategoryimage" width="100%" src={banner()} />
@@ -214,8 +207,8 @@ const Maincategory = () => {
                         <div className="container-fluid my-2">
                             <div className="row">
                                 <div className="browselayout col-12 ">
-                                    <BrowseByShop stores={BrowseByMainCategoryStore} />
-                                    <BrowseByBrands brands={BrowseByMainCategorybrand} />
+                                    <BrowseByShop stores={browsebycatstores} />
+                                    <BrowseByBrands brands={browsebycatbrands} />
                                 </div>
                             </div>
                         </div>
@@ -243,7 +236,7 @@ const Maincategory = () => {
             </ul>   
         </div>
                                     <InfiniteScroll
-                                        dataLength={MainCategoryProduct.length}
+                                        dataLength={maincategoryproducts.length}
                                         next={() => { fetchData() }}
                                         hasMore={hasMore}
                                         className={"productitemm row"}
@@ -253,7 +246,7 @@ const Maincategory = () => {
                                         loader={<div className="end-of-product col-lg-12 col-md-12 col-sm-12 col-xs-12" >Loading Products...</div>}
                                     >
                                         {
-                                            MainCategoryProduct.map((data, index) => {
+                                            maincategoryproducts.map((data, index) => {
                                                 return (<Product product={data} />)
                                             })
                                         }

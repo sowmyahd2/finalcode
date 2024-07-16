@@ -1,14 +1,14 @@
 import React, { useEffect,useCallback, useMemo } from 'react'
 
-import InfiniteScroll from 'react-infinite-scroll-component';
+
 import Header from '../Component/Header/Header'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getCategoryByDepartment } from '../Redux/Action/DepartmentAction';
 
-import { getProductByDepartment } from '../Redux/Action/ProductAction';
+import { getCategoryByDepartment,getstoresByDepartment } from '../Redux/Slice/DepartmentSlice';
 
-import { getBrowseByDepartment } from '../Redux/Action/DepartmentAction';
+import {getProductByDepartment} from '../Redux/Slice/ProductSlice';
+
 import { pathOr } from 'ramda';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 const ProductTittle = React.lazy(() => import('../Component/Product/ProductTittle'));
@@ -21,24 +21,25 @@ const FilterBox = React.lazy(() => import('../Component/FilterBox/FilterBox'));
 const Department = () => { 
     const { id} = useParams();
     const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
-    useMemo(() => {
-        dispatch(getCategoryByDepartment(city, id))
-        dispatch(getProductByDepartment(city,id))
-        dispatch(getBrowseByDepartment(city,id))
-    }, [])
-   
-    const CategoryDepartment = useSelector(state => state.Department.categoryByDepartment);
-    const ProductDepartment = useSelector(state => state.Product.productByDepartment);
+    const selectedCity = "mysore";
 
-    const keys = Object.keys(CategoryDepartment);
-    const productskeys = Object.keys(ProductDepartment);
+    useEffect(() => {
+        dispatch(getCategoryByDepartment({"selectedCity":selectedCity, id:id}))
+        dispatch(getProductByDepartment({"selectedCity":selectedCity, id:id}))
+        dispatch(getstoresByDepartment({"selectedCity":selectedCity, id:id}))
+    }, [selectedCity])
+   const {categoryDepartment,departmentstores,departmentbrands}=useSelector(state=>state.department);
+   console.log(departmentbrands);
+   const {departmentproducts}=useSelector(state=>state.product);
+console.log(departmentstores);
+    const keys = Object.keys(categoryDepartment);
+    const productskeys = Object.keys(departmentproducts);
     let count=false;
     const panelheading = () => { 
       
     let node = []
         keys.forEach((key) => {
-        node.push(<BoxFilter title={key}>{panelbody(CategoryDepartment[key])}</BoxFilter>)
+        node.push(<BoxFilter title={key}>{panelbody(categoryDepartment[key])}</BoxFilter>)
         })
         return node;
     };
@@ -54,7 +55,7 @@ const Department = () => {
         let node = []
         productskeys.forEach((key) => {
             const title = key.split("_");
-            node.push(<ProductTittle title={title[0]} link={"/maincategory/"+title[1]}>{categorybody(ProductDepartment[key])}</ProductTittle>)
+            node.push(<ProductTittle title={title[0]} link={"/maincategory/"+title[1]}>{categorybody(departmentproducts[key])}</ProductTittle>)
         })
             return node;
     };
@@ -70,8 +71,7 @@ const Department = () => {
     const banner = () => {
         return "https://s3-ap-southeast-1.amazonaws.com/cityonnet-virtualmall/category_banner/"+id+".webp"
     }
-    const BrowseByDepStore = useSelector(state => pathOr([],["store"], state.Department.browseByDepartment));    
-    const BrowseByDepbrand = useSelector(state => pathOr([],["brand"], state.Department.browseByDepartment));
+   
  
 
     return (
@@ -87,8 +87,8 @@ const Department = () => {
             <div className="container-fluid my-2">
                 <div className="row">
                     <div className="browselayout col-12 ">
-                        <BrowseByShop stores={BrowseByDepStore} />
-                        <BrowseByBrands brands={BrowseByDepbrand} />
+                        <BrowseByShop stores={departmentstores} />
+                        <BrowseByBrands brands={departmentbrands} />
                     </div>
                 </div>
             </div>

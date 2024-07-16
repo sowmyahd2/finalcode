@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
 
 import { getBrandOfferDetail } from '../Redux/Action/BrandAction'
-import Header from '../Component/Header/Header'
+import Header from '../Component/Header/Header';
+import { getbrandofferdetail } from '../Redux/Slice/BrandSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Offerproducts from '../Component/Product/Offerproducts';
@@ -9,10 +10,11 @@ import Offerproducts from '../Component/Product/Offerproducts';
 const BrandOfferDetail = () => {
     const {DepartmentId, BrandId}= useParams();
     const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
-    const brandDealsProducts = useSelector(state => state.Brand.brandOfferDetail);
+    const city = "mysore";
+    const {brandofferproducts} = useSelector(state => state.brand);
     useEffect(()=>{
-        dispatch(getBrandOfferDetail(city,DepartmentId,BrandId))
+
+    dispatch(getbrandofferdetail({"selectedcity":city,dpartid:DepartmentId,brandid:BrandId}))
 
     })
     const brandofferbanner = () => {
@@ -31,7 +33,7 @@ const BrandOfferDetail = () => {
                     <div className="offerdetailproducts">
                         <div className="container-fluid my-2">
                             <div className="row">
-                                {brandDealsProducts.map((data,index) => {
+                                {brandofferproducts.map((data,index) => {
                                     return (<Offerproducts product={data}  />)
                                     })
                                 }

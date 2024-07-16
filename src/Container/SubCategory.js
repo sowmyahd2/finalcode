@@ -3,17 +3,17 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Header from '../Component/Header/Header';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductbySubcategory } from '../Redux/Action/ProductAction';
+import { getsubcategoryproducts } from '../Redux/Slice/ProductSlice';
 import Product from '../Component/Product/Product';
 
 import SubCategoryFilter from '../Component/FilterBySort/SubCategoryFilter';
 import Sort from '../Component/FilterBySort/Sort';
 import BrowseByShop from '../Component/BrowseBox/BrowseByShop';
 import BrowseByBrands from '../Component/BrowseBox/BrowseByBrand';
-import {getSubCategoryFilter} from '../Redux/Action/SubCategoryAction';
+
 import FilterBox from '../Component/FilterBox/FilterBox';
 import BoxFilter from '../Component/FilterBox/BoxFilter'
-import { getBrowseBySubCategory } from '../Redux/Action/CategoryAction';
+import { getBrowseBySubCategory,getSubCategoryFilter } from '../Redux/Slice/SubcategorySlice';
 import { pathOr } from 'ramda';
 
 
@@ -23,7 +23,7 @@ let offset = 0
 const SubCategory = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
+    const city = "mysore";
     const [checkedValues, setCheckedValues] = React.useState([]);
     const [price, setPrice] = React.useState({min: 0, max:0})
     const [pricemin, setpricemin] = React.useState([]);
@@ -33,8 +33,10 @@ const SubCategory = () => {
     const [prices, setprices] = React.useState([])
     let limit = 24
     useEffect(()=>{
-        dispatch(getSubCategoryFilter(city, id))
-        dispatch(getBrowseBySubCategory(city,id))
+       
+        dispatch(getBrowseBySubCategory({"selectedcity":city, id:id}))
+        dispatch(getSubCategoryFilter({"selectedcity":city, id:id}))
+        
         getMinMaxPrice()
     },[])
     useEffect(() => {
@@ -43,18 +45,21 @@ const SubCategory = () => {
             type: Type.resetProducts
         })
         const cost = selectedPrice.min + "," + selectedPrice.max
-        dispatch(getProductbySubcategory(city, id,limit, offset, checkedValues.toString(), cost,sort))
+        dispatch(getsubcategoryproducts({"selectedCity":city, id:id,limit:limit, offset:offset, brandis:checkedValues.toString(), price:cost,sort:sort}))
         
     }, [checkedValues, selectedPrice])
-    const subCategoryProduct = useSelector(state => state.Product.productBySubcategory);
-    const subCategoryFilter = useSelector(state => state.SubCategory.subCategoryFilter);
-    const hasMore = useSelector(state => state.Product.productBySubcategoryHasMore)
-    const keys = Object.keys(subCategoryFilter);
+    const subcategoryproducts = useSelector(state => state.product);
+   console.log(subcategoryproducts);
+    const productBySubcategoryHasMore = useSelector(state => state.product)
+ const hasMore=productBySubcategoryHasMore;
+    const {BrowseBySubCategoryStore,BrowseBySubCategorybrand,subcategoryfilters} = useSelector(state =>  state.subcategory);    
+    const keys = Object.keys(subcategoryfilters);
+console.log(BrowseBySubCategoryStore);
     const getMinMaxPrice = () => {
         let max = 0;
         let min =0;
-        if(subCategoryProduct.length > 0) { 
-            subCategoryProduct.forEach((data) => {
+        if(subcategoryproducts.length > 0) { 
+            subcategoryproducts.forEach((data) => {
             if(parseInt(data.SellingPrice) > parseInt(max))
             {
                 max = data.SellingPrice;
@@ -131,16 +136,19 @@ const SubCategory = () => {
             type: Type.resetProducts
         })
        
-      
-        dispatch(getProductbySubcategory(city, id, limit, offset, checkedValues.toString(), cost,type))
+        dispatch(getsubcategoryproducts({"selectedCity":city, id:id,limit:limit, offset:offset, brandis:checkedValues.toString(), price:cost,sort:type}))
+        
     }
+
+
     const panelheading = () => { 
-    let node = []
-        keys.forEach((key) => {
-        node.push(<BoxFilter title={key}>{panelbody(subCategoryFilter[key])}</BoxFilter>)
-        })
-        return node;
-    };
+        let node = []
+            keys.forEach((key) => {
+            node.push(<BoxFilter title={key}>{panelbody(subcategoryfilters[key])}</BoxFilter>)
+            })
+            return node;
+        };
+    
 
     const panelbody = (item) => {
         return item.map((data,index)=>{
@@ -150,13 +158,12 @@ const SubCategory = () => {
         const fetcProductByPrice = (value) => {
             setSelectedPrice(value)
         }
-        const BrowseBySubCategoryStore = useSelector(state => pathOr([],["store"], state.Category.browseBySubCategory));    
-        const BrowseBySubCategorybrand = useSelector(state => pathOr([],["brand"], state.Category.browseBySubCategory));
-     
+       
         const fetchData = () => {
             offset = limit + offset;
             const cost = selectedPrice.min + "," + selectedPrice.max
-            dispatch(getProductbySubcategory(city, id, limit, offset, checkedValues.toString(), cost,sort))
+            dispatch(getsubcategoryproducts({"selectedCity":city, id:id,limit:limit, offset:offset, brandis:checkedValues.toString(), price:cost,sort:sort}))
+          
         }
         const handleBrandsFilter = (target) => {
             if (target.checked) {
@@ -197,7 +204,7 @@ const SubCategory = () => {
                     <div className="container-fluid d-block d-md-none my-2">
                         <div className="row">
                             <div className="filterbysortlayout col-12">
-                                <SubCategoryFilter />
+                              
                                 <Sort />
                             </div>
                         </div>
@@ -216,23 +223,26 @@ const SubCategory = () => {
                 <li onClick={(target) => { sorting("desc") }}><span>Price-High - Low</span></li>
             </ul>   
         </div>
-        
-                                <InfiniteScroll
-                                        dataLength={subCategoryProduct.length}
-                                        next={() => { fetchData() }}
-                                        hasMore={hasMore}
-                                        className={"row"}
-                                        endMessage={
-                                            <div className="end-of-product col-lg-12 col-md-12 col-sm-12 col-xs-12" >That's all folks...</div>
-                                        }
-                                        loader={<div className="end-of-product col-lg-12 col-md-12 col-sm-12 col-xs-12" >Loading Products...</div>}
-                                    >
-                                {
-                                    subCategoryProduct.map((data,index)=>{
-                                        return (<Product product={data}  />)
-                                    })
-                                }
-                                 </InfiniteScroll>
+        {subcategoryproducts.length > 0 ? (
+                <InfiniteScroll
+                    dataLength={subcategoryproducts.length}
+                    next={fetchData}
+                    hasMore={hasMore}
+                    className={"row"}
+                    endMessage={
+                        <div className="end-of-product col-lg-12 col-md-12 col-sm-12 col-xs-12">That's all folks...</div>
+                    }
+                    loader={<div className="end-of-product col-lg-12 col-md-12 col-sm-12 col-xs-12">Loading Products...</div>}
+                >
+                    {subcategoryproducts.map((data, index) => (
+                        <Product key={index} product={data} />
+                    ))}
+                </InfiniteScroll>
+            ) : (
+                <div className="no-products">No products available</div>
+            )}
+                              
+                               
                             </div>
                         </div>
                     </div>

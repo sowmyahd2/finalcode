@@ -3,7 +3,8 @@ import React, {useEffect} from 'react';
 import Header from '../Component/Header/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getBrandSubCategory, getbrowseByBrandCategory } from '../Redux/Action/BrandAction';
+
+import { getBrandSubCategory, getbrowseByBrandCategory } from '../Redux/Slice/BrandSlice';
 import Product from '../Component/Product/Product';
 import { pathOr } from 'ramda';
 import FilterBox from '../Component/FilterBox/FilterBox';
@@ -20,11 +21,12 @@ const BrandSubCategory = () => {
 const [checkedValues, setCheckedValues] = React.useState([]);
 const [selectedPrice, setSelectedPrice] = React.useState({min: 0, max:0})
 const[sort,setsort]=React.useState('desc');
+const {brandsubcategoryproducts,browserbysubcategorybrandstore,brandsubcategoryfilters,browserbysubcategorybrand}=useSelector(state=>state.brand);
 const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
+    const city = "mysore";
     useEffect(() => {
-        dispatch(getbrowseByBrandCategory(city,BrandId,DepartmentId))
-        getMinMaxPrice()
+        dispatch(getbrowseByBrandCategory({"selectedcity":city,brandid:BrandId,dpid:DepartmentId}))
+       
     }, [])
     let limit = 24
     useEffect(()=>{
@@ -32,44 +34,10 @@ const dispatch = useDispatch();
             type: Type.resetProducts
         })
         const cost = selectedPrice.min + "," + selectedPrice.max
-        dispatch(getBrandSubCategory(city,DepartmentId,BrandId,  limit, offset, checkedValues.toString(), cost,sort))
+        dispatch(getBrandSubCategory({"selectedcity":city,dpid:DepartmentId,brandid:BrandId,  limit:limit, offset:offset, brandid:checkedValues.toString(), price:cost,sort:sort}))
 
 
     },[checkedValues, selectedPrice])
-
-    const brandSubCategoryProducts = useSelector(state => pathOr([],["products"], state.Brand.brandSubCategory));
-    const brandSubCategoryFilter = useSelector(state => pathOr([],["filters"], state.Brand.brandSubCategory))
-    const brandSubCategoryPrice = useSelector(state => pathOr([],["price"], state.Brand.brandSubCategory) );
-    const BrowseByBrandCategoryStore = useSelector(state => pathOr([],["store"], state.Brand.browseByBrandCategory));    
-    const BrowseByBrandCategoryCategory = useSelector(state => pathOr([],["category"], state.Brand.browseByBrandCategory));
-    const hasMore = useSelector(state => state.Brand.brandSubCategoryProductsHasMore)
-    const getMinMaxPrice = () => {
-        let max = 0;
-        let min =0;
-        if(brandSubCategoryProducts.length > 0) { 
-            brandSubCategoryProducts.forEach((data) => {
-            if(parseInt(data.SellingPrice) > parseInt(max))
-            {
-                max = data.SellingPrice;
-            }
-            if(parseInt(data.SellingPrice) < parseInt(min))
-            {
-                min = data.SellingPrice;
-            }
-        })
-        setPrice({min,max})
-        setSelectedPrice({min,max})
-        return{
-            min, max
-        }
-    } else {
-        setPrice({min,max})
-        setSelectedPrice({min,max})
-        return{
-            min, max
-        }
-    }
-    }
 
     const sorting=(type)=>{
        
@@ -81,12 +49,12 @@ const dispatch = useDispatch();
         })
        
       
-        dispatch(brandSubCategoryProducts(city,DepartmentId,BrandId,  limit, offset, checkedValues.toString(), cost,sort))
+        dispatch(brandsubcategoryproducts(city,DepartmentId,BrandId,  limit, offset, checkedValues.toString(), cost,sort))
     }
-      const fetchData = () => {
+    const fetchData = () => {
         offset = limit + offset;
         const cost = selectedPrice.min + "," + selectedPrice.max
-        dispatch(brandSubCategoryProducts(city,DepartmentId,BrandId,  limit, offset, checkedValues.toString(), cost,sort))
+        dispatch(brandsubcategoryfilters(city,DepartmentId,BrandId,  limit, offset, checkedValues.toString(), cost,sort))
     }
 
     const handleBrandsFilter = (target) => {
@@ -101,24 +69,21 @@ const dispatch = useDispatch();
         }
 
     }
-    const fetcProductByPrice = (value) => {
-        setSelectedPrice(value)
-    }
     return(
         <>
         <Header />
         <div className="container-fluid">
             <div className="row">
                 <div className="brandSubcategory col-lg-2 d-none d-lg-block">    
-                   <div className="">
+                  
+                <div className="">
                    {
-                       brandSubCategoryFilter.map((data,index) => {
+                       brandsubcategoryfilters.map((data,index) => {
                            return(<FilterBox  onChange={(target) => { handleBrandsFilter(target) }} id={data.SubCategoryId} label = {data.SubCategoryName} checkbox />)
                        }
                    )
                     } 
                     </div> 
-                    
                     <div className="">
                     <BoxFilter title="Price">
                                 <div class="mx-4 p-4 filterbox">
@@ -128,15 +93,14 @@ const dispatch = useDispatch();
                     </div>
                 </div>
                 <div className="brandsubcategorylayout col-lg-10 col-md-12 col-sm-12 col-12 my-2">
-                    <div className="container-fluid my-2">
+                <div className="container-fluid my-2">
                         <div className="row">
                             <div className="browselayout col-12 ">
-                                <BrowseByCategory category={BrowseByBrandCategoryCategory} />
-                                <BrowseByShop stores={BrowseByBrandCategoryStore} />
+                               
+                               
                             </div>
                         </div>
                     </div>
-                    
                     <div className="container-fluid">
                         <div className="row">
                         <div className="subcategorysort col-12 d-none d-lg-block ">
@@ -150,10 +114,10 @@ const dispatch = useDispatch();
                 <li onClick={(target) => { sorting("desc") }}><span>Price-High - Low</span></li>
             </ul>   
         </div>
-                        <InfiniteScroll
-                                        dataLength={brandSubCategoryProducts.length}
+        <InfiniteScroll
+                                        dataLength={brandsubcategoryproducts.length}
                                         next={() => { fetchData() }}
-                                        hasMore={hasMore}
+                                        
                                         className={"row"}
                                         endMessage={
                                             <div className="end-of-product col-lg-12 col-md-12 col-sm-12 col-xs-12" >That's all folks...</div>
@@ -161,11 +125,11 @@ const dispatch = useDispatch();
                                         loader={<div className="end-of-product col-lg-12 col-md-12 col-sm-12 col-xs-12" >Loading Products...</div>}
                                     >
                             {
-                                brandSubCategoryProducts.map((data,index)=>{
+                                brandsubcategoryproducts.map((data,index)=>{
                                 return (<Product product={data}  />)
                             })
                             }
-                            </InfiniteScroll>
+                            </InfiniteScroll>   
                         </div>
                     </div>
                 </div>            

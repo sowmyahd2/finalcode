@@ -13,21 +13,20 @@ const ProductDetails = () => {
 
     const { id } = useParams();
     const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
+    const city = "mysore";
     useEffect(()=>{
         dispatch(getProductDetails(city, id))
 
     },[])
    
     
-    const mostViewProduct = useSelector(state => state.Product.mostView);
-
+   
     return(
         <>
         <Header />
         <Productpage />
         <div className='container-fluid'>
-        <SimilarProduct data={mostViewProduct} product={true} />
+      
         </div>
         
         

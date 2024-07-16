@@ -2,13 +2,13 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import  BASE_URL  from '../../Config/apii';
 
-export const fetchMostViewedProducts = createAsyncThunk(
+export const fetchshopcatproducts = createAsyncThunk(
   'products/fetchMostViewedproducts',
-  async ({ selectedCity }) => {
+  async ({ dealerid,selectedCity }) => {
     try {
       
-      const city=selectedCity;
-      const response = await fetch(`${BASE_URL}products/mostview/${city}`);
+      
+      const response = await fetch(`${BASE_URL}store/categoryproducts/${dealerid}/${selectedCity}`);
     
    
       if (!response.ok) {
@@ -44,23 +44,23 @@ export const fetchMostViewedstores = createAsyncThunk(
   }
 );
 
-const mostViewedSlice = createSlice({
+const shoppageSlice = createSlice({
   name: 'mostViewed',
   initialState: { mostviewedproducts: [], mostviewedstores: [], isLoading: false, error: null },
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchMostViewedProducts.pending, (state) => {
+      .addCase(fetchshopcatproducts.pending, (state) => {
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(fetchMostViewedProducts.fulfilled, (state, action) => {
+      .addCase(fetchshopcatproducts.fulfilled, (state, action) => {
      
         state.mostviewedproducts = action.payload.data;
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(fetchMostViewedProducts.rejected, (state, action) => {
+      .addCase(fetchshopcatproducts.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
@@ -80,4 +80,4 @@ const mostViewedSlice = createSlice({
   },
 });
 
-export default mostViewedSlice.reducer;
+export default shoppageSlice.reducer;

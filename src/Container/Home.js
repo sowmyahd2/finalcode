@@ -1,9 +1,10 @@
 import React, { useEffect, Suspense, lazy,useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'; 
-import { getMostViewProduct } from '../Redux/Action/ProductAction';
-import { getMostViewStore } from '../Redux/Action/StoreAction';
-import './styles/Home.css'
 
+
+import './styles/Home.css'
+import { fetchMostViewedProducts,fetchMostViewedstores } from "../Redux/Slice/MostviewSlice";
+import {fetchdepartment} from '../Redux/Slice/DepartmentSlice' // Ensure this path is correct
 const Loader = React.lazy(() => import('../Component/Loader'));
 const Header = lazy(() => import('../Component/Header/Header'));
 const Banner = lazy(() => import('../Component/Banner/Banner'));
@@ -16,49 +17,34 @@ const Homeslider = lazy(() => import('../Component/Homeslider/Homeslider'));
 const Home = () => {
     
     const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
-    const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-      
-        (position) => {
-           
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-        },
-        (error) => {
-          console.log(error.message);
-        }
-      );
-    } else {
-      console.log('Geolocation is not supported by this browser.');
-    }
-  }, []);
+   
+  
+  
     useEffect(() => {
-        dispatch(getMostViewProduct(city))
-        dispatch(getMostViewStore(city))
+        dispatch(fetchMostViewedProducts({ selectedCity: "mysore" }));
+        dispatch(fetchMostViewedstores({ selectedCity: "mysore",pincode:"560001" }));
+    dispatch(fetchdepartment());
+    }, [dispatch]);
+  
+    
+    const {mostviewedproducts,mostviewedstores}=useSelector(state=>state.mostviewed);
+    const {departments} = useSelector(state => state.department);
 
-    }, [city])
-
-    const mostViewProduct = useSelector(state => state.Product.mostView);
-    const mostViewStore = useSelector(state => state.Store.mostView);
-   console.log("dd");
-    const offersBrand = useSelector(state => state.Department.department);
+console.log([departments]);
+    
     return ( 
         <Suspense fallback={<Loader />} >
-           <Header />
-            <div className="container-fluid">                                   
+        
+          <div className="container-fluid">   
+          <Header />                                
                 <div className="row">
                     <div className="bannerhome col-lg-12 col-md-12 col-sm-12 col-12">                        
                     <Suspense fallback={<Loader />} ><Homeslider /></Suspense>
                     <Suspense fallback={<Loader />} ><Banner /></Suspense>
                     <Suspense fallback={<Loader />} ><Vertical /></Suspense>
-                    <Suspense fallback={<Loader />} ><Cauroselproduct data={mostViewProduct} product={true} /></Suspense>
-                    <Suspense fallback={<Loader />} ><Cauroselstore data={mostViewStore} store={true} /></Suspense>
-                    <Suspense fallback={<Loader />} ><Cauroselbrand data={offersBrand} offer={true} /></Suspense>
+                    <Suspense fallback={<Loader />} ><Cauroselproduct data={mostviewedproducts} product={true} /></Suspense>
+                    <Suspense fallback={<Loader />} ><Cauroselstore data={mostviewedstores} store={true} /></Suspense>
+                    <Suspense fallback={<Loader />} ><Cauroselbrand data={departments} offer={true} /></Suspense>
                     </div>
                 </div>
             </div>

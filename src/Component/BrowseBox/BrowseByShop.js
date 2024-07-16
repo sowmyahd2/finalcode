@@ -6,7 +6,9 @@ import { useHistory } from 'react-router';
 
 
 const BrowseByShop = (props) => {
+   
     const stores = props.stores;
+   
     const history = useHistory()
     return(
         <>

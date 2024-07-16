@@ -1,25 +1,24 @@
-import { combineReducers  } from '@reduxjs/toolkit';
-import { persistReducer } from 'redux-persist';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { combineReducers } from '@reduxjs/toolkit';
+import cityReducer from './Slice/CitySlice'; // Adjust the path as per your structure
+import departmentReducer from './Slice/DepartmentSlice'; // Adjust the path as per your structure
+import  searchReducer  from './Slice/SearchSlice';
+import mostViewedReducer from './Slice/MostviewSlice';
+import productReducer from './Slice/ProductSlice';
+import brandRedducer from './Slice/BrandSlice';
+import categoryReducer from './Slice/CategorySlice';
+import subcategoryReducer from './Slice/SubcategorySlice';
+import shoppageReducer from './Slice/ShopPageSlice';
 
-import cityReducer from './Slice/CitySlice';
-
-
-// Create a persist configuration for the root reducer
-const persistConfig = {
-  key: 'root',
-  storage: AsyncStorage,
-  whitelist: ['selectedCity'],
-  // Name of the slice to persist
-};
-
-// Combine the city reducer with other reducers if necessary
 const rootReducer = combineReducers({
-  city: persistReducer(persistConfig, cityReducer),
-  
-
-  
- 
+  city: cityReducer,
+  department: departmentReducer,
+  mostviewed:mostViewedReducer,
+  search:searchReducer,
+  product:productReducer,
+  brand:brandRedducer,
+  category:categoryReducer,
+  subcategory:subcategoryReducer,
+  shoppage:shoppageReducer
   // Add other reducers here if needed
 });
 

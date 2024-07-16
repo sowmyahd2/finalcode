@@ -1,62 +1,74 @@
-import Api from "../../Config/Api";
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-export const fetchCity = createAsyncThunk('city/getPopularCity', async (dispatch) => {
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import  BASE_URL  from '../../Config/apii';
+export const fetchcity = createAsyncThunk('city/fetchcity', async () => {
   try {
-    const response = await fetch(`${Api}/city`);
+
+    const response = await fetch(`${BASE_URL}city`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     const json = await response.json();
     console.log(json);
     return json;
+  } catch (error) {
+    console.error('Error fetching departments:', error);
+    throw error;
+  }
+});
+export const setCityname = createAsyncThunk('city/setCity', async ({city,pincode}) => {
+  try {
+  
+    const response = await fetch(`${BASE_URL}getcityname/${city}/${pincode}`);
+    const json = await response.json();
+    localStorage.setItem('selectedCity', json.data.CityName.toLowerCase());
+    localStorage.setItem('selectedpincode', json.data.Pincode);
+    return {
+      city:(json.data.CityName).toLowerCase(),
+      pincode:json.data.Pincode
+    };
   } catch (error) {
     // Handle error
     throw error;
   }
 });
-
-export const cityApi = createApi({
-  reducerPath: 'city',
-  baseQuery: fetchBaseQuery({ baseUrl: Api }),
-  endpoints: (builder) => ({
-    getPopularCity: builder.query({
-      query: () => 'Useraccount/getpopularcity/',
-    }),
-  }),
-});
-
-const citySlice = createSlice({
+export const citySlice = createSlice({
   name: 'city',
   initialState: {
-    selectedCity: 'mysuru',
-    cityList: [],
     isLoading: false,
+    isError: false,
+    cityList: [],
+    selectedCity: localStorage.getItem('selectedCity') || '',
+    selectedpincode:"",
     error: null,
   },
-  reducers: {
-    setCity: (state, action) => {
-      state.selectedCity = action.payload;
-    },
-    setCityList: (state, action) => {
-      state.cityList = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCity.pending, (state) => {
+      .addCase(fetchcity.pending, (state) => {
         state.isLoading = true;
+        state.isError = false;
         state.error = null;
       })
-      .addCase(fetchCity.fulfilled, (state, action) => {
-        state.cityList = action.payload;
+      .addCase(fetchcity.fulfilled, (state, action) => {
+  
+        state.cityList = action.payload.data;
+        state.isLoading = false;
+        state.isError = false;
+        state.error = null;
+      })
+      .addCase(setCityname.fulfilled, (state, action) => {
+        state.selectedCity = action.payload.city;
+        state.selectedpincode = action.payload.pincode;
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(fetchCity.rejected, (state, action) => {
+      .addCase(fetchcity.rejected, (state, action) => {
+        
         state.isLoading = false;
+        state.isError = true;
         state.error = action.error.message;
       });
   },
 });
 
-export const { setCity, setCityList } = citySlice.actions;
-export default citySlice.reducer;   
+export default citySlice.reducer;

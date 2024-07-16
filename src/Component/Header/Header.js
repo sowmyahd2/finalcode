@@ -2,13 +2,13 @@ import React, { useState, useEffect, Suspense,useCallback } from 'react';
 import './Header.css';
 import { useDispatch, useSelector, } from 'react-redux';
 import 'react-responsive-modal/styles.css';
-import { getcity } from '../../Redux/Action/CityAction';
-import { setCity,getpcartcount,gethomecartcount } from '../../Redux/Action/UserPreferenceAction';
 
-import { getSearch, ClearAutoComplete } from '../../Redux/Action/SearchAction';
+import { fetchcity,setCityname } from '../../Redux/Slice/CitySlice';
+import { getSearch } from '../../Redux/Slice/SearchSlice';
+
 import { Link, useHistory } from 'react-router-dom';
 import { pathOr } from 'ramda';
-import { logout } from '../../Redux/Action/LoginAction';
+import { Dropdown } from 'react-bootstrap';
 import Loader from '../Loader';
 import Popup from '../Popup';
 import GoogleTranslate from '../GoogleTranslate';
@@ -20,43 +20,80 @@ const Sticky = React.lazy(() => import('react-sticky-el'))
 const Header = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [pickcount, setpickount] = useState(0);
-    const [onlinecount, setonlinecount] = useState(0);
+    const [userId, setuserId] = useState(0);
+    const [pcount, setonlinecount] = useState(0);
+    const [homecount, sethomecount] = useState(0);
     const [cityModalOpen, setCityToggleModal] = useState(false);
     const [languageModalOpen, setLanguageToggleModal] = useState(false);
     const dispatch = useDispatch();
     const history = useHistory();
-    useEffect(() => {
-        dispatch(getcity())
-        dispatch(ClearAutoComplete())
-
-    }, [])
-    const user = useSelector(state => state.Login)
-    const userId = pathOr("", ["user", "UserId"], user);
- 
-    const userlogout = (event) => {
-        event.preventDefault();
-        dispatch(logout())
-    }
-
-    const city = useSelector(state => state.City.city);
-    const selectedCity = useSelector(state => state.UserPreference.city)
-    const pcount = useSelector(state => state.UserPreference.pcount)
-    const homecount = useSelector(state => state.UserPreference.homecount)
    
-        useEffect(() => {
-            if(userId!=""){
-            dispatch(getpcartcount(userId,selectedCity))
-            dispatch(gethomecartcount(userId,selectedCity))
-        }
-        }, [pcount,homecount])
-       
 
-    const search = useSelector(state => state.Search.search)
+   
+    const cityList=useSelector(state=>state.city);
+  
+
+
+
+    const selectedCity = cityList.selectedCity
+   
+    useEffect(() => {
+        // Dispatch the fetchCity thunk here
+        dispatch(fetchcity());
+      }, [selectedCity]);
+     
+       
+        useEffect(() => {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(
+              
+                (position) => {
+                  const apiKey = "AIzaSyCstriROXRCEDBDY9w_5p7pt7hT1cUp3zI";
+                  const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=${apiKey}`;
+                  fetch(apiUrl)
+                  .then(response => response.json())
+                  .then(data => {
+                    if (data.status === 'OK') {
+                        const addressComponents = data.results[0].address_components;
+                        const cityComponent = addressComponents.find((component) =>
+                          component.types.includes('locality')
+                        );
+                        const postalCodeComponent = addressComponents.find((component) =>
+                          component.types.includes('postal_code')
+                        );
+                  
+                        const city = cityComponent ? cityComponent.long_name : 'City not found';
+                        const postalCode = postalCodeComponent
+                          ? postalCodeComponent.short_name
+                          : 'Postal code not found';
+                  
+                          dispatch(setCityname({"city":city,"pincode":postalCode}))
+                      } else {
+                        console.error('Error in geocoding:', data.status);
+                      }
+               
+                    
+                  })
+                  .catch(error => {
+                    console.error("Error fetching city:", error);
+                  });
+                },
+                (error) => {
+                  console.log(error.message);
+                }
+              );
+            } else {
+                alert(selectedCity);
+              console.log('Geolocation is not supported by this browser.');
+            }
+          }, []);
+       
+          const {searchcategory,searchbrands,searchstores} = useSelector(state => state.search)
   
     const [suggestion, setSuggestion] = useState([]);
     const selectCity = (city) => {
-        dispatch(setCity(city.toLowerCase()))
+       
+        dispatch(setCityname({"city":city.toLowerCase(),pincode:0}))
       
         setCityToggleModal(!cityModalOpen)
     }
@@ -67,11 +104,8 @@ const Header = () => {
      }
     const onSuggestionsFetchRequested = (term) => {
         if (term.length > 0) {
-            dispatch(getSearch(selectedCity, term))
-        } else {
-            dispatch(ClearAutoComplete())
-
-        }
+            dispatch(getSearch({"selectedCity":selectedCity, "term":term}))
+        } 
         //   setSuggestion(suggestion);
     }
     const onSuggestionsClearRequested = () => {
@@ -79,7 +113,15 @@ const Header = () => {
     }
 
  
- 
+ const handleInputChange=()=>{
+  
+    dispatch(setCityname({"city":selectedCity.toLowerCase(),pincode:0}))
+      
+ }
+ const userlogout = (event) => {
+    event.preventDefault();
+   
+}
     return (
         <>
                           
@@ -123,18 +165,18 @@ const Header = () => {
                     
                         <div className="headersearch col-12">
                             <input
-                                onBlur={() => { dispatch(ClearAutoComplete()) }}
+                               
                                 className="inputbar"
                                 type="text"
                                 onChange={(e) => { onSuggestionsFetchRequested(e.target.value) }}
                                 onFocus={(e) => { onSuggestionsFetchRequested(e.target.value) }}
                                 placeholder="Search by Products, Brands, Stores, Bussiness" />
                             <button className="gobutton"><i className="fas fa-search" /></button>
-                            <div className="searchinputlist" style={(search.category.length > 0 || search.stores.length > 0 || search.brands.length > 0) ? { display: 'block' } : { display: 'none' }}>
-                                {search.category.length > 0 && (<h6>Categories</h6>)}
+                             <div className="searchinputlist" style={(searchcategory.length > 0 || searchstores.length > 0 || searchbrands.length > 0) ? { display: 'block' } : { display: 'none' }}>
+                                {searchcategory.length > 0 && (<h6>Categories</h6>)}
 
                                 {
-                                    search.category.map((data, index) => {
+                                    searchcategory.map((data, index) => {
                                         return (
 
                                             <Link to={"/maincategory/" + data.MainCategoryId}><li className="suggestedlist" key={index}>{data.MainCategoryName}</li></Link>
@@ -143,9 +185,9 @@ const Header = () => {
                                     })
 
                                 }
-                                {search.brands.length > 0 && (<h6>Brands</h6>)}
+                                {searchbrands.length > 0 && (<h6>Brands</h6>)}
                                 {
-                                    search.brands.map((data, index) => {
+                                    searchbrands.map((data, index) => {
                                         return (
 
 
@@ -154,9 +196,9 @@ const Header = () => {
                                         )
                                     })
                                 }
-                                {search.stores.length > 0 && (<h6>Stores</h6>)}
+                                {searchstores.length > 0 && (<h6>Stores</h6>)}
                                 {
-                                    search.stores.map((data, index) => {
+                                    searchstores.map((data, index) => {
                                         return (
                                             <Link to={"/shoppage/" + data.DealerId}> <li className="suggestedlist" key={index}>{data.ShopName}</li></Link>
 
@@ -204,18 +246,18 @@ const Header = () => {
                                 <a className="col-2 categories px-2" href=""><i className="fas fa-list " /> All Categories </a>
                                 <div className="col-5 searchinput">
                                     <input
-                                        onBlur={() => { dispatch(ClearAutoComplete()) }}
+                                        
                                         className="inputbar"
                                         type="text"
                                         onChange={(e) => { onSuggestionsFetchRequested(e.target.value) }}
                                         onFocus={(e) => { onSuggestionsFetchRequested(e.target.value) }}
                                         placeholder="Search by Products, Brands, Stores, Bussiness" />
                                     <button className="gobutton"><i className="fas fa-search" /></button>
-                                    <div className="searchinputlist" style={(search.category.length > 0 || search.stores.length > 0 || search.brands.length > 0) ? { display: 'block' } : { display: 'none' }}>
-                                        {search.category.length > 0 && (<h6>Categories</h6>)}
+                                    <div className="searchinputlist" style={(searchcategory.length > 0 || searchstores.length > 0 || searchbrands.length > 0) ? { display: 'block' } : { display: 'none' }}>
+                                        {searchcategory.length > 0 && (<h6>Categories</h6>)}
 
                                         {
-                                            search.category.map((data, index) => {
+                                            searchcategory.map((data, index) => {
                                                 return (
 
                                                     <Link to={"/maincategory/" + data.MainCategoryId}><li className="suggestedlist" key={index}>{data.MainCategoryName}</li></Link>
@@ -224,9 +266,9 @@ const Header = () => {
                                             })
 
                                         }
-                                        {search.brands.length > 0 && (<h6>Brands</h6>)}
+                                        {searchbrands.length > 0 && (<h6>Brands</h6>)}
                                         {
-                                            search.brands.map((data, index) => {
+                                            searchbrands.map((data, index) => {
                                                 return (
 
 
@@ -235,9 +277,9 @@ const Header = () => {
                                                 )
                                             })
                                         }
-                                        {search.stores.length > 0 && (<h6>Stores</h6>)}
+                                        {searchstores.length > 0 && (<h6>Stores</h6>)}
                                         {
-                                            search.stores.map((data, index) => {
+                                            searchstores.map((data, index) => {
                                                 return (
                                                     <Link to={"/shoppage/" + data.DealerId}> <li className="suggestedlist" key={index}>{data.ShopName}</li></Link>
 
@@ -287,16 +329,38 @@ const Header = () => {
                     </ul>
                 </Modal>
                 <Modal open={cityModalOpen} onClose={() => { setCityToggleModal(!cityModalOpen) }} center>
-                    <ul className="list-group citylist">
-                        <h6>Select a City</h6>
-                        {city.map((data, index) => {
+                <Dropdown className='list-group citylist'>
+      <Dropdown.Toggle variant="default" id="dropdown-basic">
+      Select City
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu >
+      {cityList.cityList.map((data, index) => {
                             return (
-                                <li onClick={() => { selectCity(data.CityName) }} className="list-group-item listli" key={index}><a href="#">{data.CityName}</a></li>
+                                <Dropdown.Item onClick={() => { selectCity(data.NewCityName) }} ><a href="#">{data.NewCityName}</a></Dropdown.Item>
+
+                            )
+                        })}
+       
+       
+      </Dropdown.Menu>
+    </Dropdown>
+    <input type='text' placeholder='pincode' onBlur={handleInputChange}/>
+                    <ul className="list-group citylist">
+                        
+                         
+                        <h6>Select a City</h6>
+                        {cityList.cityList.map((data, index) => {
+                            return (
+                                <li onClick={() => { selectCity(data.NewCityName) }} className="list-group-item listli" key={index}><a href="#">{data.NewCityName}</a></li>
                             )
                         })}
 
+                 
+
                     </ul>
                 </Modal>
+                
             </Suspense>
 
         </>

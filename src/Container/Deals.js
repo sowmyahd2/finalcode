@@ -1,16 +1,22 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Header from '../Component/Header/Header';
-import { useSelector } from 'react-redux';
-import OfferDepartments from '../Component/OfferDepartment/OfferDepartment';
+import { useSelector,useDispatch } from 'react-redux';
 
+import OfferDepartments from '../Component/OfferDepartment/OfferDepartment';
+import { fetchdepartment } from '../Redux/Slice/DepartmentSlice';
 const Deals = () => {
-    const offerdepartments = useSelector(state => state.Department.department);
+    const {departments} = useSelector(state => state.department);
+   console.log(departments);
+   const dispatch = useDispatch();
+   useEffect(()=>{
+    dispatch(fetchdepartment());
+   },[])
     return(
         <>
         <Header />
         <div className="container-fluid px-2 my-2">
             
-            {offerdepartments.map((data,index)=>{
+            {departments.map((data,index)=>{
                   return(
                     <OfferDepartments name={data.DepartmentName} image={data.Icons} link={"/deals/offers/"+data.DepartmentId} key={index} />
                   )
