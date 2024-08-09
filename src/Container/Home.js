@@ -35,7 +35,7 @@ console.log([departments]);
     return ( 
         <Suspense fallback={<Loader />} >
         
-          <div>home</div>
+          
             
         </Suspense>
         
