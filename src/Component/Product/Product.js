@@ -24,8 +24,10 @@ const Product = (props) => {
                 <p className="mrpprice">{props.product.MRP}</p> 
                 <p className="sellingprice"><i class="fas fa-rupee-sign"></i> {props.product.SellingPrice}</p>
                 <p className="storeprice">In Store <i class="fas fa-rupee-sign"></i> {props.product.StorePrice}</p>
+                {props.product.ShopCount ?
                 <p className="ndealers">Dealers<span>({props.product.ShopCount})</span></p>
-            </div>  
+            
+            :""}</div>  
                               
         </div>
     )

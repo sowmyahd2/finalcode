@@ -13,11 +13,12 @@ import BoxFilter from '../FilterBox/BoxFilter';
 import FilterBox from '../FilterBox/FilterBox';
 import { useParams } from 'react-router-dom';
 
-const StoreFrontProducts = () => {
+const StoreFrontProducts = ({products,filters}) => {
     const { DealerId } = useParams();
-    const shopPagecategoryProducts = useSelector(state => pathOr({},['products'],state.ShopPage.shopPage));
+    
+    const shopPagecategoryProducts = products;
     const shopPageCategoryProductskeys = Object.keys(shopPagecategoryProducts);    
-    const shopPagecategoryFilter = useSelector(state => pathOr([],["filter"],state.ShopPage.shopPage));    
+    const shopPagecategoryFilter = filters;    
     const shopPagecategoryFilterkeys = Object.keys(shopPagecategoryFilter);
 
     

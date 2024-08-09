@@ -3,23 +3,24 @@ import './Login.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLogin,sendotp,mobileLogin } from '../../Redux/Action/LoginAction';
+import { getLogin,sendotp } from '../../Redux/Action/LoginAction';
 import { pathOr } from 'ramda';
 import { Redirect } from 'react-router-dom';
+import {mobilelogin} from '../../Redux/Slice/LoginSlice';
 
 const Login = () => { 
     const dispatch = useDispatch();
-    const user= useSelector(state => state.Login)
-    const userotp= useSelector(state => state.Login.otp)
+    const user= useSelector(state => state.user)
+    const userotp= useSelector(state => state.user.otp)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [mobile, setmobile] = useState("")
-    const userId = pathOr("",["user","UserId"],user);
+    const {UserId} = useSelector(state=>state.login);
     const [list, setList] = useState(false);
-    
+   
     const [showcode, setshowCode] = useState(false);
     const[showinput,setshowinput]=useState(true);
-    if(userId!=""){
+    if(UserId!=""){
         return(<Redirect to="/" />)
     }
     const onLogin = (event)=>{
@@ -29,7 +30,7 @@ const Login = () => {
 
     }
     const Mobilelogin = (event)=>{
-    
+  
      const first= document.getElementsByName('field-1')[0].value;
      const second= document.getElementsByName('field-2')[0].value;
      const third= document.getElementsByName('field-3')[0].value;
@@ -38,7 +39,12 @@ const Login = () => {
      
     if(`${first}${second}${third}${fouth}`==userotp ){
       event.preventDefault();
-        dispatch(mobileLogin(mobile))
+      const body = {
+        email:"",
+        password:"",
+        number:mobile
+    }
+        dispatch(mobilelogin(body))
     }
   
     else{

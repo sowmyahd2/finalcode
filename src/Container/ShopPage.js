@@ -17,13 +17,15 @@ const ShopPage = () => {
             dispatch(fetchshopcatproducts({"selectedCity":city,dealerid:DealerId}))
     
         })
-        const Detail = useSelector(state => pathOr({},['detail'], state.shoppage))
-    
+
+const {shopdetail,shopproducts,shopfilter}=useSelector(state=>state.shoppage);
+  
+   
     return (
         <>
         <Header />
-        <StoreFront  detail={Detail}/>
-        <StoreFrontProducts />
+       <StoreFront detail={shopdetail}/>
+       <StoreFrontProducts  products={shopproducts} filters={shopfilter}/>
         </>
     )
 }

@@ -11,7 +11,7 @@ import { useParams } from 'react-router-dom';
 const StoreFront = (props) => { 
     const { DealerId } = useParams();
         const dispatch = useDispatch();
-        const city = useSelector(state => state.UserPreference.city)
+        const city = "mysore";
         
     const shopPageDetail = props.detail
     

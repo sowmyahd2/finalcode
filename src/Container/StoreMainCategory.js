@@ -7,9 +7,9 @@ import Product from '../Component/Product/Product';
 import { pathOr } from 'ramda';
 import FilterBox from '../Component/FilterBox/FilterBox';
 import BoxFilter from '../Component/FilterBox/BoxFilter';
-import { getStoreMainCategoryProducts } from '../Redux/Action/shopPageAction';
 import StoreFront from '../Component/StoreFront/StoreFront';
 
+import{fetchshopmaincatproducts} from '../Redux/Slice/ShopPageSlice';
 
 import Type from '../Redux/Action/Types';
 
@@ -21,7 +21,7 @@ const StoreMainCategoryProducts = () => {
    
     const {DealerId,DepartmentId}= useParams();
     const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
+    const city = "mysore";
     const [price, setPrice] = React.useState({min: 0, max:0})
     const [checkedValues, setCheckedValues] = React.useState([]);
     const [checkedcatValues, setCheckedcatValues] = React.useState([]);
@@ -35,30 +35,31 @@ const StoreMainCategoryProducts = () => {
     useEffect(() => {
         getMinMaxPrice()
     }, [])
-    let limit = 24
+    let limit = 24;
     useEffect(()=>{
   
         offset = 0;
         dispatch({
             type: Type.resetProducts
         })
+       
         const cost = selectedPrice.min + "," + selectedPrice.max
-        dispatch(getStoreMainCategoryProducts(city,DealerId,DepartmentId,limit, offset, checkedValues.toString(),checkedcatValues.toString(), cost,sort))
+        dispatch(fetchshopmaincatproducts({"selectedCity":city,dealerid:DealerId,departmentid:DepartmentId,limit:limit, offset:offset, brandid:checkedValues.toString(),price:checkedcatValues.toString(),cost: cost,sort:sort}))
 
     },[checkedValues, selectedPrice,checkedcatValues])
-    const Detail = useSelector(state => pathOr({},['detail'], state.ShopPage.storeMainCategoryProducts))
-    const storeMainCategoryProducts = useSelector(state => pathOr([],["products"], state.ShopPage.storeMainCategoryProducts));
-    const storeMainCategoryFilter = useSelector(state => pathOr([],["filter","category"], state.ShopPage.storeMainCategoryProducts))
-    const storeMainCategoryPrice = useSelector(state => pathOr([],["price"], state.ShopPage.storeMainCategoryProducts));
-    const storeMainCategoryBrands = useSelector(state => pathOr([],["filter","brands"], state.ShopPage.storeMainCategoryProducts) );
-    const hasMore = useSelector(state => state.ShopPage.storeMainCategoryProductsHasMore)
+
+    const {shopdetail,shopmaincatproducts,shopmaincategory,shopmaincategorybrands}=useSelector(state=>state.shoppage);
+    
+   console.log("dsds",shopmaincatproducts);
+   
+    const hasMore = useSelector(state => state.shoppage.storeMainCategoryProductsHasMore)
     const getMinMaxPrice = () => {
         let max = 0;
         let min =0;
         let maximum=0;
   
-        if(storeMainCategoryProducts.length > 0) { 
-            storeMainCategoryProducts.forEach((data) => {
+        if(shopmaincatproducts.length > 0) { 
+            shopmaincatproducts.forEach((data) => {
             if(parseInt(data.SellingPrice) > parseInt(max))
             {
                 max = data.SellingPrice;
@@ -110,14 +111,13 @@ const StoreMainCategoryProducts = () => {
             type: Type.resetProducts
         })
        
-      
-        dispatch(getStoreMainCategoryProducts(city,DealerId,DepartmentId,limit, offset, checkedValues.toString(),checkedcatValues.toString(), cost,sort))
-    }
+        dispatch(fetchshopmaincatproducts({"selectedCity":city,dealerid:DealerId,departmentid:DepartmentId,limit:limit, offset:offset, brandid:checkedValues.toString(),price:checkedcatValues.toString(),cost: cost,sort:sort}))
+            }
     const fetchData = () => {
         offset = limit + offset;
         const cost = selectedPrice.min + "," + selectedPrice.max
-        dispatch(getStoreMainCategoryProducts(city,DealerId,DepartmentId,limit, offset, checkedValues.toString(), checkedcatValues.toString(),cost,sort))
-    }
+        dispatch(fetchshopmaincatproducts({"selectedCity":city,dealerid:DealerId,departmentid:DepartmentId,limit:limit, offset:offset, brandid:checkedValues.toString(),price:checkedcatValues.toString(),cost: cost,sort:sort}))
+           }
 
     const handleBrandsFilter = (target) => {
         
@@ -175,37 +175,33 @@ const StoreMainCategoryProducts = () => {
     return(
         <>
         <Header />
-        <StoreFront detail={Detail}/>
+        <StoreFront detail={shopdetail}/>
         <div className="container-fluid">
             <div className="row">
                 <div className="brandmaincategory col-lg-2 d-none d-lg-block">    
           
                 <div className="">
-                            <BoxFilter title="Subcategory">
+                <BoxFilter title="Subcategory">
                             {
-                       storeMainCategoryFilter.map((data,index) => {
+                       shopmaincategory.map((data,index) => {
                         return(<FilterBox  onChange={(target) => { handlecatFilter(target) }} id={data.SubCategoryId} label = {data.SubCategoryName} checkbox />)
                        }
                    )
                     } 
-                            </BoxFilter>
+                            </BoxFilter>  
                         </div>
                  
                     
             
                     <div className="">
-                        <BoxFilter title="Brands">
-                            {storeMainCategoryBrands.map((brand,index)=>{
+                    <BoxFilter title="Brands">
+                            {shopmaincategorybrands.map((brand,index)=>{
                                 return (<FilterBox onChange={(target) => { handleBrandsFilter(target) }} id={brand.BrandId}    label={brand.BrandName} key={index} checkbox  />)
                             })}
                         </BoxFilter>
                     </div>
                     <div className="">
-                        <BoxFilter title="Price">
-                            {prices.map((brand,index)=>{
-                                return (<FilterBox onChange={(target) => { handlepriceFilter(target) }} id={brand}    label={brand} key={index} checkbox  />)
-                            })}
-                        </BoxFilter>
+                       
                     </div>              
                 </div>
                 <div className="brandmaincategorylayout col-lg-10 col-md-12 col-sm-12 col-12 my-2">
@@ -222,8 +218,8 @@ const StoreMainCategoryProducts = () => {
                 <li onClick={(target) => { sorting("desc") }}><span>Price-High - Low</span></li>
             </ul>   
         </div>
-                        <InfiniteScroll
-                                        dataLength={storeMainCategoryProducts.length}
+        <InfiniteScroll
+                                        dataLength={shopmaincatproducts.length}
                                         next={() => { fetchData() }}
                                         hasMore={hasMore}
                                         className={"row"}
@@ -233,11 +229,11 @@ const StoreMainCategoryProducts = () => {
                                         loader={<div className="end-of-product col-lg-12 col-md-12 col-sm-12 col-xs-12" >Loading Products...</div>}
                                     >
                             {
-                                storeMainCategoryProducts.map((data,index)=>{
+                                shopmaincatproducts.map((data,index)=>{
                                 return (<Product product={data}  />)
                             })
                             }
-                             </InfiniteScroll>
+                             </InfiniteScroll>  
                         </div>
                     </div>
                 </div>            

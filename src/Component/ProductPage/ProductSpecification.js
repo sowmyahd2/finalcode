@@ -10,8 +10,8 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import { useSelector } from 'react-redux';
 import{pathOr} from 'ramda';
 const ProductSpecification = () => {
-    const productDescription = useSelector(state => state.Product.productDetails);
-    const specification = useSelector(state => pathOr([],["specification"],state.Product.productDetails));
+    
+    const {specification,productdetails} = useSelector(state => state.product);
     
     return(
         <div class="productspedesc">            
@@ -23,7 +23,7 @@ const ProductSpecification = () => {
                         </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
-                        <p>{pathOr("",["productdetail","Description"], productDescription)} </p>
+                        <p>{ productdetails.Description} </p>
                     </AccordionItemPanel>
                 </AccordionItem>
                 <AccordionItem dangerouslySetExpanded={true}>

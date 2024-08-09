@@ -4,9 +4,10 @@ import Header from '../Component/Header/Header';
 import Productpage from '../Component/ProductPage/ProductPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getProductDetails } from '../Redux/Action/ProductAction';
+
 import SimilarProduct from '../Component/ProductPage/SimilarProduct';
 import Footer from '../Component/Footer/Footer';
+import {getproductdetail} from '../Redux/Slice/ProductSlice';
 
 
 const ProductDetails = () => {
@@ -15,18 +16,18 @@ const ProductDetails = () => {
     const dispatch = useDispatch();
     const city = "mysore";
     useEffect(()=>{
-        dispatch(getProductDetails(city, id))
+        dispatch(getproductdetail({"selectedCity":city, id:id}))
 
     },[])
    
-    
-   
+    const {productdetails,productimages}=useSelector(state=>state.product)
+   console.log("dss",productdetails);
     return(
         <>
         <Header />
-        <Productpage />
+
         <div className='container-fluid'>
-      
+      <Productpage/>
         </div>
         
         

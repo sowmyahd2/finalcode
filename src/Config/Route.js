@@ -9,6 +9,7 @@ import { store, persistor } from '../Redux/Store';
 import { PersistGate } from 'redux-persist/integration/react'
 
 import Loader from '../Component/Loader';
+import Cart from '../Component/Cart/Cart';
 
 
 const Home = React.lazy(() => import ("../Container/Home"));
@@ -36,7 +37,8 @@ const Pickorderdetail = React.lazy(() => import('../Container/Pickorderdetail'))
 const Homedeliveryorders = React.lazy(() => import('../Container/Homedeliveryorders'));
 const Homedeliveryorderdetail = React.lazy(() => import('../Container/Homedeliveryorderdetail'));
 const Aboutus =React.lazy(()=>import("../Container/Aboutus"));
-
+const Contactus=React.lazy(()=>import('../Container/Contactus'));
+const Career=React.lazy(()=>import('../Container/Careers'));
 const CheckoutHome= React.lazy(()=>import("../Container/Checkouthome"));
 export default function App() {
     return (
@@ -61,6 +63,10 @@ export default function App() {
                             <Route path="/brands/subcategory/:DepartmentId/:BrandId" render={() => <BrandSubCategory />} exact />
                             <Route path="/store/maincategory/products/:DealerId/:DepartmentId" render={() => <StoreMainCategoryProducts />} exact />
                             <Route path="/login" render={() => <LoginPage />} exact />
+                            <Route path="/contactus" render={()=><Contactus/>} exact/>
+                            <Route path="/aboutus" render={()=><Aboutus/>} exact/>
+                            <Route path="/careers" render={()=><Career/>} exact/>
+                            <Route path="/cart" render={()=><CartPage/>} exact/>
                         </Switch>
                     </Router>
                 </Suspense>

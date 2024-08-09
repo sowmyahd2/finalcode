@@ -8,7 +8,9 @@ import brandRedducer from './Slice/BrandSlice';
 import categoryReducer from './Slice/CategorySlice';
 import subcategoryReducer from './Slice/SubcategorySlice';
 import shoppageReducer from './Slice/ShopPageSlice';
-
+import cartReducer from './Slice/cartSlice';
+import userReducer  from './Slice/userSlice';
+import LoginReducer  from './Slice/LoginSlice';
 const rootReducer = combineReducers({
   city: cityReducer,
   department: departmentReducer,
@@ -18,7 +20,10 @@ const rootReducer = combineReducers({
   brand:brandRedducer,
   category:categoryReducer,
   subcategory:subcategoryReducer,
-  shoppage:shoppageReducer
+  shoppage:shoppageReducer,
+  cart:cartReducer,
+ 
+  login:LoginReducer
   // Add other reducers here if needed
 });
 

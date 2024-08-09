@@ -36,20 +36,13 @@ console.log([departments]);
         <Suspense fallback={<Loader />} >
         
           <div className="container-fluid">   
-          <Header />                                
+                                         
                 <div className="row">
-                    <div className="bannerhome col-lg-12 col-md-12 col-sm-12 col-12">                        
-                    <Suspense fallback={<Loader />} ><Homeslider /></Suspense>
-                    <Suspense fallback={<Loader />} ><Banner /></Suspense>
-                    <Suspense fallback={<Loader />} ><Vertical /></Suspense>
-                    <Suspense fallback={<Loader />} ><Cauroselproduct data={mostviewedproducts} product={true} /></Suspense>
-                    <Suspense fallback={<Loader />} ><Cauroselstore data={mostviewedstores} store={true} /></Suspense>
-                    <Suspense fallback={<Loader />} ><Cauroselbrand data={departments} offer={true} /></Suspense>
-                    </div>
+                  
                 </div>
             </div>
             <div className="footerhr"></div>
-            <Footer />
+            
         </Suspense>
         
     )

@@ -16,23 +16,23 @@ import{pathOr} from 'ramda';
 
 const Cart = () => {
     const dispatch = useDispatch();
-    const city = useSelector(state => state.UserPreference.city)
+    const city = "mysore";
     const [type, setType] = useState(1)
     const history = useHistory()
-    const user= useSelector(state => state.Login)
-    const userId = pathOr("", ["user", "UserId"], user);
-    const viewCart = useSelector(state => state.Cart.addtoCart)
+
+    const userId = "";
+    const {pcartitems} = useSelector(state => state.cart)
     const initiateCheckout = () => {
         switch(type){
             case 1: 
             case 3:
             default:
-                if(viewCart.length > 0) {
+                if(pcartitems.length > 0) {
                     history.replace('/checkout')
                 }   
                 break
             case 2:
-                if(viewCart.length > 0) {
+                if(pcartitems.length > 0) {
                     history.replace('/checkouthome')
                 }  
                 break
@@ -79,7 +79,7 @@ const Cart = () => {
                                 </Thead>
                                 
                                 <Tbody>
-                                {viewCart.map((data,index) =>{
+                                {pcartitems.map((data,index) =>{
                                     pickotoal += data.SubTotal
                                     return(
                                         <Tr>
@@ -113,7 +113,7 @@ const Cart = () => {
                                 </Thead>
                                 
                                 <Tbody>
-                                {viewCart.map((data,index) =>{
+                                {pcartitems.map((data,index) =>{
                                     hometotal += data.SubTotal
                                     return(
                                         <Tr>

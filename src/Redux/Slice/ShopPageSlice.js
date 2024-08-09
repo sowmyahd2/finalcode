@@ -3,10 +3,10 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import  BASE_URL  from '../../Config/apii';
 
 export const fetchshopcatproducts = createAsyncThunk(
-  'products/fetchMostViewedproducts',
+  'products/fetchshopcatproducts',
   async ({ dealerid,selectedCity }) => {
     try {
-      
+   
       
       const response = await fetch(`${BASE_URL}store/categoryproducts/${dealerid}/${selectedCity}`);
     
@@ -23,7 +23,27 @@ export const fetchshopcatproducts = createAsyncThunk(
     }
   }
 );
-
+export const fetchshopmaincatproducts = createAsyncThunk(
+  'products/fetchshopmaincatproducts',
+  async ({ dealerid,selectedCity,departmentid}) => {
+    try {
+   
+      
+      const response = await fetch(`${BASE_URL}store/maincategoryproducts/${dealerid}/${departmentid}/${selectedCity}`);
+    
+   
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      
+      return data;
+    } catch (error) {
+      console.error('Error fetching departments:', error);
+    throw error;
+    }
+  }
+);
 export const fetchMostViewedstores = createAsyncThunk(
   'stores/fetchMostViewed',
   async ({ selectedCity }) => {
@@ -46,7 +66,16 @@ export const fetchMostViewedstores = createAsyncThunk(
 
 const shoppageSlice = createSlice({
   name: 'mostViewed',
-  initialState: { mostviewedproducts: [], mostviewedstores: [], isLoading: false, error: null },
+  initialState: { mostviewedproducts: [],
+     mostviewedstores: [],
+     shopdetail:"",
+     shopproducts:[],
+     shopfilter:[],
+     shopmaincatproducts:[],
+     shopmaincategory:[],
+     shopmaincategorybrands:[],
+     storeMainCategoryProductsHasMore:true,
+     isLoading: false, error: null },
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -55,11 +84,26 @@ const shoppageSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchshopcatproducts.fulfilled, (state, action) => {
-     
-        state.mostviewedproducts = action.payload.data;
+
+        state.shopdetail=action.payload.data.detail;
+        state.shopproducts = action.payload.data.products;
+        state.shopfilter = action.payload.data.filter;
+        
         state.isLoading = false;
         state.error = null;
       })
+       .addCase(fetchshopmaincatproducts.fulfilled, (state, action) => {
+console.log("Ffd",action.payload.data.filter.category);
+        state.shopdetail=action.payload.data.detail;
+        state.shopmaincatproducts = action.payload.data.products;
+        
+        state.shopmaincategory = action.payload.data.filter.category;
+        state.shopmaincategorybrands = action.payload.data.filter.brands;
+        
+        state.isLoading = false;
+        state.error = null;
+      })
+      
       .addCase(fetchshopcatproducts.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;

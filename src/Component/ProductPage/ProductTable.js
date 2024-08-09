@@ -9,10 +9,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory } from "react-router"; 
 
 const ProductTable = () => {
-    const productDealer = useSelector(state => pathOr([], ["sellers"], state.Product.productDetails));
-    const city = useSelector(state => state.UserPreference.city)
-    const user = useSelector(state => state.Login)
-    const userId = pathOr("", ["user", "UserId"], user);
+    const {sellers} = useSelector(state => state.product);
+    const city = "mysore";
+   
+    const userId = 1;
     const dispatch = useDispatch();
     const history = useHistory();
     const addtocart = (city, type, dealerPriceId, qty) => {
@@ -40,7 +40,7 @@ const ProductTable = () => {
                             <div className="selectopt col-lg-4 col-md-6 col-sm-6 col-12">
                                 <select className="locationdel">
 
-                                    {productDealer.map((data, index) => {
+                                    {sellers.map((data, index) => {
                                         return (
                                             <option className="productoption">{data.Locality}</option>
                                         )
@@ -64,7 +64,7 @@ const ProductTable = () => {
                                 </Thead>
                                 <Tbody>
                                     {
-                                        productDealer.map((data, index) => {
+                                        sellers.map((data, index) => {
                                             return (
                                                 <Tr>
                                                     <Td>

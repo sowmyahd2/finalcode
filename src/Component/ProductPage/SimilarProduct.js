@@ -7,8 +7,9 @@ import CauroselItem from "../CauroselItem/Similarproducts";
 import { useSelector, useDispatch } from 'react-redux';
 import { pathOr, path } from 'ramda';
 const SimilarProduct = (props) => {
-  const product = useSelector(state => pathOr([], ["similarproducts"], state.Product.productDetails));
-    const setting = {
+  const {similarproducts} = useSelector(state=>state.product);
+  console.log(similarproducts); 
+  const setting = {
         dots: false,
         infinite: false,
         speed: 500,
@@ -46,12 +47,12 @@ const SimilarProduct = (props) => {
     return(
         <div className="mostviewed col-12 ">
             <div className="mostviewheading ">
-            {product && (
+            {similarproducts && (
               <h5>Similar Products</h5>
             )}
             </div>
             <Slider className="" {...setting}>
-                {product && product.map((data,index)=>{
+                {similarproducts && similarproducts.map((data,index)=>{
                   return(
                     <CauroselItem name={data.ProductName} image={data.medium_image} key={index} link={"/productdetails/"+data.ProductId}/>
                   )

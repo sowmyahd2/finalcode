@@ -10,15 +10,14 @@ import ProductTable from '../ProductPage/ProductTable';
 import { Redirect, useHistory } from "react-router"; 
 import { addtowishlist } from '../../Redux/Action/ProductAction';
 import { useParams } from 'react-router-dom';
+import Similarproducts from '../ProductPage/SimilarProduct';
 
 
 const Productpage = () => { 
-    const productDetails = useSelector(state => state.Product.productDetails);
-    const availableSize = useSelector(state => pathOr([],["availableSize"],state.Product.productDetails));    
-    const productImage = useSelector(state => pathOr({},["images"],state.Product.productDetails));    
-    const city = useSelector(state => state.UserPreference.city)
-    const user = useSelector(state => state.Login)
-    const userId = pathOr("", ["user", "UserId"], user);
+
+    const {productdetails,productimages,availableSize,similarproducts}=useSelector(state=>state.product)
+    const city = "mysore";
+    const userId = "";
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
@@ -49,16 +48,16 @@ const Productpage = () => {
                     <div className="productpageimage">                   
                         <Carousel>
                             <div className="cauroselimage">
-                                <img className="img-responsive" src={pathOr("",["image1","zoom_image"],productImage)} className="imagecaurosel" />
+                                <img className="img-responsive imagecaurosel" alt="product" src={pathOr("",["image1","zoom_image"],productimages)}  />
                             </div>
                             <div className="cauroselimage">
-                                <img className="img-responsive" src={pathOr("",["image2","zoom_image"],productImage)} className="imagecaurosel" />
+                                <img className="img-responsive imagecaurosel" alt="product" src={pathOr("",["image2","zoom_image"],productimages)}  />
                             </div>
                             <div className="cauroselimage">
-                                <img className="img-responsive" src={pathOr("",["image3","zoom_image"],productImage)} className="imagecaurosel" />
+                                <img className="img-responsive imagecaurosel"  alt="product" src={pathOr("",["image3","zoom_image"],productimages)} />
                             </div>
                             <div className="cauroselimage">
-                                <img className="img-responsive" src={pathOr("",["image4","zoom_image"],productImage)} className="imagecaurosel" />
+                                <img className="img-responsive imagecaurosel"  alt="product" src={pathOr("",["image4","zoom_image"],productimages)}  />
                             </div>
                         </Carousel>
                         <div className="buttonproduct col-12">
@@ -71,10 +70,10 @@ const Productpage = () => {
                     </div>
                     <div className="productpagedetails col-lg-7 col-md-6 col-sm-12 col-12">
                         <div className="detailsproduct col-12">
-                            <h6>{pathOr("",["productdetail","ProductName"], productDetails)}</h6>
+                            <h6>{ productdetails.ProductName}</h6>
                             <hr className="producthorizontal" />
-                            <p className="concode">CON Code : {pathOr("",["productdetail","ConCode"], productDetails)}</p>
-                            <p className="productcode">Product Code : {pathOr("",["productdetail","ProductCode"], productDetails)}</p>
+                            <p className="concode">CON Code : { productdetails.ConCode}</p>
+                            <p className="productcode">Product Code : { productdetails.ProductCode}</p>
                         </div>
                         <hr className="producthorizontal" />
                         <div className="ratings col-lg-6 col-md-6 col-sm-6 col-12">
@@ -94,8 +93,8 @@ const Productpage = () => {
                         <hr className="producthorizontal" />
                         <div className="productpricepin col-12 my-3">    
                             <div className="productrupee col-12">                                                           
-                                <p className="itemprice"><i class="fas fa-rupee-sign"></i>. {pathOr("",["productdetail","LowestSellingPrice"], productDetails)} </p>
-                                <p className="discountprice"><i class="fas fa-rupee-sign"></i>. {pathOr("",["productdetail","MRP"], productDetails)} </p>
+                                <p className="itemprice"><i class="fas fa-rupee-sign"></i>{ productdetails.LowestSellingPrice} </p>
+                                <p className="discountprice"><i class="fas fa-rupee-sign"></i> {    productdetails.MRP} </p>
                                 <span>50% off</span>
                             </div> 
                             {availableSize.length > 0 &&
@@ -159,7 +158,11 @@ const Productpage = () => {
                         <ProductTable />
                     </div>
                 </div>
-            
+                <div className="container-fliud  producttabb">
+                    <div className="row"> 
+                        <Similarproducts similarproducts={similarproducts}/>
+                    </div>
+                </div>
             </div>
             </div>
         

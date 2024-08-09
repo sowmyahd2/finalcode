@@ -20,14 +20,25 @@ const Sticky = React.lazy(() => import('react-sticky-el'))
 const Header = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [userId, setuserId] = useState(0);
+    const [userId, setUserId] = useState(null);
+
+    // Simulate fetching userId (e.g., from an API or localStorage)
+    useEffect(() => {
+        const fetchedUserId = localStorage.getItem('userId');
+        if (fetchedUserId) {
+            setUserId(fetchedUserId);
+        }
+    }, []);
+
+
+ 
     const [pcount, setonlinecount] = useState(0);
     const [homecount, sethomecount] = useState(0);
     const [cityModalOpen, setCityToggleModal] = useState(false);
     const [languageModalOpen, setLanguageToggleModal] = useState(false);
     const dispatch = useDispatch();
     const history = useHistory();
-   
+   console.log("dsds",userId);
 
    
     const cityList=useSelector(state=>state.city);
@@ -311,11 +322,16 @@ const Header = () => {
                                             <a className="nav-link" href="#" onClick={togglePopup}><i className="fas fa-user" /> <span>Logout</span></a>
                                         </li>
                                     )}
-                                    {userId == "" && (
-                                        <li className="nav-item">
-                                            <Link to={"/login"} className="nav-link" ><i className="fas fa-user" /> <span> Login </span></Link>
-                                        </li>
-                                    )}
+                                  {userId != "" && (
+                                    <li className="nav-item">
+                                 <Link to={"/login"} className="nav-link" onClick={(event) => { userlogout(event) }} ><i className="fas fa-user logcolor" /></Link>
+                                    </li>
+                                )}
+                                {userId == "" && (
+                                    <li className="nav-item">
+                                        <Link to={"/login"} className="nav-link" ><i className="fas fa-user" /></Link>
+                                    </li>
+                                )}
                                 </ul>
                             </div>
                         </div>
