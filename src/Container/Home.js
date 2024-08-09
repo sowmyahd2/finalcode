@@ -35,13 +35,7 @@ console.log([departments]);
     return ( 
         <Suspense fallback={<Loader />} >
         
-          <div className="container-fluid">   
-                                         
-                <div className="row">
-                  
-                </div>
-            </div>
-            <div className="footerhr"></div>
+          <div>home</div>
             
         </Suspense>
         
