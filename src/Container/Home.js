@@ -34,7 +34,21 @@ console.log([departments]);
     
     return ( 
         <Suspense fallback={<Loader />} >
-        <Header/>
+        <Header />
+            <div className="container-fluid">                                   
+                <div className="row">
+                    <div className="bannerhome col-lg-12 col-md-12 col-sm-12 col-12">                        
+                    <Suspense fallback={<Loader />} ><Homeslider /></Suspense>
+                    <Suspense fallback={<Loader />} ><Banner /></Suspense>
+                    <Suspense fallback={<Loader />} ><Vertical /></Suspense>
+                    <Suspense fallback={<Loader />} ><Cauroselproduct data={mostViewProduct} product={true} /></Suspense>
+                    <Suspense fallback={<Loader />} ><Cauroselstore data={mostViewStore} store={true} /></Suspense>
+                    <Suspense fallback={<Loader />} ><Cauroselbrand data={offersBrand} offer={true} /></Suspense>
+                    </div>
+                </div>
+            </div>
+            <div className="footerhr"></div>
+            <Footer />
           
             
         </Suspense>
