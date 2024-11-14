@@ -45,7 +45,7 @@ export default function App() {
         <Provider store={store}>
             
                 <Suspense fallback={<Loader />} >
-                    <Router basename='react' forceRefresh={true}>
+                    <Router basename='' forceRefresh={true}>
                         <Switch>
                             <Route path="/" render={() => <Home />} exact />
                             <Route path="/department/category/:id" render={() => <Department />} exact />
