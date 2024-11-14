@@ -31,9 +31,7 @@ const Home = () => {
     const {departments} = useSelector(state => state.department);
 
 console.log([departments]);
-const mostViewProduct = useSelector(state => state.Product.mostView);
-const mostViewStore = useSelector(state => state.Store.mostView);
-const offersBrand = useSelector(state => state.Department.department);
+
     return ( 
         <Suspense fallback={<Loader />} >
         <Header />
@@ -43,9 +41,7 @@ const offersBrand = useSelector(state => state.Department.department);
                     <Suspense fallback={<Loader />} ><Homeslider /></Suspense>
                     <Suspense fallback={<Loader />} ><Banner /></Suspense>
                     <Suspense fallback={<Loader />} ><Vertical /></Suspense>
-                    <Suspense fallback={<Loader />} ><Cauroselproduct data={mostViewProduct} product={true} /></Suspense>
-                    <Suspense fallback={<Loader />} ><Cauroselstore data={mostViewStore} store={true} /></Suspense>
-                    <Suspense fallback={<Loader />} ><Cauroselbrand data={offersBrand} offer={true} /></Suspense>
+                   
                     </div>
                 </div>
             </div>
