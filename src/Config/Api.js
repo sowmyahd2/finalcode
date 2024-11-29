@@ -1,4 +1,4 @@
-    import { store } from "../Redux/Store";
+import { store } from "../Redux/Store";
 import { pathOr } from "ramda";
 
   
@@ -20,7 +20,7 @@ class Api {
     }
     static xhr(route, params, verb) {
         
-       const host = "http://3.6.88.125/pickupinstoreapi/index.php/api/v1/" 
+       const host = "http://13.202.141.32/reactapi/public/v1/" 
         const url = `${host}${route}`;
         const options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null);
         options.headers = Api.headers();
