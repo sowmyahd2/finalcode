@@ -8,7 +8,8 @@ class Api {
         const accessToken = pathOr("",["user","AccessToken"],state.Login);
         return {
             "Content-Type": "application/json",
-            "Authorization": "Bearer "+accessToken
+            "Authorization": "Bearer "+accessToken,
+            "Access-Control-Allow-Origin":"*"
         };
     }
 
@@ -22,7 +23,8 @@ class Api {
         
        const host = "https://radiancelooks.in/index.php/" 
         const url = `${host}${route}`;
-        const options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null);
+        const options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null, 
+    );
         options.headers = Api.headers();
         return fetch(url, options).then((resp) => {
             console.log("ResponseUrl",url)
