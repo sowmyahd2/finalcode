@@ -4,7 +4,9 @@ import Type from './Types';
 export const getcity = () => async dispatch => {
     try
     {
-        const response =  await Api.get('city');
+        const response =  await Api.get('city',{
+            mode: 'no-cors', 
+        });
         if(response.message === "success"){
         dispatch({
                 type : Type.citySuccess,
