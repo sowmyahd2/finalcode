@@ -21,7 +21,7 @@ class Api {
     }
     static xhr(route, params, verb) {
         
-       const host = "http://radiancelooks.in/index.php/" 
+       const host = "https://radiancelooks.in/index.php/" 
         const url = `${host}${route}`;
         const options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null, 
     );
