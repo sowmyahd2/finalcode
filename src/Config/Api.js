@@ -1,6 +1,6 @@
-    import { store } from "../Redux/Store";
+import { store } from "../Redux/Store";
 import { pathOr } from "ramda";
-
+import cors from 'cors';
   
 class Api {
     static headers() {
