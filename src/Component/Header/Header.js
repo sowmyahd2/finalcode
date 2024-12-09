@@ -31,6 +31,27 @@ const Header = () => {
         dispatch(ClearAutoComplete())
 
     }, [])
+    useEffect(() => {
+        // Define an asynchronous function inside useEffect
+        const fetchData = async () => {
+          try {
+             // Start loading
+            const response = await fetch("https://api.pickupinstore.com/reactApi/public/index.php/v1/city");
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const result = await response.json();
+            console.log(result); // Set the fetched data
+          } catch (err) {
+            console.log("errir");
+            // Handle any errors
+          } finally {
+             // End loading
+          }
+        };
+    
+        fetchData(); // Call the async function
+      }, []); 
     const user = useSelector(state => state.Login)
     const userId = pathOr("", ["user", "UserId"], user);
  
