@@ -21,7 +21,7 @@ class Api {
     }
     static xhr(route, params, verb) {
         
-       const host = "https://api.pickupinstore.com/reactApi/public/index.php/v1/" 
+       const host = "http://api.pickupinstore.com/reactApi/public/index.php/v1/" 
         const url = `${host}${route}`;
         const options = Object.assign({ method: verb }, params ? { body: JSON.stringify(params) } : null, 
     );
