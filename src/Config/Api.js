@@ -9,7 +9,7 @@ class Api {
         return {
             "Content-Type": "application/json",
             "Authorization": "Bearer "+accessToken,
-            "Access-Control-Allow-Origin":"*"
+           
         };
     }
 
