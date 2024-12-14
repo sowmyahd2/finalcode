@@ -4,7 +4,9 @@ import axios from 'axios';
 export const getDepartment = () => async dispatch => {
     try
     {
+        alert("d");
         const response =  await axios.get(`${Api}department`);
+       console.log("data",response);
         if(response.message === "success"){
         dispatch({
                 type : Type.departmentSuccess,
@@ -18,7 +20,7 @@ export const getDepartment = () => async dispatch => {
 export const getCategoryByDepartment = (city,id) => async dispatch => {
     try
     {
-        const response =  await Api.get('department/category/'+id)
+        const response =  await axios.get(`${Api}departmentmaicategory/`+id)
         if(response.message === "success"){
         dispatch({
                 type : Type.categoryByDepartmentSuccess,
