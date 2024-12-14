@@ -10,7 +10,7 @@ export const getcity = () => async dispatch => {
         if(response.message === "success"){
         dispatch({
                 type : Type.citySuccess,
-                payload : response.data
+                payload : response.data.data
             })
         }
     } catch(error){
