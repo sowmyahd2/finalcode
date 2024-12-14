@@ -36,8 +36,8 @@ const Header = () => {
         const fetchData = async () => {
           try {
              // Start loading
-            const response = await fetch("https://api.pickupinstore.com/reactApi/public/index.php/v1/city");
-           console.log(response);
+            const response = await fetch("https://radiancelooks.com/reactapi/public/index.php/api/city");
+           console.log(response.data);
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
             }
