@@ -57,7 +57,8 @@ const Homeslider = () => {
           dispatch(getDepartment());
       }, [])
       const departments = useSelector(state => state.Department.department)
-    return(
+   console.log(departments);
+      return(
         <>
         <Suspense>
         <div className="container-fluid homecategoryimage"> 

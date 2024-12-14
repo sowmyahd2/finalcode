@@ -10,8 +10,11 @@ const intialState = {
 const DepartmentReducer = (state=intialState, action) => {
     switch(action.type){
         case Type.departmentSuccess:
+            console.log("depatment",action.payload);
             return Object.assign({}, state, {
+                
                 department: action.payload
+                
             })
         case Type.categoryByDepartmentSuccess:
             return Object.assign({}, state,{
