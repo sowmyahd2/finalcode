@@ -1,19 +1,19 @@
 import Api from "../../Config/Api"
 import Type from './Types';
-
+import axios from 'axios';
 export const getcity = () => async dispatch => {
-    try {
-        const response = await Api.get('city', {
-            // Additional headers or parameters can be added here if needed
+    try
+    {
+        const response =  await axios.get(`${Api}city`,{
+          
         });
-        if (response.message === "success") {
-            dispatch({
-                type: Type.citySuccess,
-                payload: response.data,
-            });
+        if(response.message === "success"){
+        dispatch({
+                type : Type.citySuccess,
+                payload : response.data
+            })
         }
-    } catch (error) {
-        // Handle error (optional: log error or dispatch an error action)
-        console.error("Error fetching city data:", error);
+    } catch(error){
+    
     }
-};
+} 

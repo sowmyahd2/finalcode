@@ -1,10 +1,10 @@
 import Api from "../../Config/Api"
 import Type from './Types';
-
+import axios from 'axios';
 export const getDepartment = () => async dispatch => {
     try
     {
-        const response =  await Api.get('department');
+        const response =  await axios.get(`${Api}department`);
         if(response.message === "success"){
         dispatch({
                 type : Type.departmentSuccess,
