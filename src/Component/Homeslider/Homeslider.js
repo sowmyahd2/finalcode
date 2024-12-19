@@ -56,7 +56,7 @@ const Homeslider = () => {
       useEffect(() => {
           dispatch(getDepartment());
       }, [])
-      const departments = useSelector(state => state.Department.department)
+      const departments = useSelector(state => state.department)
    console.log(departments);
       return(
         <>

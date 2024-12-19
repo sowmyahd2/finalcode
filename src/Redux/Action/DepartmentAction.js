@@ -10,7 +10,7 @@ export const getDepartment = () => async dispatch => {
         if(response.message === "success"){
         dispatch({
                 type : Type.departmentSuccess,
-                payload : response.data.data
+                payload : response.data
             })
         }
     } catch(error){
