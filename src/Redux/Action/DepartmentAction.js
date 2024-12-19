@@ -7,7 +7,7 @@ export const getDepartment = () => async dispatch => {
       
         const response =  await axios.get(`${Api}department`);
         const res=response.data;
-        console.log("departmentdd",res);
+    
         if(res.message === "success"){
         dispatch({
                 type : Type.departmentSuccess,

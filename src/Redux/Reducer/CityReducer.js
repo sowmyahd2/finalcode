@@ -8,6 +8,7 @@ const intialState = {
 const CityReducer = (state=intialState, action) => {
     switch(action.type){
         case Type.citySuccess:
+         
             return Object.assign({}, state, {
                 city: action.payload
             })

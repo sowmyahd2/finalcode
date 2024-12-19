@@ -1,6 +1,6 @@
 import Api from '../../Config/Api';
 import Type from './Types';
-
+import axios from 'axios';
 export const getProduct = () => async dispatch => {
     try
     {
@@ -22,7 +22,9 @@ export const getProduct = () => async dispatch => {
 export const getMostViewProduct = (city) => async dispatch => {
     try
     {
-        const response = await Api.get('products/mostview/'+city)
+        const res =  await axios.get(`${Api}mostviewedproducts/${city}`);
+        const response=res.data;
+
         if(response.message === "success"){
             dispatch({
                     type : Type.mostViewProductSuccess,

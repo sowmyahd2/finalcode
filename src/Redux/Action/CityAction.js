@@ -5,12 +5,14 @@ export const getcity = () => async dispatch => {
     try
     {
         const response =  await axios.get(`${Api}city`,{
-          
+         
         });
-        if(response.message === "success"){
+        const res=response.data;
+        
+        if(res.message === "success"){
         dispatch({
                 type : Type.citySuccess,
-                payload : response.data
+                payload : res.data
             })
         }
     } catch(error){

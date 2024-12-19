@@ -311,7 +311,11 @@ const Header = () => {
                 <Modal open={cityModalOpen} onClose={() => { setCityToggleModal(!cityModalOpen) }} center>
                     <ul className="list-group citylist">
                         <h6>Select a City</h6>
-                       
+                        {city.map((data, index) => {
+                            return (
+                                <li onClick={() => { selectCity(data.CityName) }} className="list-group-item listli" key={index}><a href="#">{data.CityName}</a></li>
+                            )
+                        })}
 
                     </ul>
                 </Modal>

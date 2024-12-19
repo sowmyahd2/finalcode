@@ -1,10 +1,11 @@
 import Api from '../../Config/Api';
 import Type from './Types';
-
+import axios from 'axios';
 export const  getBrandcat= (city,id) => async dispatch => {
     try
     {
-        const response = await Api.get('brands/getcatbrand/'+city+'/'+id)
+        const res =  await axios.get(`${Api}categorybrands/${city}/${id}`);
+        const response=res.data;
        
         if(response.message === "success"){
             dispatch({
@@ -19,7 +20,8 @@ export const  getBrandcat= (city,id) => async dispatch => {
 export const getBrand = () => async dispatch => {
     try
     {
-        const response = await Api.get('brands')
+        const res =  await axios.get(`${Api}brands`);
+        const response=res.data;
         if(response.message === "success"){
             dispatch({
                     type : Type.brandSuccess,
@@ -33,6 +35,7 @@ export const getBrand = () => async dispatch => {
 export const getBrandOffer = (city,id) => async dispatch => {
     try
     {
+        
         const response = await Api.get('brands/offers/'+city+"/"+id)
         if(response.message === "success"){
             dispatch({
