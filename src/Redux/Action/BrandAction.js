@@ -54,7 +54,12 @@ export const getBrandOffer = (city,id) => async dispatch => {
 export const getBrandOfferDetail = (city,DepartmentId,BrandId) => async dispatch => {
     try
     {
-        const response = await Api.get('brands/offers/products/'+city+"/"+DepartmentId+"/"+BrandId)
+        
+        if(city==="mysore"){
+            city="mysuru";
+        }
+        const res =  await axios.get(`${Api}offerbrandsproducts/${city}/${DepartmentId}/${BrandId}`);
+        const response=res.data;
         if(response.message === "success"){
             dispatch({
                     type : Type.brandOfferDetailSuccess,
