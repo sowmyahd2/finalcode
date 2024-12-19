@@ -1,6 +1,6 @@
 import Api from '../../Config/Api';
 import Type from './Types';
-
+import axios from 'axios';
 export const placeOrder = (order, type, city) => async dispatch => {
     try
     {

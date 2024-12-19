@@ -1,6 +1,6 @@
 import Type from './Types';
 import Api from '../../Config/Api';
-
+import axios from 'axios';
 export const setCity = (city) =>  dispatch => {
     
         

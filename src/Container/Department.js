@@ -30,7 +30,7 @@ const Department = () => {
    
     const CategoryDepartment = useSelector(state => state.Department.categoryByDepartment);
     const ProductDepartment = useSelector(state => state.Product.productByDepartment);
-
+console.log("dadsdta",CategoryDepartment);
     const keys = Object.keys(CategoryDepartment);
     const productskeys = Object.keys(ProductDepartment);
     let count=false;

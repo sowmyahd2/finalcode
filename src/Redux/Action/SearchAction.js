@@ -1,6 +1,6 @@
 import Api from '../../Config/Api';
 import Type from './Types';
-
+import axios from 'axios';
 export const getSearch = (city,term) => async dispatch => {
     try
     {

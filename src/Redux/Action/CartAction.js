@@ -1,6 +1,6 @@
 import Api from '../../Config/Api';
 import Type from './Types';
-
+import axios from 'axios';
 export const getAddtoCart = (city,type,dealerPriceId,qty,) => async dispatch => {
     try
     {

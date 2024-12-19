@@ -1,7 +1,7 @@
 import Api from '../../Config/Api';
 import Type from './Types';
 
-
+import axios from 'axios';
 
 export const getLogin = (email,password) => async dispatch => {
     try{

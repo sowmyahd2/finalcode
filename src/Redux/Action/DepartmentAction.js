@@ -22,10 +22,12 @@ export const getCategoryByDepartment = (city,id) => async dispatch => {
     try
     {
         const response =  await axios.get(`${Api}departmentmaicategory/`+id)
-        if(response.message === "success"){
+       const res=response.data;
+       console.log("rad",res);
+        if(res.message === "success"){
         dispatch({
                 type : Type.categoryByDepartmentSuccess,
-                payload : response.data
+                payload : res.data
             })
         }
     } catch(error){
