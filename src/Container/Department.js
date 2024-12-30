@@ -1,5 +1,5 @@
 import React, { useEffect,useCallback, useMemo } from 'react'
-import './CommonContainer.css'
+
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Header from '../Component/Header/Header'
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,40 +23,47 @@ const Department = () => {
     const dispatch = useDispatch();
     const city = useSelector(state => state.UserPreference.city)
     useMemo(() => {
-        dispatch(getCategoryByDepartment(city, id))
+        dispatch(getCategoryByDepartment(id))
         dispatch(getProductByDepartment(city,id))
         dispatch(getBrowseByDepartment(city,id))
     }, [])
    
     const CategoryDepartment = useSelector(state => state.Department.categoryByDepartment);
     const ProductDepartment = useSelector(state => state.Product.productByDepartment);
-console.log("dadsdta",CategoryDepartment);
+
     const keys = Object.keys(CategoryDepartment);
     const productskeys = Object.keys(ProductDepartment);
+
     let count=false;
     const panelheading = () => { 
       
     let node = []
-        keys.forEach((key) => {
-        node.push(<BoxFilter title={key}>{panelbody(CategoryDepartment[key])}</BoxFilter>)
+        keys.forEach((key,value) => {
+         
+        node.push(<BoxFilter title={key}>{panelbody(CategoryDepartment[value])}</BoxFilter>)
         })
         return node;
     };
 
-    const panelbody = (item) => {
-        return item.map((data,index)=>{
+    const panelbody = (data) => {
+        
+       
+            
             return (<FilterBox label={data.SubCategoryName} link={'/subcategory/'+data.SubCategoryId} />)
-        }
-        )} 
+        } 
  
     const categoryheading = () => {
       
         let node = []
+     
         productskeys.forEach((key) => {
+            
             const title = key.split("_");
+           
             node.push(<ProductTittle title={title[0]} link={"/maincategory/"+title[1]}>{categorybody(ProductDepartment[key])}</ProductTittle>)
         })
             return node;
+ 
     };
         const categorybody = (item) => {
             if(item.length!=0){

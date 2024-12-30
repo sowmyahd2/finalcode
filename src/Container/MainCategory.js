@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import './CommonContainer.css'
+
 import Header from '../Component/Header/Header';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';

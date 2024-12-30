@@ -57,9 +57,17 @@ export const addtowishlist = (userid,pid,city) => async dispatch => {
 export const getProductByDepartment = (city,id) => async dispatch => {
     try
     {
-        const response = await Api.get('products/department/' +city +'/'+id)
+        if(city==="mysore"){
+            city="mysuru";
+        }
+       
+        const res =  await axios.get(`${Api}departmentproducts/${city}/${id}`);
+
+        const response=res.data;
         if(response.message === 'success'){
+            
             dispatch({
+               
                 type : Type.productByDepartmentSuccess,
                 payload : response.data
             })

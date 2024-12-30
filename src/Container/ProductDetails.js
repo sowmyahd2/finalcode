@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import './CommonContainer.css';
+
 import Header from '../Component/Header/Header';
 import Productpage from '../Component/ProductPage/ProductPage';
 import { useDispatch, useSelector } from 'react-redux';

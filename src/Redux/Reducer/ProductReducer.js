@@ -26,7 +26,9 @@ const ProductReducer = (state=intialState, action) => {
             })
 
         case Type.productByDepartmentSuccess:
+           
             return Object.assign({}, state,{
+                
                 productByDepartment:action.payload
             })
         case Type.productBySubcategorySuccess:
