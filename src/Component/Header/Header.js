@@ -211,7 +211,7 @@ const Header = () => {
                                     <a className="nav-link" href="#"><i className="fas fa-download" /> <span> App</span></a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#"><i className="fas fa-user" /> <span>Sellerer App</span></a>
+                                    <a className="nav-link" href="#"><i className="fas fa-user" /> <span>Seller App</span></a>
                                 </li>
                             </ul>
                         </div>
