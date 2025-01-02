@@ -37,7 +37,8 @@ CityonNet.Com Was Born On The Premise That More Than 96% Of Consumption Happens 
 <article>
 BCG Estimates That The Digitally Influenced Consumption (Check Online, Pickup In Store) Is Worth $500 Billion In Market Size.
 </article>
-<h3>Let Us Now Create 'The Future Of Your Retail Store™'</h3>
+<h3>Let Us Now Create 'The Future Of Your Retail  Store™'</h3>
+
         </div>
         
         </div>
