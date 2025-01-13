@@ -54,6 +54,7 @@ const Type = {
     productFailure:'productFailure',
     mostViewProductSuccess:'mostViewProductSuccess',
     mostViewProductFailure:'mostViewProductFailure',
+    shoppageproductsSucess:'shoppageproductsSucess',
     productByDepartmentSuccess:'productByDepartmentSuccess',
     productByDepartmentFailure:'productByDepartmentFailure',
     productBySubcategorySuccess:'productBySubcategorySuccess',

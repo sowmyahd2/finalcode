@@ -4,7 +4,11 @@ import axios from 'axios';
 export const getNewArrivals = (city,id) => async dispatch => {
     try
     {
-        const response = await Api.get('newarrival/'+city +'/'+id)
+      
+        const res = await axios.get(`${Api}newarrivalbrands/${id}/${city}`);
+       
+     const response=res.data;
+     console.log(response.data);
         if(response.message === "success"){
             dispatch({
                     type : Type.newArrivalsSuccess,

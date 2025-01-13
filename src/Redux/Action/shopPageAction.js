@@ -4,11 +4,19 @@ import axios from 'axios';
 export const getShopPage = (city,DealerId) => async dispatch => {
     try
     {
-        const response = await Api.get('/store/categoryproducts/'+DealerId+"/"+city)
-        if(response.message === "success"){
+       
+        let city1=city;
+        if(city1==="mysore"){
+            city1="mysuru";
+        }
+        
+        const res =  await axios.get(`${Api}dealerdetail/${DealerId}/${city1}`);
+
+       console.log("fd",res.data);
+        if(res.data.message === "success"){
             dispatch({
                     type : Type.shoppageSuccess,
-                    payload : response.data
+                    payload : res.data.data
                 })
             }
         } catch(error){  
@@ -19,6 +27,33 @@ export const getShopPage = (city,DealerId) => async dispatch => {
         }
 
 }
+export const getShopPageproducts= (city,DealerId) => async dispatch => {
+    try
+    {
+       
+        let city1=city;
+        if(city1==="mysore"){
+            city1="mysuru";
+        }
+        
+        const res =  await axios.get(`${Api}storeproducts/${city1}`);
+
+       console.log("fd",res.data);
+        if(res.data.message === "success"){
+            dispatch({
+                    type : Type.shoppageproductsSucess,
+                    payload : res.data.data
+                })
+            }
+        } catch(error){  
+            dispatch({
+                type : Type.shoppageFailure,
+                payload : error.message
+            })
+        }
+
+}
+
 export const getStoreMainCategoryProducts = (city,DealerId,DepartmentId, limit=24, offset=0, brandIds,catIds, price,sort) => async dispatch => {
     try
     {

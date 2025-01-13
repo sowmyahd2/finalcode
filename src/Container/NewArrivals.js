@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import './CommonContainer.css';
 import Header from '../Component/Header/Header';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,7 +13,12 @@ const NewArrivals = () => {
     const dispatch = useDispatch();
     const city = useSelector(state => state.UserPreference.city)
     useEffect(() => {
-        dispatch(getNewArrivals(city, id))
+        let ciTy=city;
+        if(ciTy=="mysore"){
+            ciTy="mysuru";
+           } 
+           
+        dispatch(getNewArrivals(ciTy, id))
         
     }, [])
     const ArrivalsFilter = useSelector(state => pathOr([],["department"],state.NewArrivals.newArrivals));

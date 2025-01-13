@@ -9,11 +9,13 @@ import { useParams } from 'react-router-dom';
 
 
 const StoreFront = (props) => { 
+
+    console.log("datadetails",props);
     const { DealerId } = useParams();
         const dispatch = useDispatch();
         const city = useSelector(state => state.UserPreference.city)
         
-    const shopPageDetail = props.detail
+    const shopPageDetail = props.detail.shopdetail.detail
     
     const shopPageBanner = () => {
         return "https://cityonnet-virtualmall.s3.amazonaws.com/StoreInfo/"+city+"/"+DealerId+".png"
