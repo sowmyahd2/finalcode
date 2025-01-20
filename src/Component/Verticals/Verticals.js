@@ -23,7 +23,7 @@ const Vertical = () => {
     return(
         
         <div className="verticals col-lg-12 col-md-12 col-sm-12 col-12 "> 
-            <div className="row row-cols-lg-6 row-cols-md-6 row-cols-sm-3 row-cols-3 mx-0">
+            <div className="row row-cols-lg-6 row-cols-md-3 row-cols-sm-3 row-cols-3 mx-0">
              {links.map(link =><div className="figlayout mx-0 " key={link.KEY}> <figure className="figure col figtag" onClick={()=>dispatch(toggleDrawer(drawer,link.KEY))}>
                <Link to={link.link}>  <img width="388px" height="232px" src={link.image} className="figure-img" alt={link.name} />
                         <figcaption className="figure-caption text-center" >{link.name}</figcaption></Link>

@@ -1,14 +1,18 @@
-.loginlayout{padding: 0px;
-    height: 100%;
-    margin: 30px auto;}
+.loginlayout{padding: 0px;margin: 30px auto;}
 .loginbox{padding: 10px; margin: 0 auto;background: #e5e5e5;}
-.logininner{border: 1px solid #ccc;margin: 0 auto;background: #fff;}
+.logininner{border: 1px solid #ccc;margin: 0 auto;background: #fff;padding: 0px 10px;}
 .react-tabs{background: #e5e5e5;padding: 10px;margin: 15px 0px;width: 100%;}
 
 .loginicon{background: #3a4080;display:flex;justify-content: center;flex-direction: column; color: #fff;    font-size: 12px;
     padding: 10px 15px;}
 .form-horizontal{margin: 20px 0 0 0px;}
-.loginbutton{background: #ffe11b;border: 1px solid #ffe11d;}
+.loginbutton{border: 1px solid hsl(7, 89%, 64%) !important;
+    background: hsl(7, 89%, 64%) !important;
+    margin: 15px auto;
+    color: #fff !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+height: 50px;}
 .login_socialmedia{margin:0}
 .login_socialmedia a{color: #fff;}
 .login_socialmedia a:hover{color: #fff;}
@@ -16,6 +20,55 @@
 .or-seperator i{padding:0 10px;background:#f7f7f7;position:relative;top:-11px;z-index:1}
 .loginregis{border-bottom: 1px solid #ccc !important;padding:5px 0px !important;}
 .loginregis li{padding: 0px;}
+.otpfield {
+    display: inline-flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 10px 0px;
+    }
+.otpfield input{display: inline-flex;width: 50px;height: 50px;}
+.formotp{border: 1px solid #ffee1f;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto !important;
+    align-content: center;
+    background: #ffee1f;
+    }
+.formotpregis{border: 1px solid #ffee1f;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto !important;
+    align-content: center;
+    background: #ffee1f;
+margin: 15px auto 0px auto !important;}
+.formotp a{color: #3a4080;}
+.formotp a:hover{color: #3a4080;cursor: pointer;font-size: 16px;font-weight: 600;}
+.formlabel{margin: 0px !important;padding: 10px 0px 0px;display: flex;justify-content: space-evenly;}
+.formotpregis a{color: #3a4080;}
+.formotpregis a:hover{color: #3a4080;cursor: pointer;font-size: 16px;font-weight: 600;}
+.logininputbox{height: 50px !important;}
+.rememberlabel{padding: 0px !important;
+    margin: 0px !important;
+    display: inline-flex;
+    justify-content: auto;
+    align-content: center;
+    align-items: center;}
+    .rememberlabel > input{width: 25px;height: 25px;}
+    .forgotpassword{padding: 0px !important;text-align: right;}
+    .react-tabs__tab {
+        display: inline-block;
+        border: 1px solid transparent;
+        border-bottom: none;
+        bottom: 0px !important;
+        position: relative;
+        list-style: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        width: 50%;
+        text-align: center;
+        }
 
 @media(min-width:200px) and (max-width:500px){
     .loginicon{padding:  5px 20px 0 10px;}
@@ -24,21 +77,27 @@
 
 /*..............................Visible-XS...........................*/
 @media(min-width:501px) and (max-width: 767px){
-    .loginicon{padding:  5px 20px 0 10px;}
+    .loginicon{}
     .loginicon i{font-size: 12px; margin: 0 auto;}
+    .loginlayout{width: 80%;}
+    .loginbox{width: 90%;}
 
 }
 
 /*..............................Visible-SM...........................*/
 @media(min-width: 768px) and (max-width: 991px){
-
+    .loginlayout{width: 60%;}
+    .loginbox{width: 90%;}
 }
 /*..............................Visible-MD...........................*/
 @media(min-width: 992px) and (max-width: 1199px){
-
+    .loginlayout{width: 50%;}
+    .loginbox{width: 80%;}
 }
 /*..............................Visible-LG...........................*/
 @media(min-width: 1200px) and (max-width: 1900px){
+    .loginlayout{width: 50%;}
+    .loginbox{width: 65%;}
 }
 
 

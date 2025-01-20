@@ -108,7 +108,7 @@ const Header = () => {
                         
     
   
-            <div className="cityonnet_Header_xs d-block d-md-none">
+            <div className="cityonnet_Header_xs d-block d-lg-none">
                 <div className="container-fluid ">
                     <div className="row">
                         <div className="headerleft col-6 ">
@@ -191,27 +191,27 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="cityonnet_Header d-none d-md-block">
+            <div className="cityonnet_Header d-none d-lg-block">
                 <div className="container-fluid ">
                     <div className="row">
-                        <div className="headerleft col-2 ">
+                        <div className="headerleft col-7 ">
                             <Logo />
                             
                         </div>
-                        <div className="headerright col-10">
-                            <ul className="nav navlist justify-content-end">
-                                <li className="nav-item">
+                        <div className="headerright col-5">
+                            <ul className="nav navlist">
+                                {/* <li className="nav-item col-4">
                                 <GoogleTranslate /> 
+                                </li> */}
+                                                               <li className="nav-item navpad col-4">
+                                    <a className="nav-link" href="#"><i className="fas fa-language" /> <span> language</span></a>
                                 </li>
-                               
-                                <li className="nav-item" onClick={() => { setCityToggleModal(!cityModalOpen) }}>
+                                <li className="nav-item navpad col-4" onClick={() => { setCityToggleModal(!cityModalOpen) }}>
                                     <a className="nav-link" href="#"><i className="fas fa-map-marker-alt" /> <span> {selectedCity}</span></a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#"><i className="fas fa-download" /> <span> App</span></a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#"><i className="fas fa-user" /> <span>Seller App</span></a>
+
+                                <li className="nav-item navpad col-4">
+                                    <a className="nav-link" href="#"><i className="fas fa-user" /> <span>Seller</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -219,8 +219,8 @@ const Header = () => {
                 </div>
             </div>
             <Sticky className="stickymenu">
-                <div className="cityonnet_Header_menu d-none d-md-block" >
-                    <div className="container-fluid ">
+                <div className="cityonnet_Header_menu d-none d-lg-block" >
+                    <div className="container-fluid padd0">
                         <div className="row">
                             <div className="headersearch col-12">
                                 <a className="col-2 categories px-2" href=""><i className="fas fa-list " /> All Categories </a>
@@ -269,16 +269,16 @@ const Header = () => {
                                     </div>
                                 </div>
 
-
-                                <ul className="nav navlist_menu col-5">
-                                    <li className="nav-item">
+                                <div className="headerright col-5">
+                                <ul className="nav navlist_menu ">
+                                    <li className="nav-item navpad col-4">
                                         <Link className="nav-link" to="/cart"><i className="fas fa-shopping-cart" /> <span> PickupinStore {pcount!=0 ?(pcount):("")}</span></Link>
                                     </li>
-                                    <li className="nav-item">
+                                    <li className="nav-item navpad col-4">
                                         <Link className="nav-link" to="/cart"><i className="fa fa-motorcycle" aria-hidden="true" /> <span> Home Delivery{homecount!=0?(homecount):("")} </span></Link>
                                     </li>
                                     {userId != "" && (
-                                        <li className="nav-item">
+                                        <li className="nav-item navpad col-4">
                                         {isOpen &&     
                                             <Popup/>  }
                             {isOpen && 
@@ -297,6 +297,7 @@ const Header = () => {
                                         </li>
                                     )}
                                 </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -311,9 +312,16 @@ const Header = () => {
                 <Modal open={cityModalOpen} onClose={() => { setCityToggleModal(!cityModalOpen) }} center>
                     <ul className="list-group citylist">
                         <h6>Select a City</h6>
+                        <input
+                                onBlur={() => { dispatch(ClearAutoComplete()) }}
+                                className="inputbarmap"
+                                type="text"
+                                placeholder="Search city" />
+
                         {city.map((data, index) => {
                             return (
-                                <li onClick={() => { selectCity(data.CityName) }} className="list-group-item listli" key={index}><a href="#">{data.CityName}</a></li>
+                                <li onClick={() => { selectCity(data.CityName) }} className="list-group-item listli" key={index}>
+                                    <i className="fas fa-map-marker-alt citylistmap" /> <a href="#">{data.CityName}</a></li>
                             )
                         })}
 

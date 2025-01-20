@@ -24,23 +24,23 @@ const MobileRegister = () => {
     }
     return(    
       
-            <div className="loginlayout col-12">
+            <div className="loginlayout col-lg-4 col-md-6 col-sm-8 col-12">
                        
                 <div className="container-fluid">
                 <div className="row paddingzero">
-                    <div className="loginbox col-lg-4 col-md-6 col-sm-8 col-12">
-                        <div className="logininner col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div className="loginbox ">
+                        <div className="logininner ">
                         <div className="form-group ">
                         <div className="form-group ">
                                     <div className="input-group">
                                     <div className="input-group-addon loginicon "><i className="fa fa-lock" /></div>
-                                    <input type="password" name="register_password" className="form-control col-11" placeholder="Password" required="required" />
+                                    <input type="password" name="register_password" className="form-control logininputbox col-11" placeholder="Password" required="required" />
                                     </div>
                                 </div>
                                 <div className="form-group ">
                                     <div className="input-group">
                                     <div className="input-group-addon loginicon "><i className="fa fa-lock" /></div>
-                                    <input type="password" name="register_cpassword" className="form-control col-11" placeholder="Confirm Password" required="required" />
+                                    <input type="password" name="register_cpassword" className="form-control  logininputboxcol-11" placeholder="Confirm Password" required="required" />
                                     </div>
                                 </div>
                                 
