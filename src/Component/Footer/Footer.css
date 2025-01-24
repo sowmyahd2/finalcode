@@ -19,7 +19,7 @@ body{margin:0 auto;}
 .footer_pmworks{padding: 0px !important;}
 .listfooter{padding: 0px !important;margin:5px 0;}
 .listfooter li {display: inline-flex;}
-.listfooter li a{color: #333; padding: 0px 5px ;font-size: 12px;}
+.listfooter li a{color: #333; padding: 0px 0px ;font-size: 12px;}
 .listfooter li b{color: #333; padding: 0px ;font-size: 12px;}
 .cityfoot{padding: 0px 5px !important;font-size: 12px;text-align: justify;}
 .cityfoot span{padding: 0px !important;font-size: 12px !important;}
@@ -32,9 +32,9 @@ body{margin:0 auto;}
 .list_footer li span{color: #333; padding: 0px 10px !important;}
 .list_footer a{color: #333; padding: 0px 10px 0 0 !important;}
 .footer_pmworks p{padding: 0px !important;margin: 0px;font-size: 14px;}
-.footer_pmworks img{margin: 0 auto;width: auto;}
+.footer_pmworks img{margin: 0 auto;width: 100%;}
 .footerleft{padding: 0px !important;}
-.allfooter{padding: 10px !important;text-align: justify;background: #fff;}
+.allfooter{padding: 10px 0px !important;text-align: justify;background: #fff;}
 .allfooter > p{margin: 0px;font-size: 11px;border-bottom: 1px solid #ccc;padding:0px 5px 5px 5px;}
 .footer_rights {padding: 0px !important;}
 .footerhr{width: 100%;background: #e5e5e5;margin: 0px 0;position: relative;padding: 0px 0;border-bottom:10px solid #f56551;}
@@ -53,7 +53,7 @@ body{margin:0 auto;}
     display: flex;
     flex-direction: column;}
 .footer_pmworks p{padding: 0px;margin: 0px;text-align: center;}
-.footer_pmworks img{margin: 0 auto;width: auto;height: auto;}
+.footer_pmworks img{margin: 0 auto;width: 100%;height: auto;}
 .footer_layout{display: block;background: #fff;}
 .footer_terms {margin: 10px 0px;text-align: center;}
 .footer_terms ul li a {padding: 0px;}
@@ -78,7 +78,7 @@ body{margin:0 auto;}
         display: flex;
         flex-direction: column;}
     .footer_pmworks p{padding: 0px;margin: 0px;text-align: center;}
-    .footer_pmworks img{margin: 0 auto;width: auto;height: auto;}
+    .footer_pmworks img{margin: 0 auto;width: 100%;height: auto;}
     .footer_layout{display: block;background: #fff;}
     .footer_terms {margin: 10px auto;text-align: center;}
     .footer_terms ul li a {padding: 0px;}

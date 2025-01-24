@@ -201,7 +201,7 @@ const Header = () => {
                         <div className="headerright col-5">
                             <ul className="nav navlist">
                                 {/* <li className="nav-item col-4">
-                                <GoogleTranslate /> 
+                                <GoogleTranslate />  
                                 </li> */}
                                                                <li className="nav-item navpad col-4">
                                     <a className="nav-link" href="#"><i className="fas fa-language" /> <span> language</span></a>
@@ -211,7 +211,7 @@ const Header = () => {
                                 </li>
 
                                 <li className="nav-item navpad col-4">
-                                    <a className="nav-link" href="#"><i className="fas fa-user" /> <span>Seller</span></a>
+                                    <a className="nav-link" href="#"><i className="fas fa-user-circle" /> <span>Seller</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -223,8 +223,9 @@ const Header = () => {
                     <div className="container-fluid padd0">
                         <div className="row">
                             <div className="headersearch col-12">
-                                <a className="col-2 categories px-2" href=""><i className="fas fa-list " /> All Categories </a>
-                                <div className="col-5 searchinput">
+                                <div className='headermenuflex col-7'>
+                                <div className="col-3 categories" href=""><i className="fas fa-list " /> All Categories </div>
+                                <div className="col-9 searchinput">
                                     <input
                                         onBlur={() => { dispatch(ClearAutoComplete()) }}
                                         className="inputbar"
@@ -268,7 +269,7 @@ const Header = () => {
                                         }
                                     </div>
                                 </div>
-
+                                </div>
                                 <div className="headerright col-5">
                                 <ul className="nav navlist_menu ">
                                     <li className="nav-item navpad col-4">

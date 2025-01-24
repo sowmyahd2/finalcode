@@ -90,15 +90,15 @@ const Department = () => {
                 {panelheading()}
             </div>
         <div className="departmentbanner col-lg-10 col-md-12 col-sm-12 col-12 my-2">
-            <LazyLoadImage className="depimage img-fluid" rel="preload" as="image" src={banner()} />
-            <div className="container-fluid my-2">
+            <LazyLoadImage className="depimage img-fluid" width={"100%"} rel="preload" as="image" src={banner()} />
+            {/* <div className="container-fluid my-2">
                 <div className="row">
                     <div className="browselayout col-12 ">
                         <BrowseByShop stores={BrowseByDepStore} />
                         <BrowseByBrands brands={BrowseByDepbrand} />
                     </div>
                 </div>
-            </div>
+            </div> */}
         {categoryheading()}
        
         </div>

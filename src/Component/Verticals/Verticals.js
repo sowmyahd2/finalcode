@@ -12,7 +12,7 @@ var links = [
   {"KEY":3, "link":"/newarrivals","name":"New Arrivals","image":"https://cityonnet-virtualmall.s3.ap-southeast-1.amazonaws.com/Homepage_Vertical_Images/Newarrivals.webp"},
   {"KEY":4, "link":"/deals","name":"Deals & offer","image":"https://cityonnet-virtualmall.s3.ap-southeast-1.amazonaws.com/Homepage_Vertical_Images/Dealsandoffers.webp"},
   {"KEY":5, "link":"","name":"Near By You","image":"https://cityonnet-virtualmall.s3.ap-southeast-1.amazonaws.com/Homepage_Vertical_Images/Nearbyyou.webp"},
-  ];
+  ]; 
   
 
 const Vertical = () => {

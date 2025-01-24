@@ -1,6 +1,6 @@
 /* ..............HOME.JS CSS STARTS HERE............... */
 
-.productitemm {padding: 0 15px;}
+.productitemm {padding: 0px;}
 .infinite-scroll-component__outerdiv {
     width: -webkit-fill-available;
 }
@@ -64,7 +64,8 @@
 
 .offerdetailsbanner{padding: 10px;margin: 0px 0px;background-color: #E4E5EB;}
 .odbimage{border: 1px solid #ccc;}
-.offerdetailproducts{background: #E4E5EB;padding: 0px 0px;}
+.offerdetailproducts{background: #E4E5EB !important;padding: 0px 0px;}
+
 
 /* ..............BRANDOFFERDETAILS.JS CSS ENDS HERE............... */
 

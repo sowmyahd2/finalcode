@@ -58,7 +58,7 @@ const Login = () => {
    
     return(             
             <div className="loginlayout">
-                <div className="container-fluid">
+                <div className="container-fluid px-0">
                 <div className="row paddingzero">
                     <div className="loginbox">
                         <div className="logininner">
@@ -144,7 +144,11 @@ const Login = () => {
    </div></div>   
       }
                                
-                                
+                               <div className="form-group formlabel">
+                                    
+                                    <div className="col-lg-6 col-md-6 col-sm-6 col-6 rememberlabelreg" htmlFor="rememberMe"> ....</div>
+                                    <div className="col-lg-6 col-md-6 col-sm-6 col-6 forgotpasswordereg" data-target="#pwdModal" data-toggle="modal">....</div>
+                                </div>  
                                 <button type="Button"  onClick={(event)=>Mobilelogin(event)} className="btn loginbutton col-12" >Register</button>
 
                                 <div className="or-seperator my-3"><i>or</i></div>

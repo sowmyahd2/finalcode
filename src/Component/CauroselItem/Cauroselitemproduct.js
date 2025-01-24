@@ -7,7 +7,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const Cauroselitemproduct = (props) => {
     return(
 
-        <div className="productlayout m-1">
+        <div className="productlayout">
             <Link to={props.link}  style={{ textDecoration: 'none' }}> 
             <div className="productimage">
                 <LazyLoadImage effect='blur' className="imageproduct"  onError={event => {

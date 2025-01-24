@@ -18,8 +18,9 @@ const BrandOffer = () => {
     return(
         <> 
         <Header />
-        <div className="container-fluid my-2">
-            <p style={{left: "10px"}}><span style={{color:"red"}}>*</span>All brand logos depicted here are registered trademarks and owned by their respective holding companies      </p>
+        <div className='brandofferpage'>
+        <div className="container-fluid">
+            <p style={{margin: "5px 0 10px 0"}}><span style={{color:"red"}}>*</span>All brand logos depicted here are registered trademarks and owned by their respective holding companies      </p>
             <div className="row"> 
             {brandDeals.map((data,index)=>{
                   return(
@@ -27,6 +28,7 @@ const BrandOffer = () => {
                   )
                 })}
             </div>
+        </div>
         </div>
         </>
     )

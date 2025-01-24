@@ -1,20 +1,65 @@
 /* .mostviewed{background: #E4E6E8;margin: 10px 0;padding: 0px;} */
 
-.mostviewed{margin: 20px 0;padding: 0px;background: #fff;}
+.mostviewed{margin: 60px 0;padding: 0px !important;background: #fff;}
 .mostviewed h5{padding: 20px 0 0px 0px;
     font-size: 21px;
     margin: 50px auto 20px;
     text-align: center;
     color: #3a4080;
     text-decoration: underline;}
+    .slick-list{width: 98%; margin: 0 auto !important;}
+.sliderlayoutcauroselproduct > button{height: 260px !important;
+    width: 40px !important;
+    background: #eee;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;}
+    .sliderlayoutcauroselproduct > button:hover{height: 260px !important;
+        width: 40px !important;
+        background: #ccc;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        align-content: center !important;}
+    .sliderlayoutcauroselstore > button{height: 260px !important;
+            width: 40px !important;
+            background: #eee;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            align-content: center !important;}
+    .sliderlayoutcauroselstore > button:hover{height: 260px !important;
+                width: 40px !important;
+                background: #ccc;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                align-content: center !important;}
+    .sliderlayoutcauroselbrand > button{height: 260px !important;
+                    width: 40px !important;
+                    background: #eee;
+                    display: flex !important;
+                    justify-content: center !important;
+                    align-items: center !important;
+                    align-content: center !important;}
+    .sliderlayoutcauroselbrand > button:hover{height: 260px !important;
+                        width: 40px !important;
+                        background: #ccc;
+                        display: flex !important;
+                        justify-content: center !important;
+                        align-items: center !important;
+                        align-content: center !important;}
+                        .sliderlayoutcauroselbrand > button:before{left: 0px !important;
+                            position: relative;}
 /* .slick-arrow{background: #fff !important;color: #fff;transition: none;border: 1px solid #ccc;}
 .slick-arrow:hover{background: #3a4080 !important;color: #fff;transition: none;color: #FFF;} */
-.slick-prev{color:#fff;width: 25px !important;height: 25px !important;}
-.slick-next{color:#fff;width: 25px !important;height: 25px !important;}
-.productimage {background:#fff;padding: 0px;height: 220px !important;flex-direction: column !important;display: flex !important;justify-content: center !important;border-radius: 5px;}
+.slick-prev{color:#fff;width: 30px !important;height: 30px !important;}
+.slick-next{color:#fff;width: 30px !important;height: 30px !important;}
+.productimage {background:#fff;padding: 0px;height: 220px !important;flex-direction: column !important;display: flex !important;justify-content: center !important;border-radius: 10px;}
 .imageproduct {height: auto;max-height: 250px;max-width: 80%;width:auto;margin: 0 auto;padding: 5px;}
-.productlayout {text-align: center;justify-content: center;cursor: pointer;background:#fff;margin: 0px 0px 0 0;height: 250px;border-radius: 5px;}
-/* .productlayout:hover {text-align: center;justify-content: center;cursor: pointer;background: #ffee1f;} */
+.productlayout {text-align: center;justify-content: center;cursor: pointer;background:#fff;margin: 0px 5px;height: 260px;border-radius: 10px;border: 1px solid #ddd;}
+.productlayout:hover {text-align: center;justify-content: center;cursor: pointer;border: 1px solid hsl(7, 89%, 64%);}
 .productlayoutone {text-align: center;justify-content: center;cursor: pointer;background:#fff;margin: 0px 0px 0 0;height: 200px;border-radius: 5px;}
 
 .mostviewheading{padding: 0;margin:0px 0px;}
@@ -24,7 +69,7 @@
 .producttext {
     padding: 10px;  
     margin: 0;
-    background: #fff;
+    background: #fff;border-top: 1px solid #bbb;
 }
 .locality p {
     margin: 0 0 10px 0;
@@ -37,6 +82,41 @@
 .slick-next:before{color: #aaa !important;}
 .slick-prev:before, .slick-next:before{font-size: 25px !important;line-height: 1.3 !important;}
 
-.sliderlayoutcauroselproduct{border: none;clear: both; width: 96%;margin: 0 auto;border-top:1px solid #ccc;border-bottom: 1px solid #ccc;}
-.sliderlayoutcauroselstore{border: none;clear: both; width: 96%;margin: 0 auto;border-top:1px solid #ccc;border-bottom: 1px solid #ccc;}
-.sliderlayoutcauroselbrand {border: none;clear: both; width: 96%;margin: 0 auto;border-top:1px solid #ccc;border-bottom: 1px solid #ccc;}
+.sliderlayoutcauroselproduct{border: none;clear: both; width: 97%;margin: 0 auto;}
+.sliderlayoutcauroselstore{border: none;clear: both; width: 97%;margin: 0 auto;}
+.sliderlayoutcauroselbrand {border: none;clear: both; width: 97%;margin: 0 auto;}
+
+
+@media (max-width: 575.98px) { 
+    .sliderlayoutcauroselproduct{border: none;clear: both; width: 92%;margin: 0 auto;}
+.sliderlayoutcauroselstore{border: none;clear: both; width: 92%;margin: 0 auto;}
+.sliderlayoutcauroselbrand {border: none;clear: both; width: 92%;margin: 0 auto;}
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .sliderlayoutcauroselproduct{border: none;clear: both; width: 92%;margin: 0 auto;}
+.sliderlayoutcauroselstore{border: none;clear: both; width: 92%;margin: 0 auto;}
+.sliderlayoutcauroselbrand {border: none;clear: both; width: 92%;margin: 0 auto;}
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .sliderlayoutcauroselproduct{border: none;clear: both; width: 94%;margin: 0 auto;}
+.sliderlayoutcauroselstore{border: none;clear: both; width: 94%;margin: 0 auto;}
+.sliderlayoutcauroselbrand {border: none;clear: both; width: 94%;margin: 0 auto;}
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .sliderlayoutcauroselproduct{border: none;clear: both; width: 95%;margin: 0 auto;}
+    .sliderlayoutcauroselstore{border: none;clear: both; width: 95%;margin: 0 auto;}
+    .sliderlayoutcauroselbrand {border: none;clear: both; width: 95%;margin: 0 auto;}
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+    .sliderlayoutcauroselproduct{border: none;clear: both; width: 97%;margin: 0 auto;}
+.sliderlayoutcauroselstore{border: none;clear: both; width: 97%;margin: 0 auto;}
+.sliderlayoutcauroselbrand {border: none;clear: both; width: 97%;margin: 0 auto;}
+}

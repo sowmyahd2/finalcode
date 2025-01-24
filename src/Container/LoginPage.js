@@ -8,7 +8,7 @@ const Header = lazy(() => import('../Component/Header/Header'));
 const LoginPage = () => { 
     
     return(
-        <div className="container-fluid"> 
+        <div className="container-fluid px-0"> 
 
             <Header />
             <Login />

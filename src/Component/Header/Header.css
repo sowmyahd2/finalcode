@@ -8,6 +8,11 @@ body{margin:0 auto;}
     padding-left: 10px;
     font-size: 16px;
     }
+    .brandofferpage {
+        padding: 10px 10px;
+        }
+
+.offerdetailproducts   {background: #eee;}
 @media (max-width: 575.98px) { 
     .cityonnet_Header_xs{background: #fff;padding: 0px 0px;}
 .header{color: #fff;}
@@ -18,14 +23,14 @@ body{margin:0 auto;}
     display: inline-flex;
     align-content: center;
     align-items: center;}
-.headerleft{padding: 10px 10px !important ;display: flex;}
-.headerright{padding: 2px 10px !important;display: inline-flex;
+.headerleft{padding: 5px 10px !important ;display: flex;}
+.headerright{padding: 0px 5px !important;display: inline-flex;
     justify-content: end;
     align-items: center;
     align-content: center;}
-.headerleft i {padding: 0px 10px 0 0;
-    color: #000;
-    font-size: 20px;
+.headerleft i {padding: 0px 5px 0 0;
+    color: #3a4080;
+    font-size: 22px;
     justify-content: center;
     align-items: center;
     align-content: center;}
@@ -34,11 +39,13 @@ body{margin:0 auto;}
 .gobutton {height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #3a4080;    position: absolute;
     right: 0px;}
 .gobutton i{padding: 0px 10px;}
-.navlist{margin: 5px 0 0 0;}
-.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+.navlist{margin: 0px 0 0 0;}
+.react-responsive-modal-modal{width: 100%;
+    margin: 0px !important;
+    display: flex !important;}
 .citylist{background: #E4E6E8;}
 .citylist h6{background: #E4E6E8;padding: 10px;}
-.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 25px !important;border: 1px solid #fff !important;background: #fff  !important;}
 .listli{padding: 5px 10px !important;}
 .listli a{color: #3a4080 !important;}
 .inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
@@ -60,13 +67,16 @@ body{margin:0 auto;}
 .navpad{padding: 0px !important;}
 .navlist_menu{padding: 0px !important;}
 .padd0{padding: 0px !important;}
+
+
+
 }
 
 /*// Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) { 
     .cityonnet_Header_xs{background: #fff;padding: 0px 0px;}
 .header{color: #fff}
-.logo{width: 120px;height: auto;padding: 0px 10px !important }
+.logo{width: 120px;height: auto;padding: 0px 5px !important }
 .navlist li a {padding:0px 10px;color: #3a4080;list-style-type: none;font-size: 14px;}
 .navlist li i{border:1px solid #3a4080;color: #3a4080;width: 30px;
     height: 30px;
@@ -74,8 +84,8 @@ body{margin:0 auto;}
     display: inline-flex;
     align-content: center;
     align-items: center;}
-.headerleft{padding: 10px 10px !important ;display: flex;}
-.headerright{padding: 2px 10px !important;display: inline-flex;
+.headerleft{padding: 5px 10px !important ;display: flex;}
+.headerright{padding: 0px 5px !important;display: inline-flex;
     justify-content: end;
     align-items: center;
     align-content: center;}
@@ -90,11 +100,13 @@ body{margin:0 auto;}
 .gobutton {height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #3a4080;    position: absolute;
     right: 0px;}
 .gobutton i{padding: 0px 10px;}
-.navlist{margin: 5px 0 0 0;}
-.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+.navlist{margin: 0px 0 0 0;}
+.react-responsive-modal-modal{width: 100%;
+    margin: 0px !important;
+    display: flex !important;}
 .citylist{background: #E4E6E8;}
 .citylist h6{background: #E4E6E8;padding: 10px;}
-.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 25px !important;border: 1px solid #fff !important;background: #fff  !important;}
 .listli{padding: 5px 10px !important;}
 .listli a{color: #3a4080 !important;}
 .inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
@@ -119,10 +131,10 @@ body{margin:0 auto;}
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) { 
-.cityonnet_Header{background:#fff;padding: 0px 5px;}
+.cityonnet_Header{background:#fff;padding: 5px 5px;}
 .cityonnet_Header_xs{background: #fff;padding: 0px 0px;}
 .header{color: #000;}
-.logo{width: 150px;height: auto;padding: 0px 10px !important/*mix-blend-mode: multiply;background:#fff;padding: 0px 5px;*/}
+.logo{width: 150px;height: auto;padding: 0px 5px !important/*mix-blend-mode: multiply;background:#fff;padding: 0px 5px;*/}
 .navlist li a {padding:0px 10px;color: #3a4080;list-style-type: none;font-size: 14px;}
 .navlist li i{border:1px solid #3a4080;color: #3a4080;width: 30px;
     height: 30px;
@@ -131,7 +143,7 @@ body{margin:0 auto;}
     align-content: center;
     align-items: center;}
 .headerleft{padding: 5px 10px !important ;display: flex;}
-.headerright{padding: 2px 10px !important;display: inline-flex;
+.headerright{padding: 0px 5px !important;display: inline-flex;
     justify-content: end;
     align-items: center;
     align-content: center;}
@@ -146,7 +158,7 @@ body{margin:0 auto;}
 .gobutton {height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #3a4080;    position: absolute;
     right: 10px;}
 .gobutton i{padding: 0px 10px;}
-.navlist{padding: 0px;}
+.navlist{padding: 0px;margin: 0px !important;}
 .categories {color:  #ffee1f !important;padding: 0px;padding: 7px 0;font-size: 13px;font-weight: 500;height: 35px;}
 .categories i{padding: 5px;}
 .navlist_menu li a{color: #fff;padding: 0px;font-size: 14px;}
@@ -158,10 +170,12 @@ body{margin:0 auto;}
     align-items: center;}
 .navlist_menu span{padding: 0px;}
 .stickymenu{z-index: 1;} 
-.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+.react-responsive-modal-modal{width: 100%;
+    margin: 0px !important;
+    display: flex !important;}
 .citylist{background: #E4E6E8;}
 .citylist h6{background: #E4E6E8;padding: 10px;}
-.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 25px !important;border: 1px solid #fff !important;background: #fff  !important;}
 .listli{padding: 5px 10px !important;}
 .listli a{color: #3a4080 !important;}
 .inputbar{height: 35px;width: 100%;font-size: 13px;padding: 5px;}
@@ -185,11 +199,12 @@ body{margin:0 auto;}
 .navpad{padding: 0px !important;}
 .navlist_menu{padding: 0px !important;}
 .padd0{padding: 0px !important;}
+.headermenuflex{display: flex !important;}
 }
-
+ 
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199.98px) { 
-.cityonnet_Header{background:#fff;padding: 0px 5px;}
+.cityonnet_Header{background:#fff;padding: 5px 5px;}
 .cityonnet_Header_menu{background: hsl(7, 89%, 64%);}
 .header{color: #fff;padding: 0px;}
 .logo{width: 150px;height: auto;padding: 0px !important;/*mix-blend-mode: multiply;background:#fff;padding: 0px 5px;*/}
@@ -202,6 +217,7 @@ body{margin:0 auto;}
     align-items: center;}
 .headerleft{padding: 0px 5px !important }
 .headerright{padding: 2px 10px !important}
+.headerrightmenu{padding: 2px 12px !important;}
 .headerleft i {position: relative;top: 5px;padding: 0px 5px;color: #fff;font-size: 20px;}
 .headersearch{padding: 0px  !important;display: flex;margin: 3px auto;}
 .inputsearch{width: 100%;font-size: 14px;padding: 5px;background: #fff;border: 1px solid #fff;height: 35px;margin: 0px 0 0 10px;}
@@ -209,8 +225,20 @@ body{margin:0 auto;}
     right: 10px;}
 .gobutton i{padding: 0px 10px;}
 .navlist{margin: 10px 0 0 0;padding: 0px;}
-.categories {color: #ffee1f !important;padding: 0px;padding: 5px;font-size: 14px;font-weight: 500;height: 35px;}
-.categories i{padding: 5px;}
+.categories {
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0px !important;
+    }
+.categories i{padding:0px 10px 0px 0px;font-size: 19px;font-weight: 600;}
+.headerrightmenu{padding: 2px 12px !important;}
 .navlist_menu li a{color: #fff;padding: 0px;font-size: 14px;}
 .navlist_menu li i{background: #fff;color: #3a4080;border: 1px solid #fff;width: 30px;
     height: 30px;
@@ -220,10 +248,10 @@ body{margin:0 auto;}
     align-items: center;}
 .navlist_menu span{padding: 0px;}
 .stickymenu{z-index: 1;position:relative;}
-.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+/* .react-responsive-modal-modal{max-width: 600px !important;width: 100%;} */
 .citylist{background: #E4E6E8;}
 .citylist h6{background: #E4E6E8;padding: 10px;}
-.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 25px !important;border: 1px solid #fff !important;background: #fff !important;}
 .listli{padding: 5px 10px !important;}
 .listli a{color: #3a4080 !important;}
 .inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
@@ -245,15 +273,15 @@ body{margin:0 auto;}
 
 .navpad{padding: 0px !important;}
 .navlist_menu{padding: 0px !important;}
-
+.headermenuflex{display: flex !important;}
 }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
  @media (min-width:1200px)  { 
-.cityonnet_Header{background:#fff;padding: 0px 0px;}
+.cityonnet_Header{background:#fff;padding: 5px;}
 .cityonnet_Header_menu{background: hsl(7, 89%, 64%);}
 .header{color: #fff;padding: 0px;}
-.logo{width: 150px;height: auto;padding: 0px  !important; /*mix-blend-mode: multiply;background:#fff;padding: 0px 5px;*/}
+.logo{width: 150px;height: auto;padding: 0px 5px !important;}
 .navlist li a {padding: 0px;color: #3a4080;list-style-type: none;font-size: 14px;}
 .navlist li i{border:1px solid #3a4080;color: #3a4080;width: 30px;
     height: 30px;
@@ -261,7 +289,7 @@ body{margin:0 auto;}
     display: inline-flex;
     align-content: center;
     align-items: center;}
-.headerleft{padding: 0px !important }
+.headerleft{padding: 0px 5px !important }
 .headerright{padding: 2px 10px !important}
 .headerleft i {position: relative;top: 5px;padding: 0px 5px;color: #fff;font-size: 20px;}
 .headersearch{padding: 0px !important;display: flex;margin: 3px auto;}
@@ -269,9 +297,20 @@ body{margin:0 auto;}
 .gobutton {height: 35px;background: #ffee1f;border: 1px solid #ffee1f;color: #3a4080;    position: absolute;
     right: 10px;}
 .gobutton i{padding: 0px 10px;}
-.navlist{margin: 13px 0 0 0;padding: 0px;}
-.categories {color: #ffee1f !important;padding: 0px;padding: 5px;font-size: 15px;font-weight: 700;height: 35px;}
-.categories i{padding: 5px;}
+.navlist{margin: 10px 0 0 0;padding: 0px;}
+.categories {
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0px !important;
+    }
+.categories i{padding:0px 10px 0px 0px;font-size: 21px;font-weight: 600;}
 .navlist_menu li a{color: #fff;padding: 0px;font-size: 14px;}
 .navlist_menu li i{background: #fff;color: #3a4080;border: 1px solid #fff;width: 30px;
     height: 30px;
@@ -281,10 +320,10 @@ body{margin:0 auto;}
     align-items: center;}
 .navlist_menu span{padding: 0px;}
 .stickymenu{z-index: 1;transform: none !important;position: relative;}
-.react-responsive-modal-modal{max-width: 600px !important;width: 100%;}
+/* .react-responsive-modal-modal{max-width: 600px !important;width: 100%;} */
 .citylist{background: #E4E6E8;}
 .citylist h6{background: #E4E6E8;padding: 10px;}
-.react-responsive-modal-closeButton {top: 28px !important;right: 20px !important;border: 1px solid #000 !important;}
+.react-responsive-modal-closeButton {top: 28px !important;right: 25px !important;border: 1px solid #000 !important;}
 .listli{padding: 5px 10px !important;}
 .listli a{color: #3a4080 !important;}
 .inputbar{height: 35px;width: 100%;font-size: 14px;padding: 5px;}
@@ -303,4 +342,6 @@ body{margin:0 auto;}
 .suggestedlist{list-style-type: none;}
 .navpad{padding: 0px !important;}
 .navlist_menu{padding: 0px !important;}
+.headermenuflex{display: flex !important;}
+.headerrightmenu{padding: 2px 12px !important;}
 }
