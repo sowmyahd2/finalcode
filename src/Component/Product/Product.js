@@ -10,7 +10,6 @@ const Product = (props) => {
             <div className="productsimage">
                 <img className="imagesproduct" src={props.product.medium_image} alt="Product" />
             </div>
-            
             <div className="productstext ">
                 <p>{props.product.ProductName}</p>
             </div>

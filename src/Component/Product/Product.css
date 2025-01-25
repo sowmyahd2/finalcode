@@ -9,6 +9,7 @@
 .categorytittle{background: #E4E6EB;padding: 10px;}
 .categorytittle h6{margin: 0px;}
 .viewall{background: #E4E6EB;padding: 5px !important;justify-content: right;display: grid;cursor: pointer;}
+.viewall a:hover{text-decoration: none;}
 .viewall h6 {font-size: 13px;background: hsl(7, 89%, 64%);padding:10px;margin: 0;color: #fff;}
 .producttittle {background: #E4E5EB;}
 

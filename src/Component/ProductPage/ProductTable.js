@@ -34,10 +34,10 @@ const ProductTable = () => {
                 <div className="container-fluid ">
                     <div className="row">
                         <div className="dealerslist col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div className="selectdel col-lg-5 col-md-6 col-sm-6 col-12">
+                            <div className="selectdel col-lg-5 col-md-6 col-sm-12 col-12">
                                 <h5>Dealers Selling This Product On <b>Cityonnet</b></h5>
                             </div>
-                            <div className="selectopt col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div className="selectopt col-lg-4 col-md-6 col-sm-12 col-12">
                                 <select className="locationdel">
 
                                     {productDealer.map((data, index) => {

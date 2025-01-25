@@ -62,8 +62,8 @@ const Productpage = () => {
                             </div>
                         </Carousel>
                         <div className="buttonproduct col-12">
-                            <div className="addtocart col-lg-5 col-md-5 col-sm-6 col-12"><span>Pickupinstore </span></div>
-                            <div className="buynow col-lg-5 col-md-5 col-sm-6 col-12"><span>Homedelivery</span></div>
+                            <div className="addtocart ccol-12"><span>Pickupinstore </span></div>
+                            <div className="buynow  col-12"><span>Homedelivery</span></div>
                         </div>
                     
                     </div> 
@@ -77,15 +77,15 @@ const Productpage = () => {
                             <p className="productcode">Product Code : {pathOr("",["productdetail","ProductCode"], productDetails)}</p>
                         </div>
                         <hr className="producthorizontal" />
-                        <div className="ratings col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div className="ratings col-lg-12 col-md-12 col-sm-12 col-12">
                             <h6>4.5 <i class="fas fa-star"></i></h6> <span>4,697 Ratings and 653 Reviews</span>
                         </div>
                         <div className="socialproduct col-12">
-                            <div className="wishcomemail col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div className="wishcomemail col-lg-12 col-md-12 col-sm-12 col-12">
                                 <h6>Whishlist | Comapre | Email :</h6>
                                 <p onClick={()=>addwishlist()}><i class="fas fa-heart"></i> | <i class="fas fa-sync"></i> | <i class="fas fa-envelope"></i></p>
                             </div>
-                            <div className="shareproduct col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div className="shareproduct col-lg-12 col-md-12 col-sm-12 col-12">
                                 <h6>Share with Us</h6>
                                 <p><i class="fab fa-facebook-square"></i> <i class="fab fa-twitter-square"></i> <i class="fab fa-google-plus-square"></i> <i class="fab fa-pinterest-square"></i></p>
                             </div>
@@ -117,7 +117,7 @@ const Productpage = () => {
                         <hr className="producthorizontal" />
                         <div className="productresource col-12 my-4">
                             <div className="delivery col-2">
-                                <h6>Delivery:</h6>
+                                <h6>Delivery :</h6>
                             </div>
                             <div className="pincode col-10">
                                 <h6>Enter Pincode To Check Delivery</h6>
