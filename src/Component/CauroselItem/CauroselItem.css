@@ -8,8 +8,17 @@
 .producttext span{font-size: 13px;font-weight: 600;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
  
 .brandlayout a{color: #000 !important;}  
-.brandlayout{text-align: center;justify-content: center;cursor: pointer;}
-.brandimage{background:#fff;padding: 0px;height: 180px !important;flex-direction: column !important;display: flex !important;justify-content: center !important;}
+.brandlayout{text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #fff;
+    margin: 0px 5px;
+    height: 260px;
+    border-radius: 10px;
+    border: 1px solid #ddd;}
+    .brandlayout:hover{text-align: center;justify-content: center;cursor: pointer;border: 1px solid hsl(7, 89%, 64%);}
+    
+.brandimage{padding: 0px;height: 220px !important;flex-direction: column !important;display: flex !important;justify-content: center !important;}
 .brandtext{height: 35px;}
 .brandtext p{margin:0px;font-size: 13px;padding:0px 5px;cursor: pointer;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 

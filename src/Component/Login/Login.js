@@ -56,12 +56,12 @@ const Login = () => {
         }
     }
    
-    return(            
-            <div className="loginlayout col-12">
-                <div className="container-fluid">
+    return(             
+            <div className="loginlayout">
+                <div className="container-fluid px-0">
                 <div className="row paddingzero">
-                    <div className="loginbox col-lg-4 col-md-6 col-sm-8 col-12">
-                        <div className="logininner col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div className="loginbox">
+                        <div className="logininner">
                         <Tabs>
                             <TabList>
                                 <Tab>Login</Tab>
@@ -73,35 +73,35 @@ const Login = () => {
      
 
                                 {showinput==true &&
-                                <div>
+                                <div> 
                                 <div className="form-group ">
                                     <div className="input-group ">
                                     <div className="input-group-addon loginicon "><i className="fa fa-user" /></div>
                                     <input onChange={(event)=>setmobile(event
-                                      .target.value)} type="text" name="login_email" className="form-control col-11" placeholder="Mobile Number" required="required" />
+                                      .target.value)} type="text" name="login_email" className="form-control logininputbox col-11" placeholder="Mobile Number" required="required" />
                                     </div>
                                 </div>
                                 {showcode==true &&
-                                <div className="form-group ">
+                                <div className="form-group">
                                 <div className="input-group">
                             
-                                    <div>
+                                    <div> 
                                    
                                 <InputFields></InputFields> 
                                 </div>       </div>     </div>  
                                   } </div>
                                 }
-                                <div className="form-group">
+                                <div className="form-group formotp">
                                     
  
                                     <a onClick={(event)=>{otpsend()}} className="pull-right col-lg-6 col-md-6 col-sm-6 col-12" data-target="#pwdModal" data-toggle="modal">Request OTP</a>
                                 </div> 
                                
                                  <InputFields ></InputFields>        
-                                <div className="form-group">
+                                <div className="form-group formlabel">
                                     
-                                    <label className="col-lg-6 col-md-6 col-sm-6 col-12" htmlFor="rememberMe"> <input type="checkbox" id="rememberMe" /> Remember Me</label>
-                                    <a className="pull-right col-lg-6 col-md-6 col-sm-6 col-12" data-target="#pwdModal" data-toggle="modal">Forgot password?</a>
+                                    <div className="col-lg-6 col-md-6 col-sm-6 col-6 rememberlabel" htmlFor="rememberMe"> <input type="checkbox" id="rememberMe" /> Remember Me</div>
+                                    <div className="col-lg-6 col-md-6 col-sm-6 col-6 forgotpassword" data-target="#pwdModal" data-toggle="modal">Forgot password?</div>
                                 </div>  
                                 <button type="button" onClick={(event)=>{onLogin(event)}}  className="btn loginbutton col-12" >Login </button>
 
@@ -116,19 +116,21 @@ const Login = () => {
 
                             </TabPanel>
                             <TabPanel>
-                            <form className="form-horizontal" method="post" action>
-                                <div className="form-group ">
+                            <form className="form-horizontal mx-0" method="post" action>
+                                <div className="form-group mx-0">
                                     <div className="input-group">
                                     <div className="input-group-addon loginicon "><i className="fa fa-user" /></div>
-                                    <input type="text" name="register_username" className="form-control col-11" placeholder="Mobile Number" onChange={(event)=>setmobile(event
+                                    <input type="text" name="register_username" className="form-control logininputbox col-11" placeholder="Mobile Number" onChange={(event)=>setmobile(event
                                       .target.value)} required="required" />
                                     </div>
+                                    </div>
+                                    <div className="form-group formotpregis">
                                     <a onClick={(event)=>{otpsend()}} className="pull-right col-lg-6 col-md-6 col-sm-6 col-12" data-target="#pwdModal" data-toggle="modal">Request OTP</a>
                                 </div>
                                 <InputFields ></InputFields> 
                                 {list &&  
                                 <div>                                           
-          <div className="form-group ">
+          <div className="form-group">
           <div className="input-group">
           <div ></div>
           <input type="text" name="register_username" className="form-control col-11" placeholder="Otp" required="required" />
@@ -142,7 +144,11 @@ const Login = () => {
    </div></div>   
       }
                                
-                                
+                               <div className="form-group formlabel">
+                                    
+                                    <div className="col-lg-6 col-md-6 col-sm-6 col-6 rememberlabelreg" htmlFor="rememberMe"> ....</div>
+                                    <div className="col-lg-6 col-md-6 col-sm-6 col-6 forgotpasswordereg" data-target="#pwdModal" data-toggle="modal">....</div>
+                                </div>  
                                 <button type="Button"  onClick={(event)=>Mobilelogin(event)} className="btn loginbutton col-12" >Register</button>
 
                                 <div className="or-seperator my-3"><i>or</i></div>
@@ -198,7 +204,7 @@ class InputFields extends React.Component {
     
     render() {
       return (
-        <div>
+        <div  className="otpfield col-12">
           <InputFild name="field-1" length="1" 
                      handleChange={this.handleChange} />
           <InputFild name="field-2" length="1" 

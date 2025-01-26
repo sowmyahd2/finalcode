@@ -12,8 +12,8 @@ const Cauroselproduct = (props) => {
         dots: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 6,
-        slidesToScroll: 6,
+        slidesToShow: 5,
+        slidesToScroll: 5,
         initialSlide: 0,
         lazyLoad: true,
         focusOnSelect: true,
@@ -22,8 +22,8 @@ const Cauroselproduct = (props) => {
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 4,
-              slidesToScroll: 4,
+              slidesToShow: 3,
+              slidesToScroll: 3,
               infinite: true,
               
             }

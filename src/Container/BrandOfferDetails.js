@@ -24,6 +24,7 @@ const BrandOfferDetail = () => {
         <Header />
         <div className="brandofferdetails ">
             <div className="container-fluid my-2">
+                
                 <div className="row">
                     <div className="offerdetailsbanner col-12">
                         <img className="img-fluid odbimage" src={brandofferbanner()} alt="banner" width="100%"/>

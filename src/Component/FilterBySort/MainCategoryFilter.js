@@ -22,7 +22,7 @@ const MainCategoryFilter = () => {
         </div>                    
         <Modal open={filterModalOpen} onClose={() => {setFilterToggleModal(!filterModalOpen)}} center>
             <ul className="list-group filterlist">
-                <h6>Filter <i class="fas fa-filter"></i></h6>
+                <h6>Filter<i class="fas fa-filter col-12"></i></h6>
                 
                 <div className="subcategoryfilter">
                     <div className="subfilter  my-2">

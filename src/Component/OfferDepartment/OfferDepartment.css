@@ -1,24 +1,35 @@
 /* #E4E5EB */
-.offerlayout{background: #fff;padding: 5px 0 !important;display: inline-block;} 
-.departmentimage{display: flex;justify-content: center;margin: 0 auto; max-width: 100%; background: #fff; height: 150px;}
+.offerlayout{background: #fff;padding: 5px  !important;display: inline-block;} 
+
+.departmentimage{display: flex;
+   justify-content: center;
+   margin: 10px auto;
+   width: 100% !important;
+   background: #fff;
+   height: 150px;
+   align-items: center;}
 .imageoffer{margin: 10px 0;
    cursor: pointer;
    display: flex;
    justify-content: center;
    flex-direction: column;
    height: auto;
-   max-height: 125px;
+   max-height: 120px;
    width: auto;    
    border-radius: 50%;
-   padding: 10px;}
-.departmentname{padding: 5px;background: #E4E5EB;}
-.dealslayout{padding:0px;    border: 1px solid #ccc;}
+   padding: 10px;} 
+.departmentname{padding: 5px;background: #eee;border-bottom-left-radius:10px ;border-bottom-right-radius: 10px;}
+.dealslayout{padding: 0px;
+   border: 1px solid #ccc;
+   border-radius: 10px;}
 .dealslayout a{color: #000 !important;text-decoration: none !important;}
-/* .dealslayout:hover{padding:0px;background: #ffee1f;cursor: pointer;color: #000;text-decoration: none;} */
-.departmentname p {color:#000; text-align: center;margin: 0px;padding: 5px;font-size: 14px;cursor: pointer;}
+
+.dealslayout:hover{border: 1px solid hsl(7, 89%, 64%);text-decoration: none;}
+.departmentname p {color:#000; text-align: center;margin: 0px;padding: 5px;font-size: 14px;cursor: pointer;text-decoration: none;}
+
 @media (min-width:301px) and (max-width: 575.98px) {
-    .departmentname p {color:#000;text-align: center;margin: 0px;padding: 3px;font-size: 11px;cursor: pointer;}  
+    .departmentname p {color:#000;text-align: center;margin: 0px;padding: 3px;font-size: 14px;cursor: pointer;}  
  }
  @media (max-width:300.98px) {
-    .departmentname p {color:#000;text-align: center;margin: 0px;padding: 3px;font-size: 10px;cursor: pointer;}  
+    .departmentname p {color:#000;text-align: center;margin: 0px;padding: 3px;font-size: 14px;cursor: pointer;}  
  }

@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom';
 const Product = (props) => {
     return(
         
-        <div className="productslayout col-lg-3 col-md-3 col-sm-3 col-6">
+        <div className="productslayout col-lg-3 col-md-3 col-sm-6 col-6">
         <Link to={`/productdetails/${props.product.ProductId}`}>
             <div className="productsimage">
                 <img className="imagesproduct" src={props.product.medium_image} alt="Product" />
             </div>
-            
             <div className="productstext ">
                 <p>{props.product.ProductName}</p>
             </div>

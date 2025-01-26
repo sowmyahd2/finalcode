@@ -211,15 +211,15 @@ const Maincategory = () => {
                     <div className="subcategorybanner col-lg-10 col-md-12 col-sm-12 col-12 my-2">
                         <img className="subcategoryimage" width="100%" src={banner()} />
 
-                        <div className="container-fluid my-2">
+                        {/* <div className="container-fluid my-2">
                             <div className="row">
                                 <div className="browselayout col-12 ">
                                     <BrowseByShop stores={BrowseByMainCategoryStore} />
                                     <BrowseByBrands brands={BrowseByMainCategorybrand} />
                                 </div>
                             </div>
-                        </div>
-                        <div className="container-fluid d-block d-md-none my-2">
+                        </div> */}
+                        <div className="container-fluid d-block d-lg-none my-2">
                             <div className="row">
                                 <div className="filterbysortlayout col-12">
                                     <MainCategoryFilter />
@@ -242,11 +242,12 @@ const Maincategory = () => {
                 <li onClick={(target) => { sorting("desc") }}><span>Price-High - Low</span></li>
             </ul>   
         </div>
+        <div className="subproductend col-12 ">
                                     <InfiniteScroll
                                         dataLength={MainCategoryProduct.length}
                                         next={() => { fetchData() }}
                                         hasMore={hasMore}
-                                        className={"productitemm row"}
+                                        className={"productitemm col-12"}
                                         endMessage={
                                             <div className="end-of-product col-lg-12 col-md-12 col-sm-12 col-xs-12" >That's all folks...</div>
                                         }
@@ -258,6 +259,7 @@ const Maincategory = () => {
                                             })
                                         }
                                     </InfiniteScroll>
+                                    </div>
                                 </div>
                             </div>
                         </div>

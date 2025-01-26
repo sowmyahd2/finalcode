@@ -17,7 +17,8 @@ const Sort = () => {
         </div>
         <Modal open={sortModalOpen} onClose={() => {setSortToggleModal(!sortModalOpen)}} center>
             <ul className="list-group sortbylist">
-                <h6>Sort :</h6>
+                <div className='sortflex'><h6>Sort </h6>
+                <i class="fas fa-sort"></i></div>
                 <li><a>New</a></li>
                 <li><a>Price-Low - High</a></li>
                 <li><a>Price-High - Low</a></li>

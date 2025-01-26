@@ -2,7 +2,9 @@
 
 body{margin:0 auto;}
 
-
+.depimage.img-fluid {
+    width: 100%;
+    }
 @media (max-width: 575.98px) { 
     
 }

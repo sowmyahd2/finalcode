@@ -30,7 +30,7 @@ const ProductDetails = () => {
         <SimilarProduct data={mostViewProduct} product={true} />
         </div>
         
-        
+        <div style={{borderBottom:"10px solid hsl(7, 89%, 64%)"}}></div>
         <Footer />
         </>
     )
