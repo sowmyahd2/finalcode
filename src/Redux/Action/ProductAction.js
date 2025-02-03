@@ -117,7 +117,10 @@ export const getProductByMaincategory = (city,id, limit=24, offset=0, brandIds, 
 export const getProductDetails = (city,id) => async dispatch => {
     try
     {
-        const response = await Api.get('products/'+id +'/'+city)
+       
+        const res =  await axios.get(`${Api}productdetail/${id}/${city}`);
+        const response=res.data;
+console.log("productdetail",response);  
         if(response.message === 'success'){
             dispatch({
                 type : Type.productDetailsSuccess,

@@ -14,6 +14,7 @@ import { useParams } from 'react-router-dom';
 
 const Productpage = () => { 
     const productDetails = useSelector(state => state.Product.productDetails);
+   
     const availableSize = useSelector(state => pathOr([],["availableSize"],state.Product.productDetails));    
     const productImage = useSelector(state => pathOr({},["images"],state.Product.productDetails));    
     const city = useSelector(state => state.UserPreference.city)
@@ -71,10 +72,10 @@ const Productpage = () => {
                     </div>
                     <div className="productpagedetails col-lg-7 col-md-6 col-sm-12 col-12">
                         <div className="detailsproduct col-12">
-                            <h6>{pathOr("",["productdetail","ProductName"], productDetails)}</h6>
+                            <h6>{pathOr("",["detail","ProductName"], productDetails)}</h6>
                             <hr className="producthorizontal" />
-                            <p className="concode">CON Code : {pathOr("",["productdetail","ConCode"], productDetails)}</p>
-                            <p className="productcode">Product Code : {pathOr("",["productdetail","ProductCode"], productDetails)}</p>
+                            <p className="concode">CON Code : {pathOr("",["detail","ConCode"], productDetails)}</p>
+                            <p className="productcode">Product Code : {pathOr("",["detail","ProductCode"], productDetails)}</p>
                         </div>
                         <hr className="producthorizontal" />
                         <div className="ratings col-lg-12 col-md-12 col-sm-12 col-12">
@@ -94,8 +95,8 @@ const Productpage = () => {
                         <hr className="producthorizontal" />
                         <div className="productpricepin col-12 my-3">    
                             <div className="productrupee col-12">                                                           
-                                <p className="itemprice"><i class="fas fa-rupee-sign"></i>. {pathOr("",["productdetail","LowestSellingPrice"], productDetails)} </p>
-                                <p className="discountprice"><i class="fas fa-rupee-sign"></i>. {pathOr("",["productdetail","MRP"], productDetails)} </p>
+                                <p className="itemprice"><i class="fas fa-rupee-sign"></i>. {pathOr("",["price","LowestStorePrice"], productDetails)} </p>
+                                <p className="discountprice"><i class="fas fa-rupee-sign"></i>. {pathOr("",["price","MRP"], productDetails)} </p>
                                 <span>50% off</span>
                             </div> 
                             {availableSize.length > 0 &&

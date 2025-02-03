@@ -14,8 +14,12 @@ const ProductDetails = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const city = useSelector(state => state.UserPreference.city)
+ let cityname=city;
+    if(cityname=="mysore"){
+        cityname="Mysuru";
+  }
     useEffect(()=>{
-        dispatch(getProductDetails(city, id))
+        dispatch(getProductDetails(cityname, id))
 
     },[])
    

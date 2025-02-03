@@ -16,11 +16,11 @@ const Product = (props) => {
             </Link>
             <div className="productsdetails">
          
-                <p className="mrpprice">{props.product.MRP}</p> 
+               {/* <p className="mrpprice">{props.product.MRP}</p> 
                 <p className="sellingprice"><i class="fas fa-rupee-sign"></i> {props.product.SellingPrice}</p>
                 <p className="storeprice">In Store <i class="fas fa-rupee-sign"></i> {props.product.StorePrice}</p>
                 <p className="ndealers">Dealers<span>({props.product.ShopCount})</span></p>
-            </div>  
+            */}</div>  
                               
         </div>
     )

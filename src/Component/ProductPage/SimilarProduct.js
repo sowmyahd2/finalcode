@@ -7,7 +7,8 @@ import CauroselItem from "../CauroselItem/Similarproducts";
 import { useSelector, useDispatch } from 'react-redux';
 import { pathOr, path } from 'ramda';
 const SimilarProduct = (props) => {
-  const product = useSelector(state => pathOr([], ["similarproducts"], state.Product.productDetails));
+
+  const product = props.data;
     const setting = {
         dots: false,
         infinite: false,
