@@ -20,6 +20,8 @@ const Productpage = () => {
     const city = useSelector(state => state.UserPreference.city)
     const user = useSelector(state => state.Login)
     const userId = pathOr("", ["user", "UserId"], user);
+
+    console.log("dpe",productSpecification);
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
@@ -147,8 +149,7 @@ const Productpage = () => {
                             </div>
                         </div>
                         <hr className="producthorizontal" />
-                                <ProductSpecification specification={productSpecification}/>
-                                
+                               
                             
                     </div>
                     <br/>
