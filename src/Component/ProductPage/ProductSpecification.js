@@ -12,7 +12,7 @@ import{pathOr} from 'ramda';
 const ProductSpecification = () => {
     const productDescription = useSelector(state => state.Product.productDetails);
     const productSpecification = useSelector(state => state.Product.productSpecification);
-    
+    console.log("specifiction",productSpecification);
     return(
         <div class="productspedesc">            
             <Accordion >
