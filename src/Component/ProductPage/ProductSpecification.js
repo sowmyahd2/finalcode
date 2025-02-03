@@ -9,10 +9,10 @@ import {
 import 'react-accessible-accordion/dist/fancy-example.css'; 
 import { useSelector } from 'react-redux';
 import{pathOr} from 'ramda';
-const ProductSpecification = () => {
+const ProductSpecification = ({specification}) => {
     const productDescription = useSelector(state => state.Product.productDetails);
-    const productSpecification = useSelector(state => state.Product.productSpecification);
-    console.log("specifiction",productSpecification);
+
+    
     return(
         <div class="productspedesc">            
             <Accordion >
@@ -35,7 +35,7 @@ const ProductSpecification = () => {
                     <AccordionItemPanel>
                     <div className="pspecefication col-lg-6 col-md-6 col-sm-8 col-12">
                             <ul className="listogroup">
-                        {productSpecification.map((data,index) => {
+                        {specification.map((data,index) => {
                             return(
                                 <>
                                 <li className="col-5">{data.SpecificationName}</li>

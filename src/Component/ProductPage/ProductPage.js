@@ -14,7 +14,7 @@ import { useParams } from 'react-router-dom';
 
 const Productpage = () => { 
     const productDetails = useSelector(state => state.Product.productDetails);
-   
+   const productSpecification = useSelector(state => state.Product.productSpecification);
     const availableSize = useSelector(state => pathOr([],["availableSize"],state.Product.productDetails));    
     const productImage = useSelector(state => pathOr({},["images"],state.Product.productDetails));    
     const city = useSelector(state => state.UserPreference.city)
@@ -147,7 +147,7 @@ const Productpage = () => {
                             </div>
                         </div>
                         <hr className="producthorizontal" />
-                                <ProductSpecification />
+                                <ProductSpecification specification={productSpecification}/>
                                 
                             
                     </div>
