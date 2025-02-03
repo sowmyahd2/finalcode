@@ -36,7 +36,6 @@ const Pickorderdetail = React.lazy(() => import('../Container/Pickorderdetail'))
 const Homedeliveryorders = React.lazy(() => import('../Container/Homedeliveryorders'));
 const Homedeliveryorderdetail = React.lazy(() => import('../Container/Homedeliveryorderdetail'));
 const Aboutus =React.lazy(()=>import("../Container/Aboutus"));
-const cart =React.lazy(()=>import("../Container/CartPage"));
 
 
 const CheckoutHome= React.lazy(()=>import("../Container/Checkouthome"));
@@ -63,7 +62,7 @@ export default function App() {
                             <Route path="/brands/subcategory/:DepartmentId/:BrandId" render={() => <BrandSubCategory />} exact />
                             <Route path="/store/maincategory/products/:DealerId/:DepartmentId" render={() => <StoreMainCategoryProducts />} exact />
                             <Route path="/login" render={() => <LoginPage />} exact />
-                            <Route path="/cart" render={() => <cart />} exact />
+                            <Route path="/cart" render={() => <CartPage />} exact />
                         </Switch>
                     </Router>
                 </Suspense>

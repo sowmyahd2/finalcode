@@ -20,7 +20,7 @@ const StoreFrontProducts = () => {
     const shopPagecategoryFilter = useSelector(state => pathOr([],["filter"],state.ShopPage.shopPage));    
     const shopPagecategoryFilterkeys = Object.keys(shopPagecategoryFilter);
 
-    
+    console.log("products",shopPagecategoryProducts);
         const shopPagecategoryFilterbody = (item) => {
             return item.map((data,index)=>{
                 return (<FilterBox label={data.MainCategoryName} link={"/store/maincategory/products/"+DealerId+"/"+data.MainCategoryId} />)

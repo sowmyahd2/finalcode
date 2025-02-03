@@ -120,10 +120,50 @@ export const getProductDetails = (city,id) => async dispatch => {
        
         const res =  await axios.get(`${Api}productdetail/${id}/${city}`);
         const response=res.data;
-console.log("productdetail",response);  
+ 
         if(response.message === 'success'){
             dispatch({
                 type : Type.productDetailsSuccess,
+                payload : response.data
+            })
+        }
+    }catch(error){
+        dispatch({
+            type : Type.productDetailsFailure,
+            payload : error.message
+        })
+    }
+}
+export const getProductspecification = (id) => async dispatch => {
+    try
+    {
+       
+        const res =  await axios.get(`${Api}productspecification/${id}`);
+        const response=res.data;
+ 
+        if(response.message === 'success'){
+            dispatch({
+                type : Type.productSpecificationSuccess,
+                payload : response.data
+            })
+        }
+    }catch(error){
+        dispatch({
+            type : Type.productDetailsFailure,
+            payload : error.message
+        })
+    }
+}
+export const getProductsellers = (city,id) => async dispatch => {
+    try
+    {
+      
+        const res =  await axios.get(`${Api}productstores/${id}/${city}`);
+        const response=res.data;
+ 
+        if(response.message === 'success'){
+            dispatch({
+                type : Type.productSellersSuccess,
                 payload : response.data
             })
         }

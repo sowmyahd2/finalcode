@@ -25,7 +25,7 @@ const ShopPage = () => {
     const shopproducts = useSelector(state => state.ShopPage)
 
     
-    console.log("data",shopproducts);
+   
     return (
         <>
         <Header />

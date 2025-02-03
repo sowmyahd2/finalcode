@@ -4,7 +4,7 @@ import Header from '../Component/Header/Header';
 import Productpage from '../Component/ProductPage/ProductPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getProductDetails } from '../Redux/Action/ProductAction';
+import { getProductDetails,getProductspecification,getProductsellers} from '../Redux/Action/ProductAction';
 import SimilarProduct from '../Component/ProductPage/SimilarProduct';
 import Footer from '../Component/Footer/Footer';
 
@@ -20,6 +20,8 @@ const ProductDetails = () => {
   }
     useEffect(()=>{
         dispatch(getProductDetails(cityname, id))
+        dispatch(getProductspecification(id))
+        dispatch(getProductsellers(cityname,id))
 
     },[])
    

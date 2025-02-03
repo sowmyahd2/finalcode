@@ -6,10 +6,13 @@ const intialState = {
     productByDepartment:[],
     productBySubcategory:[],
     productByMaincategory:[],
+    productSpecification:[],
+    productStores:[],
     productByMaincategoryHasMore: true,
     productBySubcategoryHasMore: true,
     productBydepartmentHasMore: true,
     productDetails:{},
+    productSeller:[],
     wishlist:{},
 }
 
@@ -19,7 +22,15 @@ const ProductReducer = (state=intialState, action) => {
             return Object.assign({}, state, {
                 product: action.payload
             })
-
+            case Type.productSpecificationSuccess:
+            return Object.assign({}, state, {
+                productSpecification: action.payload
+            })
+           
+case Type.productSellersSuccess:
+    return Object.assign({},state,{
+        productSeller:action.payload
+    })
         case Type.mostViewProductSuccess:
             return Object.assign({}, state,{
                 mostView:action.payload
