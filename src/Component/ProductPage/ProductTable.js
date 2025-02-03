@@ -14,7 +14,7 @@ const ProductTable = () => {
     const user = useSelector(state => state.Login)
     const userId = pathOr("", ["user", "UserId"], user);
      const productSeller = useSelector(state => state.Product.productSeller);
-        console.log("sellers",productSeller);
+        
     const dispatch = useDispatch();
     const history = useHistory();
     const addtocart = (city, type, dealerPriceId, qty) => {
@@ -42,7 +42,7 @@ const ProductTable = () => {
                             <div className="selectopt col-lg-4 col-md-6 col-sm-12 col-12">
                                 <select className="locationdel">
 
-                                    {productSeller.map((data, index) => {
+                                    {productDealer.map((data, index) => {
                                         return (
                                             <option className="productoption">{data.Locality}</option>
                                         )
@@ -66,7 +66,7 @@ const ProductTable = () => {
                                 </Thead>
                                 <Tbody>
                                     {
-                                        productSeller.map((data, index) => {
+                                        productDealer.map((data, index) => {
                                             return (
                                                 <Tr>
                                                     <Td>

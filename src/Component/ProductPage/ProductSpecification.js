@@ -11,8 +11,8 @@ import { useSelector } from 'react-redux';
 import{pathOr} from 'ramda';
 const ProductSpecification = () => {
     const productDescription = useSelector(state => state.Product.productDetails);
-    const detail = useSelector(state => state.Product.productDetails);
-
+  
+    console.log(productDescription);
     const productSpecification = useSelector(state => state.Product.productSpecification);
     
     return(
@@ -25,7 +25,7 @@ const ProductSpecification = () => {
                         </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
-                        <p>{pathOr("",["productdetail","productDescription"], productDescription)} </p>
+                        <p>{pathOr("",["productdetail","Description"], productDescription)} </p>
                     </AccordionItemPanel>
                 </AccordionItem>
                 <AccordionItem dangerouslySetExpanded={true}>
