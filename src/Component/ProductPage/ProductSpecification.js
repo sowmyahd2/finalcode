@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 import{pathOr} from 'ramda';
 const ProductSpecification = () => {
     const productDescription = useSelector(state => state.Product.productDetails);
-    const specification = useSelector(state => pathOr([],["specification"],state.Product.productDetails));
+    const productSpecification = useSelector(state => state.Product.productSpecification);
     
     return(
         <div class="productspedesc">            
@@ -35,7 +35,7 @@ const ProductSpecification = () => {
                     <AccordionItemPanel>
                     <div className="pspecefication col-lg-6 col-md-6 col-sm-8 col-12">
                             <ul className="listogroup">
-                        {specification.map((data,index) => {
+                        {productSpecification.map((data,index) => {
                             return(
                                 <>
                                 <li className="col-5">{data.SpecificationName}</li>

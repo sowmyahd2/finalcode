@@ -23,6 +23,7 @@ const ProductReducer = (state=intialState, action) => {
                 product: action.payload
             })
             case Type.productSpecificationSuccess:
+                console.log("sas",action.payload);
             return Object.assign({}, state, {
                 productSpecification: action.payload
             })

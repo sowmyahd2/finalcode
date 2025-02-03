@@ -140,7 +140,7 @@ export const getProductspecification = (id) => async dispatch => {
        
         const res =  await axios.get(`${Api}productspecification/${id}`);
         const response=res.data;
- 
+ console.log("specification",response);
         if(response.message === 'success'){
             dispatch({
                 type : Type.productSpecificationSuccess,
