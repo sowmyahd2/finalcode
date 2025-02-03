@@ -7,7 +7,7 @@ const intialState = {
     productBySubcategory:[],
     productByMaincategory:[],
     productSpecification:[],
-    productStores:[],
+    productStores:{},
     productByMaincategoryHasMore: true,
     productBySubcategoryHasMore: true,
     productBydepartmentHasMore: true,
